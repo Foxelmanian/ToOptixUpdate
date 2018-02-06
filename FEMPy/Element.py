@@ -14,6 +14,11 @@ class Element(object):
         self.__nodes = nodes
         self.__element_id = element_id
 
+    def get_id(self) -> int:
+        return self.__element_id
+
+
+
 
 
 
