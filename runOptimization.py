@@ -13,22 +13,20 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
     fem_body = fem_builder.get_fem_body()
 
     # Create a material according to the density rule (currently only 1 material is possible no multi material changing)
-    modified_materials = DensityMaterial(fem_body.get_materials()[0], 20, 3.0).get_density_materials()
+    topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], 20, 3.0).get_density_materials()
     current_density = len(fem_body.get_elements()) * [voluminaRatio]
 
     # Start with the optimization by changing the material defintion and running optimizer
     ccx_topo_static = CCXSolver(solver_path, input_file_path)
-    ccx_topo_static.add_materials(modified_materials)
-
 
     print("Start Optimization")
     for iteration in range(maximum_iterations):
         print("#------ ITERATION: " + str(iteration + 1) + " of " + str(maximum_iterations) + " ---------")
         # Define new fem_body
         optimizer = TopologyOptimizer(current_density, 20)
-        element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
-        ccx_topo_static.add_element_sets(element_sets)
-        ccx_topo_static.get_displacement()
+        sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+
+        ccx_topo_static.get_topo_opt_displacement(topology_optimization_material, sorted_density_element_sets)
 
 
 
