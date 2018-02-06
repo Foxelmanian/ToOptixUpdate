@@ -31,22 +31,6 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 if __name__ == "__main__":
     testFile = "example.inp"
     solver_path = "ccx.exe"
