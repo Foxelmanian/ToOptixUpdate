@@ -13,9 +13,15 @@ class Element(object):
     def __init__(self, element_id: int, nodes: List[int]):
         self.__nodes = nodes
         self.__element_id = element_id
+        self.__strain_energy = 0.0
 
     def get_id(self) -> int:
         return self.__element_id
+
+    def set_strain_energy(self, strain_energy):
+        self.__strain_energy = strain_energy
+
+
 
 
 

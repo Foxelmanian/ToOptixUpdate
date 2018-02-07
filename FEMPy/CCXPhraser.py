@@ -133,3 +133,74 @@ if __name__ == "__main__":
     fe_body = phraserFEM.get_fem_body()
     print(fe_body)
 
+
+class FRDReader(object):
+
+    def __init__(self, file_name: str):
+        self.__file_name = file_name + ".frd"
+
+    def get_displacement(self, node_dictonary: Dict[int, Node]):
+        frd_file = open(self.__file_name, "r")
+        displacement_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if " -4  DISP" in line.upper():
+                displacement_section = True
+
+            if displacement_section and " -3" in line:
+                displacement_section = False
+            if displacement_section and " -1" in line[0:3]:
+                node_id = int(line[3:13])
+                disp_x = float(line[13:25])
+                disp_y = float(line[25:37])
+                disp_z = float(line[37:49])
+                node_dictonary[node_id].set_displacement(disp_x, disp_y, disp_z)
+
+    def get_energy_density(self, element_dictonary: Dict[int, Element]):
+
+        energy_vector = []
+        frd_file = open(self.__file_name, "r")
+        energy_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if " -4  ENER" in line.upper():
+                energy_section = True
+
+            if energy_section and " -3" in line:
+                energy_section = False
+            if energy_section and " -1" in line[0:3]:
+                element_id = int(line[3:13])
+                strain_energy= float(line[13:25])
+                print(element_id)
+                element_dictonary[element_id].set_strain_energy(strain_energy)
+                energy_vector.append(strain_energy)
+        return energy_vector
+
+
+class DATReader(object):
+
+    def __init__(self, file_name: str):
+        self.__file_name = file_name + ".dat"
+
+    def get_energy_density(self, element_dictonary: Dict[int, Element]):
+
+        energy_vector = []
+        frd_file = open(self.__file_name, "r")
+        energy_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if energy_section:
+                element_id = int(line[0:10])
+                strain_energy = float(line[15:28])
+                element_dictonary[element_id].set_strain_energy(strain_energy)
+                energy_vector.append(strain_energy)
+            if "INTERNAL ENERGY DENSITY" in line.upper():
+                energy_section = True
+        return energy_vector
+
+
+
+
