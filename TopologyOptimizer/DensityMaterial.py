@@ -4,10 +4,16 @@ from typing import List
 
 class DensityMaterial(object):
 
-    def __init__(self, material: Material, steps: int, penaltyExponent: float):
+    def __init__(self, material: Material, steps: int, penalty_exponent: float):
         self.__material = material
         self.__steps = steps
-        self.__penalty = penaltyExponent
+        self.__penalty = penalty_exponent
+
+    def get_penalty_exponent(self) -> float:
+        return self.__penalty
+
+    def get_steps(self) -> int:
+        return self.__steps
 
     def get_density_materials(self) -> List[Material]:
         density_materials = []
