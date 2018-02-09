@@ -1,4 +1,5 @@
 from typing import List
+from .Node import Node
 
 """
 
@@ -10,7 +11,7 @@ class Element(object):
     """ This class is used for creating a element of FEM
     """
 
-    def __init__(self, element_id: int, nodes: List[int]):
+    def __init__(self, element_id: int, nodes: List[Node]):
         self.__nodes = nodes
         self.__element_id = element_id
         self.__strain_energy = 0.0
@@ -20,6 +21,9 @@ class Element(object):
 
     def set_strain_energy(self, strain_energy):
         self.__strain_energy = strain_energy
+
+    def get_nodes(self):
+        return self.__nodes
 
 
 

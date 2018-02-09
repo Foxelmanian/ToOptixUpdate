@@ -1,11 +1,12 @@
 from FEMPy.FEMBody import FEMBody
-from FEMPy.CCXPhraser import CCXPhraser
-from FEMPy.CCXPhraser import FRDReader
-from FEMPy.CCXPhraser import DATReader
+from FEMPy.CCXPhraser import CCXPhraser, FRDReader, DATReader
 from FEMPy.CCXSolver import CCXSolver
 from TopologyOptimizer.DensityMaterial import DensityMaterial
 from TopologyOptimizer.TopologyOptimizer import TopologyOptimizer
+from PolygonMesh.STLPhraser import STL
+from PolygonMesh.Geometry import Surface, Solid
 import numpy as np
+import os
 
 
 def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, matSets, maximum_iterations, input_file_path):
@@ -22,7 +23,8 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
     frd_disp_reader = FRDReader("topo_displacement")
     dat_ener_reader = DATReader("topo_energy")
     optimizer = TopologyOptimizer(current_density, topology_optimization_material)
-
+    sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+    outputDensity = 0.5
     print("Start Optimization")
     for iteration in range(maximum_iterations):
         print("###################################################")
@@ -31,7 +33,7 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         print("#########")
         print("###################################################")
         # Define new fem_body
-        sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+
 
          # Calculate the strain energy density
         ccx_topo_static.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_displacement", "U")
@@ -41,6 +43,25 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         strain_energy_vec = dat_ener_reader.get_energy_density(fem_body.get_elements())
         # Modify material by using the strain energy vector
         optimizer.change_density(strain_energy_vec)
+
+        # Generate STL output of the result and calculate new sorted density set
+        sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+
+
+        for element_set in sorted_density_element_sets:
+
+
+        res_elem = []
+        print("Export Results")
+        topo_surf = Surface()
+        topo_surf.create_surface_on_elements(res_elem)
+        stl_file = STL(1)
+        topo_part = Solid(1, topo_surf.triangles)
+        stl_file.parts.append(topo_part)
+        print("Exporting result result elements", len(res_elem))
+        if os.path.isfile('STL_res_' + str(iteration) + '.stl'):
+            os.remove('STL_res_' + str(iteration) + '.stl')
+        stl_file.write(workDir + 'STL_res_' + str(iteration) + '.stl')
 
         print("###################################################")
         print("#########")

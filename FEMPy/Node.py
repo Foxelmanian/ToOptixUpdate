@@ -27,6 +27,18 @@ class Node(object):
     def set_x(self, x: float):
         self.__x = x
 
+    def get_y(self) -> float:
+        return self.__x
+
+    def set_y(self, x: float):
+        self.__x = x
+
+    def get_z(self) -> float:
+        return self.__x
+
+    def set_z(self, x: float):
+        self.__x = x
+
     def get_id(self):
         return self.__id
 
@@ -43,7 +55,6 @@ class Node(object):
 
     def get_temperature(self):
         return self.__temperature
-
 
 
 if __name__ == "__main__":

@@ -1,8 +1,9 @@
-from FEMPy.FEMBody import FEMBody
-from FEMPy.Node import Node
-from FEMPy.Element import Element
-from FEMPy.Material import Material
+from .FEMBody import FEMBody
+from .Node import Node
+from .Material import Material
 from typing import Dict
+from .Element import Element
+
 from typing import List
 
 
@@ -17,7 +18,10 @@ class CCXPhraser(object):
         # Initialize a FEMBody
         try:
             self.__file = open(file_name, "r")
-            self.__fem_body = FEMBody("CCXPhraser", self.__get_nodes(), self.__get_elements(), self.__get_material())
+            self.__nodes = self.__get_nodes()
+            self.__elements = self.__get_elements()
+            self.__material = self.__get_material()
+            self.__fem_body = FEMBody("CCXPhraser", self.__nodes, self.__elements, self.__material)
             self.__file.close()
         except FileNotFoundError as e:
             print(e)
@@ -67,7 +71,7 @@ class CCXPhraser(object):
                     elem_id = int(line_items[0])
                     node_list = []
                     for node_id in line_items[1: len(line_items) - 1]:
-                        node_list.append(int(node_id))
+                        node_list.append(self.__nodes[int(node_id)])
                     element_dict[elem_id] = Element(elem_id, node_list)
                 except IOError as e:
                     print(e)
