@@ -47,7 +47,7 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         # Generate STL output of the result and calculate new sorted density set
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
 
-
+        """
         for element_set in sorted_density_element_sets:
 
 
@@ -68,6 +68,7 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         print("#------ Mean strain energy: " + str(np.mean(strain_energy_vec))  + " ---------")
         print("#########")
         print("###################################################")
+        """
 
 
 if __name__ == "__main__":
