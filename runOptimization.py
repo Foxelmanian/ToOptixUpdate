@@ -24,7 +24,7 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
     dat_ener_reader = DATReader("topo_energy")
     optimizer = TopologyOptimizer(current_density, topology_optimization_material)
     sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
-    outputDensity = 0.5
+    output_density = 0.5
     print("Start Optimization")
     for iteration in range(maximum_iterations):
         print("###################################################")
@@ -32,6 +32,7 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         print("#------ ITERATION: " + str(iteration + 1) + " of " + str(maximum_iterations) + " ---------")
         print("#########")
         print("###################################################")
+
         # Define new fem_body
 
 
@@ -47,14 +48,18 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         # Generate STL output of the result and calculate new sorted density set
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
 
-        """
-        for element_set in sorted_density_element_sets:
-
-
         res_elem = []
+        for element_key in fem_body.get_elements():
+            if fem_body.get_elements()[element_key].get_density() > output_density:
+                res_elem.append(fem_body.get_elements()[element_key])
+
+
         print("Export Results")
         topo_surf = Surface()
         topo_surf.create_surface_on_elements(res_elem)
+
+        print("Number of result elements", len(res_elem))
+
         stl_file = STL(1)
         topo_part = Solid(1, topo_surf.triangles)
         stl_file.parts.append(topo_part)
@@ -68,11 +73,11 @@ def perform_topology_optimization(voluminaRatio, penal, workDir, solver_path, ma
         print("#------ Mean strain energy: " + str(np.mean(strain_energy_vec))  + " ---------")
         print("#########")
         print("###################################################")
-        """
+
 
 
 if __name__ == "__main__":
     testFile = "example.inp"
     solver_path = "ccx.exe"
 
-    perform_topology_optimization(0.3, 3.0, "test", solver_path, 20, 50, testFile)
+    perform_topology_optimization(0.3, 3.0, "test", solver_path, 20, 100, testFile)

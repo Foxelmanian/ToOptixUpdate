@@ -1,4 +1,5 @@
-from typing import List
+from typing import List, Dict
+from FEMPy.Element import Element
 from FEMPy.Material import Material
 from FEMPy.ElementSet import ElementSet
 from TopologyOptimizer import DensityMaterial
@@ -12,8 +13,9 @@ class TopologyOptimizer(object):
         self.__current_density = np.array(density)
         self.__next_density = np.array(density)
         self.__density_material = density_material
-
-
+        self.__memory_size = 6
+        self.__sensitivity_sets = []
+        self.__density_sets = []
         self.__convergence_max = 0.01
         self.__max_change = 0.2
         self.__compaction_ratio = 0.3
@@ -21,15 +23,17 @@ class TopologyOptimizer(object):
     def get_current_density(self):
         return self.__current_density
 
-    def get_element_sets_by_density(self, elements) -> List[ElementSet]:
+    def get_element_sets_by_density(self, elements: Dict[int, Element]) -> List[ElementSet]:
         element_sets = []
         for i in range(self.__density_material.get_steps()):
             element_sets.append([])
+
         counter = 0
         for key in elements:
             elset_number = (self.__density_material.get_steps() - 1) * self.__current_density[counter]
-            counter += 1
+            elements[key].set_density(self.__current_density[counter])
             element_sets[int(elset_number)].append(elements[key])
+            counter += 1
         element_sets_ob = []
         counter = 1
         for element_id_set in element_sets:
@@ -42,6 +46,35 @@ class TopologyOptimizer(object):
         sensitivity = np.array(self.__current_density)**(self.__density_material.get_penalty_exponent() - 1) * np.array(sensitivity)
         if min(sensitivity) <= 0:
             sensitivity += abs(min(sensitivity) + 0.1)
+
+        self.__sensitivity_sets.append(sensitivity)
+        self.__density_sets.append(self.__current_density)
+        if len(self.__sensitivity_sets) > self.__memory_size:
+            self.__sensitivity_sets.pop(0)
+            self.__density_sets.pop(0)
+
+        weight = 0
+        sum_weight = 0
+        for sensitivity_in_memory in self.__sensitivity_sets:
+            if weight == 0:
+                sensitivity = sensitivity_in_memory * np.exp(weight)
+                sum_weight += np.exp(weight)
+            else:
+                sensitivity += sensitivity_in_memory * np.exp(weight)
+                sum_weight += np.exp(weight)
+            weight += 1
+
+        weight = 0
+        for density_in_memory in self.__density_sets:
+            if weight == 0:
+                self.__current_density = density_in_memory * np.exp(weight)
+            else:
+                self.__current_density += density_in_memory * np.exp(weight)
+            weight += 1
+        self.__current_density = self.__current_density * 1.0 / sum_weight
+
+        print("length sens sets memory: ", len(self.__sensitivity_sets))
+
         l_upper = max(sensitivity)
         l_lower = min(sensitivity)
 

@@ -48,6 +48,7 @@ class CCXPhraser(object):
                     y = float(line_items[2])
                     z = float(line_items[3])
                     node_dict[node_id] = Node(node_id, x, y, z)
+
                 except IOError as e:
                     print(e)
             if "*NODE" in line.upper():
@@ -58,6 +59,8 @@ class CCXPhraser(object):
         element_dict = {}
         read_attributes = False
         self.__file.seek(0)
+        nodes_of_one_element = 0
+        new_element = True
         for line in self.__file:
             if len(line) < 1:
                 continue
@@ -68,15 +71,42 @@ class CCXPhraser(object):
             if read_attributes:
                 line_items = line[:-1].split(",")
                 try:
-                    elem_id = int(line_items[0])
-                    node_list = []
-                    for node_id in line_items[1: len(line_items) - 1]:
-                        node_list.append(self.__nodes[int(node_id)])
+                    # Check if a new element is in this line or adding new nodes by using the node number
+                    if new_element:
+                        elem_id = int(line_items[0])
+                        node_list = []
+                        for node_id in line_items[1: len(line_items)]:
+                            node_list.append(self.__nodes[int(node_id)])
+                        if len(node_list) == nodes_of_one_element:
+                            new_element = True
+                        else:
+                            new_element = False
+                            continue
+                    if not new_element:
+                        for node_id in line_items[0: len(line_items) - 1]:
+                            node_list.append(self.__nodes[int(node_id)])
+
+                        if len(node_list) == nodes_of_one_element:
+                            new_element = True
+                        else:
+                            new_element = False
+                            continue
                     element_dict[elem_id] = Element(elem_id, node_list)
                 except IOError as e:
+
                     print(e)
             if "*ELEMENT" in line.upper():
                 read_attributes = True
+                node_number = line.split("C3D")[1][0:2]
+                if node_number[1].isdigit():
+                    nodes_of_one_element = int(node_number)
+                else:
+                    nodes_of_one_element = int(node_number[0])
+                print("NODES OF ONE ELEMENT: ", nodes_of_one_element)
+
+
+
+
         return element_dict
 
     def __get_material(self) -> Material:

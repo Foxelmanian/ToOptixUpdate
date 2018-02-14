@@ -28,16 +28,16 @@ class Node(object):
         self.__x = x
 
     def get_y(self) -> float:
-        return self.__x
+        return self.__y
 
-    def set_y(self, x: float):
-        self.__x = x
+    def set_y(self, y: float):
+        self.__y = y
 
     def get_z(self) -> float:
-        return self.__x
+        return self.__z
 
-    def set_z(self, x: float):
-        self.__x = x
+    def set_z(self, z: float):
+        self.__z = z
 
     def get_id(self):
         return self.__id
