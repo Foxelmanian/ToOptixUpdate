@@ -16,6 +16,10 @@ class Element(object):
         self.__element_id = element_id
         self.__strain_energy = 0.0
         self.__density = 0.0
+        self.__x_center = 0.0
+        self.__y_center = 0.0
+        self.__z_center = 0.0
+        self.__calculate_element_center()
 
     def get_id(self) -> int:
         return self.__element_id
@@ -35,6 +39,28 @@ class Element(object):
     def set_density(self, density):
         self.__density = density
 
+    def __calculate_element_center(self):
+        count = 0
+        x_center = 0.0
+        y_center = 0.0
+        z_center = 0.0
+        for node in self.__nodes:
+            count += 1
+            x_center += node.get_x()
+            y_center += node.get_y()
+            z_center += node.get_z()
+        self.__x_center = x_center / count
+        self.__y_center = y_center / count
+        self.__z_center = z_center / count
+
+    def get_x_center(self):
+        return self.__x_center
+
+    def get_y_center(self):
+        return self.__y_center
+
+    def get_z_center(self):
+        return self.__z_center
 
 
 

@@ -4,6 +4,7 @@ import re
 from .Geometry import Triangle
 from .Geometry import Solid
 from .Geometry import Point
+from typing import List
 
 class File(object):
     """ File-object
@@ -56,12 +57,15 @@ class STL(File):
         if self.filepath:
             self.read()
 
-    @property
-    def parts(self):
+    def get_parts(self)->List[Solid]:
         """
         :return: All solid objects which are imported
         """
         return self.__parts
+
+    def add_solid(self, solid: Solid):
+        self.__parts.append(solid)
+
 
     def write(self, filename):
         """ This method can export the current data into an stl-file
@@ -71,7 +75,7 @@ class STL(File):
             raise ValueError ("File does exist alread %f", filename)
         print("Export stl in", filename)
         o_file = open(filename,"w")
-        for part in self.parts:
+        for part in self.__parts:
             solid = part
             o_file.write("solid Exported from DMST-STL\n")
             for triangle in solid.triangles:
@@ -121,7 +125,7 @@ class STL(File):
             if re.match(s_pat, line, 2):
                 id_s +=1
                 s = Solid(id_s, [])
-                self.parts.append(s)
+                self.__parts.append(s)
                 solid_is_found = True
                 continue
             # Solid is closed
@@ -135,9 +139,9 @@ class STL(File):
                 facet_is_found = True
                 t = Triangle(id_t, [])
                 words = line.split(" ")
-                nx = float(words[0])
-                ny = float(words[1])
-                nz = float(words[2])
+                nx = float(words[2])
+                ny = float(words[3])
+                nz = float(words[4])
                 t.normal = [nx, ny, nz]
                 s.triangles.append(t)
                 continue

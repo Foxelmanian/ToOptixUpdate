@@ -13,11 +13,11 @@ class TopologyOptimizer(object):
         self.__current_density = np.array(density)
         self.__next_density = np.array(density)
         self.__density_material = density_material
-        self.__memory_size = 6
+        self.__memory_size = 1
         self.__sensitivity_sets = []
         self.__density_sets = []
         self.__convergence_max = 0.01
-        self.__max_change = 0.2
+        self.__max_change = 0.1
         self.__compaction_ratio = 0.3
 
     def get_current_density(self):
@@ -46,7 +46,7 @@ class TopologyOptimizer(object):
         sensitivity = np.array(self.__current_density)**(self.__density_material.get_penalty_exponent() - 1) * np.array(sensitivity)
         if min(sensitivity) <= 0:
             sensitivity += abs(min(sensitivity) + 0.1)
-
+        """ With memory function (current tests)
         self.__sensitivity_sets.append(sensitivity)
         self.__density_sets.append(self.__current_density)
         if len(self.__sensitivity_sets) > self.__memory_size:
@@ -72,7 +72,7 @@ class TopologyOptimizer(object):
                 self.__current_density += density_in_memory * np.exp(weight)
             weight += 1
         self.__current_density = self.__current_density * 1.0 / sum_weight
-
+        """
         print("length sens sets memory: ", len(self.__sensitivity_sets))
 
         l_upper = max(sensitivity)

@@ -102,7 +102,7 @@ class CCXPhraser(object):
                     nodes_of_one_element = int(node_number)
                 else:
                     nodes_of_one_element = int(node_number[0])
-                print("NODES OF ONE ELEMENT: ", nodes_of_one_element)
+                #print("NODES OF ONE ELEMENT: ", nodes_of_one_element)
 
 
 
