@@ -191,8 +191,47 @@ class FRDReader(object):
                 disp_z = float(line[37:49])
                 node_dictonary[node_id].set_displacement(disp_x, disp_y, disp_z)
 
-    def get_energy_density(self, element_dictonary: Dict[int, Element]):
+    def get_temperature(self, node_dictonary: Dict[int, Node]):
+        frd_file = open(self.__file_name, "r")
+        displacement_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if " -4  NDTEMP" in line.upper():
+                displacement_section = True
 
+            if displacement_section and " -3" in line:
+                displacement_section = False
+            if displacement_section and " -1" in line[0:3]:
+                node_id = int(line[3:13])
+                temperature = float(line[13:25])
+                node_dictonary[node_id].set_temperature(temperature)
+
+    def get_heat_flux(self, element_dictonary: Dict[int, Element]):
+
+        energy_vector = []
+        frd_file = open(self.__file_name, "r")
+        energy_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if " -4  FLUX" in line.upper():
+                energy_section = True
+
+            if energy_section and " -3" in line:
+                energy_section = False
+            if energy_section and " -1" in line[0:3]:
+                print("import", line)
+                element_id = int(line[3:13])
+                hflx = float(line[13:25])
+                hfly = float(line[25:37])
+                hflz = float(line[37:49])
+                hfl_ges = (hflx**2 + hfly**2 + hflz**2)**0.5
+                element_dictonary[element_id].set_heat_flux(hfl_ges)
+                energy_vector.append(hfl_ges)
+        return energy_vector
+
+    def get_energy_density(self, element_dictonary: Dict[int, Element]):
         energy_vector = []
         frd_file = open(self.__file_name, "r")
         energy_section = False
@@ -234,6 +273,27 @@ class DATReader(object):
             if "INTERNAL ENERGY DENSITY" in line.upper():
                 energy_section = True
         return energy_vector
+
+    def get_heat_flux(self, element_dictonary: Dict[int, Element]):
+
+        energy_vector = []
+        frd_file = open(self.__file_name, "r")
+        energy_section = False
+        for line in frd_file:
+            if len(line) <= 2:
+                continue
+            if energy_section:
+                element_id = int(line[0:10])
+                hflx = float(line[15:28])
+                hfly = float(line[28:42])
+                hflz = float(line[42:56])
+                ges_hfl = (hflx**2+ hfly**2 + hflz**2)**0.5
+                element_dictonary[element_id].set_heat_flux(ges_hfl)
+                energy_vector.append(ges_hfl)
+            if "HEAT FLUX" in line.upper():
+                energy_section = True
+        return energy_vector
+
 
 
 

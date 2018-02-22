@@ -26,13 +26,16 @@ class ElementFilter():
             save_old_sensitivitys[element.get_id()] = sensitivity[count]
             count += 1
         count = 0
+
         new_sensitivity = []
         for element_id in self.__elements:
             element = self.__elements[element_id]
             scaling_values = self.get_scaling_values(element.get_id())
+
             sensitivity_array = []
             for filter_element in self.get_filter_elements_on_element(element.get_id()):
                 sensitivity_array.append(save_old_sensitivitys[filter_element.get_id()])
+
             new_sensitivity.append(np.dot(scaling_values, np.array(sensitivity_array)))
             count += 1
         return np.array(new_sensitivity)

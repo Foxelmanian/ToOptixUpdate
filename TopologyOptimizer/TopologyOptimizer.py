@@ -7,27 +7,29 @@ import numpy as np
 
 class TopologyOptimizer(object):
 
-    def __init__(self, density: List[float], density_material: DensityMaterial):
+    def __init__(self, density: List[float], density_material: DensityMaterial, compaction_ratio=0.3):
         self.__system_answer = []
         self.__system_sensitivity = []
         self.__current_density = np.array(density)
         self.__next_density = np.array(density)
         self.__density_material = density_material
-        self.__memory_size = 1
+        self.__memory_size = 2
         self.__sensitivity_sets = []
         self.__density_sets = []
         self.__convergence_max = 0.01
         self.__max_change = 0.1
-        self.__compaction_ratio = 0.3
+        self.__compaction_ratio = compaction_ratio
 
     def get_current_density(self):
         return self.__current_density
+
+    def set_compaction_ratio(self, compaction_ratio):
+        self.__compaction_ratio = compaction_ratio
 
     def get_element_sets_by_density(self, elements: Dict[int, Element]) -> List[ElementSet]:
         element_sets = []
         for i in range(self.__density_material.get_steps()):
             element_sets.append([])
-
         counter = 0
         for key in elements:
             elset_number = (self.__density_material.get_steps() - 1) * self.__current_density[counter]
@@ -43,10 +45,12 @@ class TopologyOptimizer(object):
         return element_sets_ob
 
     def change_density(self, sensitivity):
+
+        print(len(self.__current_density), len(sensitivity))
         sensitivity = np.array(self.__current_density)**(self.__density_material.get_penalty_exponent() - 1) * np.array(sensitivity)
         if min(sensitivity) <= 0:
             sensitivity += abs(min(sensitivity) + 0.1)
-        """ With memory function (current tests)
+
         self.__sensitivity_sets.append(sensitivity)
         self.__density_sets.append(self.__current_density)
         if len(self.__sensitivity_sets) > self.__memory_size:
@@ -54,16 +58,13 @@ class TopologyOptimizer(object):
             self.__density_sets.pop(0)
 
         weight = 0
-        sum_weight = 0
         for sensitivity_in_memory in self.__sensitivity_sets:
             if weight == 0:
-                sensitivity = sensitivity_in_memory * np.exp(weight)
-                sum_weight += np.exp(weight)
+                sensitivity = sensitivity_in_memory
             else:
-                sensitivity += sensitivity_in_memory * np.exp(weight)
-                sum_weight += np.exp(weight)
+                sensitivity += sensitivity_in_memory
             weight += 1
-
+        """
         weight = 0
         for density_in_memory in self.__density_sets:
             if weight == 0:
@@ -77,7 +78,7 @@ class TopologyOptimizer(object):
 
         l_upper = max(sensitivity)
         l_lower = min(sensitivity)
-
+        # Method of moving asympthotes
         while(abs(l_upper - l_lower) > (l_upper * self.__convergence_max)):
             l_mid = 0.5 * (l_lower + l_upper)
             # Values between 0 and 1

@@ -15,11 +15,15 @@ class Element(object):
         self.__nodes = nodes
         self.__element_id = element_id
         self.__strain_energy = 0.0
+        self.__heat_flux = 0.0
         self.__density = 0.0
         self.__x_center = 0.0
         self.__y_center = 0.0
         self.__z_center = 0.0
         self.__calculate_element_center()
+
+    def set_heat_flux(self, hflx):
+        self.__heat_flux = hflx
 
     def get_id(self) -> int:
         return self.__element_id

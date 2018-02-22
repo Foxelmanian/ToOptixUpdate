@@ -40,7 +40,7 @@ class CCXSolver(object):
                         run_file.write(str(node.get_id()) + ", 2, 2, " + str(disp[1]) + "\n")
                         run_file.write(str(node.get_id()) + ", 3, 3, " + str(disp[2]) + "\n")
                     elif output == "HFL":
-                        run_file.write(str(node.get_id()) + ", 11, 11" + str(node.get_temperature()) + "\n")
+                        run_file.write(str(node.get_id()) + ", 11, 11," + str(node.get_temperature()) + "\n")
 
             if "*" in line.upper() and "**" not in line.upper():
                 ignore_boundary = False
@@ -56,16 +56,33 @@ class CCXSolver(object):
 
             if ignore_element_output:
                 continue
-            if "*EL PRINT" in line.upper():
-                element_output_was_set = True
-                run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
-                run_file.write(output + "\n")
-                ignore_element_output = True
-                continue
-            if "*END STE" in line.upper():
-                if not element_output_was_set:
+
+            if output == "ENER":
+                if "*EL PRINT" in line.upper():
+                    element_output_was_set = True
                     run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
                     run_file.write(output + "\n")
+                    ignore_element_output = True
+                    continue
+
+                if "*END STE" in line.upper():
+                    if not element_output_was_set:
+                        run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
+                        run_file.write(output + "\n")
+            else:
+                if "*EL FILE" in line.upper():
+                    element_output_was_set = True
+                    run_file.write("*EL FILE, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
+                    run_file.write(output + "\n")
+                    ignore_element_output = True
+                    continue
+
+                if "*END STE" in line.upper():
+                    if not element_output_was_set:
+                        run_file.write("*EL FILE, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
+                        run_file.write(output + "\n")
+
+
             run_file.write(line)
         input_deck.close()
         run_file.close()
