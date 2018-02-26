@@ -26,7 +26,7 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
     frd_disp_reader = FRDReader("topo_displacement")
     frd_temp_reader = FRDReader("topo_temperature")
     dat_ener_reader = DATReader("topo_energy")
-    frd_hfl_reader = FRDReader("topo_heatflux")
+    dat_hfl_reader = DATReader("topo_heatflux")
     optimizer = TopologyOptimizer(current_density, topology_optimization_material)
     sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
     output_density = 0.5
@@ -65,29 +65,17 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
         ccx_topo_heat.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_temperature", "NT")
         frd_temp_reader.get_temperature(fem_body.get_nodes())
         ccx_topo_heat.run_topo_sens(fem_body.get_nodes(), "topo_heatflux", fem_body.get_elements(), "HFL")
-        heat_flux_vec = frd_hfl_reader.get_heat_flux(fem_body.get_elements())
+        heat_flux_vec = dat_hfl_reader.get_heat_flux(fem_body.get_elements())
 
 
 
-        print(heat_flux_vec)
         #######filtered_strain_energy = ele_filter.filter_sensitivity(heat_flux_vec)
         optimizer.change_density(heat_flux_vec)
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
 
-
-
-
-
-
-
-
-
-
-
-
         res_elem = []
         for element_key in fem_body.get_elements():
-            if fem_body.get_elements()[element_key].get_density() > output_density:
+            if fem_body.get_elements()[element_key].get_density() < output_density:
                 res_elem.append(fem_body.get_elements()[element_key])
 
         print("Export Results")
@@ -106,14 +94,14 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
 
         print("###################################################")
         print("#########")
-        print("#------ Mean strain energy: " + str(np.mean(strain_energy_vec))  + " ---------")
+        print("#------ Mean strain energy: " + str(np.mean(heat_flux_vec))  + " ---------")
         print("#########")
         print("###################################################")
 
 
 if __name__ == "__main__":
-    testFile = "TwoRectanglesStruc.inp"
-    testFile2 = "TwoRectanglesTherm.inp"
+    testFile = "BlockHeatTransfer.inp"
+    testFile2 = "BlockHeatTransfer.inp"
     solver_path = "ccx.exe"
     work_path = "stlResults"
-    perform_topology_optimization(0.3, 3.0, "stlResults", solver_path, 20, 100, testFile, testFile2)
+    perform_topology_optimization(0.8, 3.0, "stlResults", solver_path, 20, 20, testFile, testFile2)

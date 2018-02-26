@@ -57,30 +57,18 @@ class CCXSolver(object):
             if ignore_element_output:
                 continue
 
-            if output == "ENER":
-                if "*EL PRINT" in line.upper():
-                    element_output_was_set = True
+
+            if "*EL PRINT" in line.upper():
+                element_output_was_set = True
+                run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
+                run_file.write(output + "\n")
+                ignore_element_output = True
+                continue
+
+            if "*END STE" in line.upper():
+                if not element_output_was_set:
                     run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
                     run_file.write(output + "\n")
-                    ignore_element_output = True
-                    continue
-
-                if "*END STE" in line.upper():
-                    if not element_output_was_set:
-                        run_file.write("*EL PRINT, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
-                        run_file.write(output + "\n")
-            else:
-                if "*EL FILE" in line.upper():
-                    element_output_was_set = True
-                    run_file.write("*EL FILE, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
-                    run_file.write(output + "\n")
-                    ignore_element_output = True
-                    continue
-
-                if "*END STE" in line.upper():
-                    if not element_output_was_set:
-                        run_file.write("*EL FILE, ELSET=TOPO_ALL_ELEMENTS_DMST\n")
-                        run_file.write(output + "\n")
 
 
             run_file.write(line)

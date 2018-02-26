@@ -25,6 +25,9 @@ class Element(object):
     def set_heat_flux(self, hflx):
         self.__heat_flux = hflx
 
+    def get_heat_flux(self):
+        return self.__heat_flux
+
     def get_id(self) -> int:
         return self.__element_id
 

@@ -206,7 +206,7 @@ class FRDReader(object):
                 node_id = int(line[3:13])
                 temperature = float(line[13:25])
                 node_dictonary[node_id].set_temperature(temperature)
-
+"""
     def get_heat_flux(self, element_dictonary: Dict[int, Element]):
 
         energy_vector = []
@@ -250,6 +250,7 @@ class FRDReader(object):
                 element_dictonary[element_id].set_strain_energy(strain_energy)
                 energy_vector.append(strain_energy)
         return energy_vector
+"""
 
 
 class DATReader(object):
@@ -276,22 +277,33 @@ class DATReader(object):
 
     def get_heat_flux(self, element_dictonary: Dict[int, Element]):
 
-        energy_vector = []
+
         frd_file = open(self.__file_name, "r")
         energy_section = False
+        element_id_before = -1
+
         for line in frd_file:
             if len(line) <= 2:
                 continue
             if energy_section:
                 element_id = int(line[0:10])
-                hflx = float(line[15:28])
-                hfly = float(line[28:42])
-                hflz = float(line[42:56])
-                ges_hfl = (hflx**2+ hfly**2 + hflz**2)**0.5
-                element_dictonary[element_id].set_heat_flux(ges_hfl)
-                energy_vector.append(ges_hfl)
+                hflx_x = float(line[15:28])
+                hflx_y = float(line[28:42])
+                hflx_z = float(line[42:56])
+                ges_hfl = (hflx_x ** 2 + hflx_y ** 2 + hflx_z ** 2) ** 0.5
+                if element_id != element_id_before:
+                    element_dictonary[element_id].set_heat_flux(ges_hfl)
+                    element_id_before = element_id
+                else:
+                    old_hflx = element_dictonary[element_id].get_heat_flux()
+                    element_dictonary[element_id].set_heat_flux(ges_hfl + old_hflx)
             if "HEAT FLUX" in line.upper():
                 energy_section = True
+        energy_vector = []
+        for key in element_dictonary:
+            energy_vector.append(element_dictonary[key].get_heat_flux())
+
+
         return energy_vector
 
 
