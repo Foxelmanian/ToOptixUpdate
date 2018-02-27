@@ -46,6 +46,7 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
         print("###################################################")
         optimizer.set_compaction_ratio(max(volumina_ratio, 1.0 - 0.05 * iteration))
 
+        """
         # -------------------------- STATIC Topology Optimization --------------------------
         # Calculate the sensitivity
         ccx_topo_static.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_displacement", "U")
@@ -55,8 +56,8 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
         # Change densitys
         optimizer.change_density(strain_energy_vec)
         optimizer.filter_density(ele_filter)
-
         """
+
         # -------------------------- Heat Topology Optimization ----------------------------------
         # Calculate the sensitivity
         ccx_topo_heat.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_temperature", "NT")
@@ -66,7 +67,7 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
         # Change density
         optimizer.change_density(heat_flux_vec)
         optimizer.filter_density(ele_filter)
-        """
+
 
         # ------------------------- Output part of Optimization -----------------------------------
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
@@ -93,8 +94,8 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
 
 
 if __name__ == "__main__":
-    testFile = "testFile.inp"
-    testFile2 = "testFile.inp"
+    testFile = "TwoRectanglesStruc.inp"
+    testFile2 = "TwoRectanglesTherm.inp"
     solver_path = "ccx.exe"
     work_path = "stlResults"
     perform_topology_optimization(0.3, 3.0, "stlResults", solver_path, 20, 100, testFile, testFile2)
