@@ -10,13 +10,13 @@ import numpy as np
 import os
 
 
-def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, solver_path, matSets, maximum_iterations, input_file_path, input_file_path2):
+def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, solver_path, material_sets, maximum_iterations, input_file_path, input_file_path2):
     # Import Model
     fem_builder = CCXPhraser(input_file_path)
     fem_body = fem_builder.get_fem_body()
 
     # Create a material according to the density rule (currently only 1 material is possible no multi material changing)
-    topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], 20, penalty_exponent)
+    topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], material_sets, penalty_exponent)
     current_density = len(fem_body.get_elements()) * [volumina_ratio]
 
     # Start with the optimization by changing the material defintion and running optimizer
@@ -38,7 +38,6 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
     ele_filter = ElementFilter(fem_body.get_elements())
     ele_filter.create_filter_structure()
 
-
     for iteration in range(maximum_iterations):
         print("###################################################")
         print("#########")
@@ -48,37 +47,37 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
         optimizer.set_compaction_ratio(max(volumina_ratio, 1.0 - 0.05 * iteration))
 
         # -------------------------- STATIC Topology Optimization --------------------------
-        """
+        # Calculate the sensitivity
         ccx_topo_static.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_displacement", "U")
         frd_disp_reader.get_displacement(fem_body.get_nodes())
-        # Sensitivity
         ccx_topo_static.run_topo_sens(fem_body.get_nodes(), "topo_energy",fem_body.get_elements(),  "ENER")
-
         strain_energy_vec = dat_ener_reader.get_energy_density(fem_body.get_elements())
-        ############filtered_strain_energy = ele_filter.filter_sensitivity(strain_energy_vec)
+        # Change densitys
         optimizer.change_density(strain_energy_vec)
-        sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+        optimizer.filter_density(ele_filter)
+
         """
-
-
         # -------------------------- Heat Topology Optimization ----------------------------------
+        # Calculate the sensitivity
         ccx_topo_heat.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, "topo_temperature", "NT")
         frd_temp_reader.get_temperature(fem_body.get_nodes())
         ccx_topo_heat.run_topo_sens(fem_body.get_nodes(), "topo_heatflux", fem_body.get_elements(), "HFL")
         heat_flux_vec = dat_hfl_reader.get_heat_flux(fem_body.get_elements())
-
-
-
-        #######filtered_strain_energy = ele_filter.filter_sensitivity(heat_flux_vec)
+        # Change density
         optimizer.change_density(heat_flux_vec)
+        optimizer.filter_density(ele_filter)
+        """
+
+        # ------------------------- Output part of Optimization -----------------------------------
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
 
+        # Select results which density is higher than a specific value
         res_elem = []
         for element_key in fem_body.get_elements():
-            if fem_body.get_elements()[element_key].get_density() < output_density:
+            if fem_body.get_elements()[element_key].get_density() > output_density:
                 res_elem.append(fem_body.get_elements()[element_key])
 
-        print("Export Results")
+        # Create the Surface for an stl output
         topo_surf = Surface()
         topo_surf.create_surface_on_elements(res_elem)
         print("Number of result elements", len(res_elem))
@@ -92,16 +91,10 @@ def perform_topology_optimization(volumina_ratio, penalty_exponent, work_path, s
             os.remove(stl_result_path)
         stl_file.write(stl_result_path)
 
-        print("###################################################")
-        print("#########")
-        print("#------ Mean strain energy: " + str(np.mean(heat_flux_vec))  + " ---------")
-        print("#########")
-        print("###################################################")
-
 
 if __name__ == "__main__":
-    testFile = "BlockHeatTransfer.inp"
-    testFile2 = "BlockHeatTransfer.inp"
+    testFile = "testFile.inp"
+    testFile2 = "testFile.inp"
     solver_path = "ccx.exe"
     work_path = "stlResults"
-    perform_topology_optimization(0.8, 3.0, "stlResults", solver_path, 20, 20, testFile, testFile2)
+    perform_topology_optimization(0.3, 3.0, "stlResults", solver_path, 20, 100, testFile, testFile2)

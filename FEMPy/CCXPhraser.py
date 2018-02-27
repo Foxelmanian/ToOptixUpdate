@@ -48,10 +48,12 @@ class CCXPhraser(object):
                     y = float(line_items[2])
                     z = float(line_items[3])
                     node_dict[node_id] = Node(node_id, x, y, z)
-
                 except IOError as e:
                     print(e)
-            if "*NODE" in line.upper():
+            if "*NODE" in line.upper() \
+                    and not "OUTPUT" in line.upper() \
+                    and not "PRINT" in line.upper() \
+                    and not "FILE" in line.upper():
                 read_attributes = True
         return node_dict
 
@@ -93,7 +95,6 @@ class CCXPhraser(object):
                             continue
                     element_dict[elem_id] = Element(elem_id, node_list)
                 except IOError as e:
-
                     print(e)
             if "*ELEMENT" in line.upper():
                 read_attributes = True
@@ -102,11 +103,6 @@ class CCXPhraser(object):
                     nodes_of_one_element = int(node_number)
                 else:
                     nodes_of_one_element = int(node_number[0])
-                #print("NODES OF ONE ELEMENT: ", nodes_of_one_element)
-
-
-
-
         return element_dict
 
     def __get_material(self) -> Material:
@@ -276,7 +272,6 @@ class DATReader(object):
         return energy_vector
 
     def get_heat_flux(self, element_dictonary: Dict[int, Element]):
-
 
         frd_file = open(self.__file_name, "r")
         energy_section = False

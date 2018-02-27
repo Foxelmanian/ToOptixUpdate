@@ -3,6 +3,7 @@ from FEMPy.Element import Element
 from FEMPy.Material import Material
 from FEMPy.ElementSet import ElementSet
 from TopologyOptimizer import DensityMaterial
+from TopologyOptimizer.Filter import ElementFilter
 import numpy as np
 
 class TopologyOptimizer(object):
@@ -43,6 +44,9 @@ class TopologyOptimizer(object):
             element_sets_ob.append(eset)
             counter += 1
         return element_sets_ob
+
+    def filter_density(self, element_filter: ElementFilter):
+        element_filter.filter_element_properties(self.__current_density)
 
     def change_density(self, sensitivity):
 
@@ -95,6 +99,7 @@ class TopologyOptimizer(object):
             else:
                 l_upper = l_mid
         print("##---- MEAN DENSTIY: " + str(np.mean(self.__next_density)))
+
         self.__current_density = self.__next_density
 
 

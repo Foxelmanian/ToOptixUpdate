@@ -16,29 +16,28 @@ class ElementFilter():
 
         self.__element_filter = None
 
-    def filter_sensitivity(self, sensitivity):
+    def filter_element_properties(self, properties):
         print("filter sensitivity")
         # Save old sensitivity for new ordering
         count = 0
-        save_old_sensitivitys = {}
+        copy_properties = {}
         for element_id in self.__elements:
             element = self.__elements[element_id]
-            save_old_sensitivitys[element.get_id()] = sensitivity[count]
+            copy_properties[element.get_id()] = properties[count]
             count += 1
         count = 0
 
-        new_sensitivity = []
+        filtered_properties = []
         for element_id in self.__elements:
             element = self.__elements[element_id]
             scaling_values = self.get_scaling_values(element.get_id())
 
             sensitivity_array = []
             for filter_element in self.get_filter_elements_on_element(element.get_id()):
-                sensitivity_array.append(save_old_sensitivitys[filter_element.get_id()])
-
-            new_sensitivity.append(np.dot(scaling_values, np.array(sensitivity_array)))
+                sensitivity_array.append(copy_properties[filter_element.get_id()])
+            filtered_properties.append(np.dot(scaling_values, np.array(sensitivity_array)))
             count += 1
-        return np.array(new_sensitivity)
+        return np.array(filtered_properties)
 
 
 
