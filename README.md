@@ -2,9 +2,9 @@
 
 # Topology optimization with ToOptix
 
-[Static Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png)
+![Static Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png)
 
-[Heat Transfer Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/HeatLoadCaseTwoRectangle.png)
+![Heat Transfer Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/HeatLoadCaseTwoRectangle.png)
 
 ## Current version
 - Only 3D-FEM support
