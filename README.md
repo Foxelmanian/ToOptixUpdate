@@ -2,7 +2,9 @@
 
 # Topology optimization with ToOptix
 
-[Static Topology Optimization] (Images/HeatLoadCaseTwoRectangle.png)
+[Static Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png)
+
+[Heat Transfer Topology Optimization] (https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/HeatLoadCaseTwoRectangle.png)
 
 ## Current version
 - Only 3D-FEM support
@@ -25,6 +27,18 @@
 ## Output
 - STL File
 
+Example:
+
+```python,test
+
+testFile = "TwoRectanglesStruc.inp"
+testFile2 = "TwoRectanglesTherm.inp"
+solver_path = "ccx.exe"
+work_path = "stlResults"
+perform_topology_optimization(0.3, 3.0, "stlResults", solver_path, 20, 100, testFile, testFile2)
+
+
+```
 
 
 ## Licence
