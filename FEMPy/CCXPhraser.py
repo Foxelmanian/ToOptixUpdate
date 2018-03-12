@@ -36,6 +36,8 @@ class CCXPhraser(object):
         for line in self.__file:
             if len(line) < 1:
                 continue
+            if line[:-1].isspace():
+                continue
             if "**" in line:
                 continue
             if "*" in line[0]:
@@ -66,12 +68,15 @@ class CCXPhraser(object):
         for line in self.__file:
             if len(line) < 1:
                 continue
+            if line[:-1].isspace():
+                continue
             if "**" in line:
                 continue
             if "*" in line[0]:
                 read_attributes = False
             if read_attributes:
                 line_items = line[:-1].split(",")
+
                 try:
                     # Check if a new element is in this line or adding new nodes by using the node number
                     if new_element:
@@ -87,7 +92,6 @@ class CCXPhraser(object):
                     if not new_element:
                         for node_id in line_items[0: len(line_items) - 1]:
                             node_list.append(self.__nodes[int(node_id)])
-
                         if len(node_list) == nodes_of_one_element:
                             new_element = True
                         else:
@@ -96,7 +100,10 @@ class CCXPhraser(object):
                     element_dict[elem_id] = Element(elem_id, node_list)
                 except IOError as e:
                     print(e)
-            if "*ELEMENT" in line.upper():
+            if "*ELEMENT" in line.upper() \
+                    and not "OUTPUT" in line.upper() \
+                    and not "PRINT" in line.upper() \
+                    and not "FILE" in line.upper():
                 read_attributes = True
                 node_number = line.split("C3D")[1][0:2]
                 if node_number[1].isdigit():
@@ -113,7 +120,8 @@ class CCXPhraser(object):
         for line in self.__file:
             if "**" in line:
                 continue
-
+            if line[:-1].isspace():
+                continue
             if "*" in line[0]:
                 read_elastic = False
                 read_conductivity = False
@@ -285,7 +293,7 @@ class DATReader(object):
                 hflx_x = float(line[15:28])
                 hflx_y = float(line[28:42])
                 hflx_z = float(line[42:56])
-                ges_hfl = (hflx_x ** 2 + hflx_y ** 2 + hflx_z ** 2) ** 0.5
+                ges_hfl = (hflx_x**2 + hflx_y**2 + hflx_z**2)**0.5
                 if element_id != element_id_before:
                     element_dictonary[element_id].set_heat_flux(ges_hfl)
                     element_id_before = element_id
