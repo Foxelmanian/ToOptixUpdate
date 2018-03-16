@@ -1,5 +1,5 @@
 from typing import Dict
-from FEMPy.Element import Element
+from .FEMPy.Element import Element
 import numpy as np
 
 class ElementFilter():
@@ -11,7 +11,7 @@ class ElementFilter():
         self.__scaling_values = {}
         # elements_on_node[node.id] = [elem1, elem2 ... ] all elements which are acting on this node
         self.__element_on_node = {}
-        self.__weight_of_current_element = 0.75
+        self.__weight_of_current_element = 0.5
         self.__elements = elements
 
         self.__element_filter = None
@@ -49,10 +49,10 @@ class ElementFilter():
             element = self.__elements[element_id]
             for node in element.get_nodes():
                 try:
-                    self.__element_on_node[node.get_id()].add(element)
+                    self.__element_on_node[node.id].add(element)
                 except:
-                    self.__element_on_node[node.get_id()] = set()
-                    self.__element_on_node[node.get_id()].add(element)
+                    self.__element_on_node[node.id] = set()
+                    self.__element_on_node[node.id].add(element)
 
     def create_filter_structure(self):
         self.__find_elements_on_nodes()
@@ -67,7 +67,7 @@ class ElementFilter():
             yc = element.get_y_center()
             zc = element.get_z_center()
             for node in element.get_nodes():
-                element_in_region = element_in_region | self.__element_on_node[node.get_id()]
+                element_in_region = element_in_region | self.__element_on_node[node.id]
 
             inverse_distance_to_neighbour_elements = []
             neighbour_elements = []

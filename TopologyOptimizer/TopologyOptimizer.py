@@ -1,7 +1,6 @@
 from typing import List, Dict
-from FEMPy.Element import Element
-from FEMPy.Material import Material
-from FEMPy.ElementSet import ElementSet
+from .FEMPy.Element import Element
+from .FEMPy.ElementSet import ElementSet
 from TopologyOptimizer import DensityMaterial
 from TopologyOptimizer.Filter import ElementFilter
 import numpy as np
@@ -20,6 +19,11 @@ class TopologyOptimizer(object):
         self.__convergence_max = 0.01
         self.__max_change = 0.1
         self.__compaction_ratio = compaction_ratio
+
+    def set_maximum_density_change(self, max_change):
+        self.__max_change = max_change
+
+
 
     def get_current_density(self):
         return self.__current_density
@@ -46,14 +50,16 @@ class TopologyOptimizer(object):
         return element_sets_ob
 
     def filter_density(self, element_filter: ElementFilter):
-        element_filter.filter_element_properties(self.__current_density)
+        self.__current_density = element_filter.filter_element_properties(self.__current_density)
 
     def change_density(self, sensitivity):
 
-        print(len(self.__current_density), len(sensitivity))
+
         sensitivity = np.array(self.__current_density)**(self.__density_material.get_penalty_exponent() - 1) * np.array(sensitivity)
+
         if min(sensitivity) <= 0:
-            sensitivity += abs(min(sensitivity) + 0.1)
+            sensitivity += abs(np.min(sensitivity))+ 0.1
+
 
         self.__sensitivity_sets.append(sensitivity)
         self.__density_sets.append(self.__current_density)

@@ -1,6 +1,5 @@
-from FEMPy.Material import Material
+from .FEMPy.Material import Material
 from typing import List
-
 
 class DensityMaterial(object):
 
