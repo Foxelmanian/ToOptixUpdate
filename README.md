@@ -1,7 +1,5 @@
--
 
 # Topology optimization with ToOptix
-
 
 <p align="center">
   <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png" width="100%">
@@ -32,18 +30,27 @@
 - Create new cases for CalculiX "test.inp" ....
 
 ## Output
-- STL File
+- STL File in a specific folder for every optimizaiton step
 
 Example:
 
-```python,test
+```python,example
 
-testFile = "TwoRectanglesStruc.inp"
-testFile2 = "TwoRectanglesTherm.inp"
-solver_path = "ccx.exe"
-work_path = "stlResults"
-perform_topology_optimization(0.3, 3.0, "stlResults", solver_path, 20, 100, testFile, testFile2)
+from TopologyOptimizer.OptimizationController import OptimizationController
+import os
+# Set environment variable Windows
+cpus = 4
+#Windows environment variable
+os.popen("set OMP_NUM_THREADS=" + str(cpus))
 
+#Optimization controller settings
+opti_type = "seperated"
+sol_type = ["heat", "static"]
+files = ["TwoRectanglesTherm.inp", "TwoRectanglesStruc.inp"]
+opti_controller = OptimizationController(files, sol_type, reverse=True, type=opti_type)
+
+# Start the optimization
+opti_controller.run()
 
 ```
 
