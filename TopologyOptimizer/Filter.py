@@ -16,6 +16,9 @@ class ElementFilter():
 
         self.__element_filter = None
 
+    def get_element_on_node(self):
+        return self.__element_on_node
+
     def filter_element_properties(self, properties):
         print("filter sensitivity")
         # Save old sensitivity for new ordering
@@ -38,9 +41,6 @@ class ElementFilter():
             filtered_properties.append(np.dot(scaling_values, np.array(sensitivity_array)))
             count += 1
         return np.array(filtered_properties)
-
-
-
 
     def __find_elements_on_nodes(self):
 

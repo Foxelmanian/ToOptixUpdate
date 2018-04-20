@@ -18,14 +18,14 @@ class Surface():
         eFace = {} # Counts how many times is there a face
         for elem in elements:
             if len(elem.get_nodes()) == 8 or len(elem.get_nodes()) == 20:
-                n1 = elem.get_nodes()[0].get_id()
-                n2 = elem.get_nodes()[1].get_id()
-                n3 = elem.get_nodes()[2].get_id()
-                n4 = elem.get_nodes()[3].get_id()
-                n5 = elem.get_nodes()[4].get_id()
-                n6 = elem.get_nodes()[5].get_id()
-                n7 = elem.get_nodes()[6].get_id()
-                n8 = elem.get_nodes()[7].get_id()
+                n1 = elem.get_nodes()[0].id
+                n2 = elem.get_nodes()[1].id
+                n3 = elem.get_nodes()[2].id
+                n4 = elem.get_nodes()[3].id
+                n5 = elem.get_nodes()[4].id
+                n6 = elem.get_nodes()[5].id
+                n7 = elem.get_nodes()[6].id
+                n8 = elem.get_nodes()[7].id
                 f = sorted([n1, n2, n3, n4])
                 try:
                     eFace[f[0], f[1], f[2], f[3]] = eFace[f[0], f[1], f[2], f[3]] + 1
@@ -207,12 +207,12 @@ class Surface():
                     tn += 1
 
             if len(elem.get_nodes()) == 6 or len(elem.get_nodes()) == 15:
-                n1 = elem.get_nodes()[0].get_id()
-                n2 = elem.get_nodes()[1].get_id()
-                n3 = elem.get_nodes()[2].get_id()
-                n4 = elem.get_nodes()[3].get_id()
-                n5 = elem.get_nodes()[4].get_id()
-                n6 = elem.get_nodes()[5].get_id()
+                n1 = elem.get_nodes()[0].id
+                n2 = elem.get_nodes()[1].id
+                n3 = elem.get_nodes()[2].id
+                n4 = elem.get_nodes()[3].id
+                n5 = elem.get_nodes()[4].id
+                n6 = elem.get_nodes()[5].id
                 n11 = elem.get_nodes()[0]
                 n22 = elem.get_nodes()[1]
                 n33 = elem.get_nodes()[2]

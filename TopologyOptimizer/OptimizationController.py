@@ -18,8 +18,10 @@ class OptimizationController(object):
         self.__files = files
         self.__solution_types = solution_types
 
+        self.__result_file_name = "stl_result"
 
-        self.__volumina_ratio = 0.3
+
+        self.__volumina_ratio = 0.5
         if self.__reverse:
             self.__volumina_ratio = 1.0 - self.__volumina_ratio
 
@@ -32,9 +34,19 @@ class OptimizationController(object):
         self.__run_counter = 0
         self.__change = 0.2
         self.__use_filter = True
+        self.__only_last_result = False
+
+    def get_only_last_result(self):
+        self.__only_last_result = True
+
+    def set_result_file_name(self, file_name: str):
+        self.__result_file_name = file_name
 
     def use_filter(self, boolean_v):
         self.__use_filter = boolean_v
+
+    def set_volumina_ratio(self, volumina_ratio:float):
+        self.__volumina_ratio = volumina_ratio
 
     def set_maximum_iterations(self, maximum_iterations):
         self.__maximum_iterations = maximum_iterations
@@ -132,9 +144,15 @@ class OptimizationController(object):
                     if fem_body.get_elements()[element_key].get_density() > self.__density_output:
                         res_elem.append(fem_body.get_elements()[element_key])
 
-            self.__plot_result(iteration, res_elem)
+            if self.__only_last_result:
+                if iteration == self.__maximum_iterations -1:
+                    self.__plot_result(iteration, res_elem)
+            else:
+                self.__plot_result(iteration, res_elem)
+
 
     def __plot_result(self, iteration, res_elem):
+
         # Create the Surface for an stl output
         topo_surf = Surface()
         topo_surf.create_surface_on_elements(res_elem)
@@ -144,7 +162,7 @@ class OptimizationController(object):
         stl_file.add_solid(topo_part)
         print("Exporting result elements: {}".format(len(res_elem)))
         stl_result_path = os.path.join(self.__result_path, str(self.__run_counter)
-                                       + '_STL_res_' + str(iteration) + '.stl')
+                                       + self.__result_file_name + str(iteration) + '.stl')
         print("Exporting stl result: {}".format(stl_result_path))
         if os.path.isfile(stl_result_path):
             os.remove(stl_result_path)

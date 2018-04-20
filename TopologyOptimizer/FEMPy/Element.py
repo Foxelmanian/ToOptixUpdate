@@ -16,11 +16,24 @@ class Element(object):
         self.__element_id = element_id
         self.__strain_energy = 0.0
         self.__heat_flux = 0.0
+        self.__hflux_x = 0.0
+        self.__hflux_y = 0.0
+        self.__hflux_z = 0.0
         self.__density = 0.0
         self.__x_center = 0.0
         self.__y_center = 0.0
         self.__z_center = 0.0
+
+
         self.__calculate_element_center()
+
+    def set_heat_flux_xyz(self, flx_x, flx_y, flx_z):
+        self.__hflux_x = flx_x
+        self.__hflux_y = flx_y
+        self.__hflux_z = flx_z
+
+    def get_heat_flux_xyz(self):
+        return [self.__hflux_x, self.__hflux_y, self.__hflux_z]
 
     def set_heat_flux(self, hflx):
         self.__heat_flux = hflx

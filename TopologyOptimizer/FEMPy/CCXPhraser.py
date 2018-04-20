@@ -258,12 +258,22 @@ class DATReader(object):
                 hflx_y = float(line[28:42])
                 hflx_z = float(line[42:56])
                 ges_hfl = (hflx_x**2 + hflx_y**2 + hflx_z**2)**0.5
+
+
                 if element_id != element_id_before:
                     element_dictonary[element_id].set_heat_flux(ges_hfl)
+                    element_dictonary[element_id].set_heat_flux_xyz(hflx_x, hflx_y, hflx_z)
+
+
+
                     element_id_before = element_id
                 else:
                     old_hflx = element_dictonary[element_id].get_heat_flux()
+                    old_hflx_xyz = element_dictonary[element_id].get_heat_flux_xyz()
                     element_dictonary[element_id].set_heat_flux(ges_hfl + old_hflx)
+                    element_dictonary[element_id].set_heat_flux_xyz(old_hflx_xyz[0] + hflx_x,
+                                                                    old_hflx_xyz[1] + hflx_y,
+                                                                    old_hflx_xyz[2] + hflx_z)
             if "HEAT FLUX" in line.upper():
                 energy_section = True
         energy_vector = []
