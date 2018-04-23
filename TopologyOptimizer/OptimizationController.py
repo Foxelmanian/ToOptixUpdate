@@ -1,8 +1,8 @@
 from .FEMPy.CCXPhraser import CCXPhraser, FRDReader, DATReader
 from .FEMPy.CCXSolver import CCXSolver
-from TopologyOptimizer.DensityMaterial import DensityMaterial
-from TopologyOptimizer.TopologyOptimizer import TopologyOptimizer
-from TopologyOptimizer.Filter import ElementFilter
+from .DensityMaterial import DensityMaterial
+from .TopologyOptimizer import TopologyOptimizer
+from .Filter import ElementFilter
 from .FEMPy.Geometry.STLPhraser import STL
 from .FEMPy.Geometry.Solid import Solid
 from .FEMPy.Geometry.Surface import Surface
@@ -35,6 +35,15 @@ class OptimizationController(object):
         self.__change = 0.2
         self.__use_filter = True
         self.__only_last_result = False
+
+    def set_penalty_exponent(self, penalty):
+        self.__penalty_exponent = penalty
+
+    def set_result_path(self, path):
+        self.__result_path = path
+
+    def set_solver_path(self, path):
+        self.__solver_path = path
 
     def get_only_last_result(self):
         self.__only_last_result = True
@@ -95,8 +104,8 @@ class OptimizationController(object):
         else:
             raise ValueError("Solution type not supported")
 
-        sys_file_name = system_request + "_system_optimization"
-        sens_file_name = sensitivity_request + "_sensitivity_optimization"
+        sys_file_name = os.path.join(self.__result_path, system_request + "_system_optimization")
+        sens_file_name = os.path.join(self.__result_path, sensitivity_request + "_sensitivity_optimization")
         # Create a material according to the density rule (currently only 1 material is possible no multi material changing)
         topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], self.__material_sets, self.__penalty_exponent)
         current_density = len(fem_body.get_elements()) * [self.__volumina_ratio]

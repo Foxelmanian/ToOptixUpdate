@@ -72,7 +72,7 @@ class CCXSolver(object):
             run_file.write(line)
         input_deck.close()
         run_file.close()
-        print(self.__solver_path + " " + run_path)
+        print(self.__solver_path, run_path)
         os.system(self.__solver_path + " " + run_path)
 
 
@@ -138,6 +138,7 @@ class CCXSolver(object):
             run_file.write(line)
         input_deck.close()
         run_file.close()
+        print(self.__solver_path, run_path)
         os.system(self.__solver_path + " " + run_path)
 
 

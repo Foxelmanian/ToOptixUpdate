@@ -1,22 +1,41 @@
-from TopologyOptimizer.OptimizationController import OptimizationController
+## BLENDER from .TopologyOptimizer.OptimizationController import OptimizationController
+## PYCHARM from TopologyOptimizer.OptimizationController import OptimizationController
+from .TopologyOptimizer.OptimizationController import OptimizationController
+
 import os
 
-print('Start topology otpimization')
-# Set environment variable Windows
-cpus = 4
-#Windows environment variable
-os.popen("set OMP_NUM_THREADS=" + str(cpus))
+def run_optimization(penal,  matSets, opti_type, sol_type,
+                    weight_factors, max_iteration, vol_frac,
+                    files, workDir, solverPath, cpus):
+    print('Start topology otpimization')
+    # Set environment variable Windows
+    #Windows environment variable
+    os.popen("set OMP_NUM_THREADS=" + str(cpus))
+    opti_controller = OptimizationController(files, sol_type, reverse=False, type=opti_type)
+    opti_controller.set_maximum_iterations(max_iteration)
+    opti_controller.set_penalty_exponent(penal)
+    opti_controller.set_number_of_material_sets(matSets)
+    opti_controller.set_solver_path(solverPath)
+    #opti_controller.get_only_last_result()
 
-#Optimization controller settings
-opti_type = "seperated"
-sol_type = ["static", "heat"]
-files = ["TwoRectanglesStruc.inp", "TwoRectanglesTherm"]
-opti_controller = OptimizationController(files, sol_type, reverse=True, type=opti_type)
-opti_controller.set_maximum_iterations(20)
-opti_controller.get_only_last_result()
-
-# Start the optimization
-for vol_frac in [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95, 0.975]:
+    # Start the optimization
     opti_controller.set_result_file_name('stl_result' + str(vol_frac) + "__")
+    opti_controller.set_result_path(workDir)
     opti_controller.set_volumina_ratio(vol_frac)
     opti_controller.run()
+
+if __name__ == "__main__":
+    cpus = 4
+    opti_type = "seperated"
+    sol_type = ["static"]
+    files = ["testinp\Cylinder_Mesh.inp"]
+    max_iteration = 20
+    vol_frac = 0.3
+    penal = 3.0
+    matSets = 10
+    weight_factors = [3.0]
+    workDir = "work"
+    solverPath = "ccx"
+    run_optimization(penal,  matSets, opti_type, sol_type,
+                                          weight_factors, max_iteration, vol_frac,
+                                          files, workDir, solverPath, cpus)

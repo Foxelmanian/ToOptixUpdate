@@ -1,8 +1,8 @@
 from typing import List, Dict
 from .FEMPy.Element import Element
 from .FEMPy.ElementSet import ElementSet
-from TopologyOptimizer import DensityMaterial
-from TopologyOptimizer.Filter import ElementFilter
+from . import DensityMaterial
+from .Filter import ElementFilter
 import numpy as np
 
 class TopologyOptimizer(object):

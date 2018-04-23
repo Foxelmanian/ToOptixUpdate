@@ -90,7 +90,11 @@ class CCXPhraser(object):
                         elem_id = int(line_items[0])
                         node_list = []
                         for node_id in line_items[1: len(line_items)]:
-                            node_list.append(self.__nodes[int(node_id)])
+                            try:
+                                node_id_int = int(node_id)
+                            except ValueError:
+                                continue
+                            node_list.append(self.__nodes[node_id_int])
                         if len(node_list) == nodes_of_one_element:
                             new_element = True
                         else:
@@ -126,6 +130,7 @@ class CCXPhraser(object):
                         nodes_of_one_element = int(node_number)
                     else:
                         nodes_of_one_element = int(node_number[0])
+
         return element_dict
 
     def __get_material(self) -> Material:
@@ -231,6 +236,8 @@ class DATReader(object):
         energy_vector = []
         frd_file = open(self.__file_name, "r")
         energy_section = False
+        element_id_before = -1
+
         for line in frd_file:
             if len(line) <= 2:
                 continue
@@ -238,9 +245,20 @@ class DATReader(object):
                 element_id = int(line[0:10])
                 strain_energy = float(line[15:28])
                 element_dictonary[element_id].set_strain_energy(strain_energy)
-                energy_vector.append(strain_energy)
+
+                if element_id != element_id_before:
+                    element_dictonary[element_id].set_strain_energy(strain_energy)
+                    element_id_before = element_id
+                else:
+                    old_energy = element_dictonary[element_id].get_strain_energy()
+                    element_dictonary[element_id].set_heat_flux(strain_energy + old_energy)
+
             if "INTERNAL ENERGY DENSITY" in line.upper():
                 energy_section = True
+
+        energy_vector = []
+        for key in element_dictonary:
+            energy_vector.append(element_dictonary[key].get_strain_energy())
         return energy_vector
 
     def get_heat_flux(self, element_dictonary: Dict[int, Element]):
@@ -259,13 +277,9 @@ class DATReader(object):
                 hflx_z = float(line[42:56])
                 ges_hfl = (hflx_x**2 + hflx_y**2 + hflx_z**2)**0.5
 
-
                 if element_id != element_id_before:
                     element_dictonary[element_id].set_heat_flux(ges_hfl)
                     element_dictonary[element_id].set_heat_flux_xyz(hflx_x, hflx_y, hflx_z)
-
-
-
                     element_id_before = element_id
                 else:
                     old_hflx = element_dictonary[element_id].get_heat_flux()
