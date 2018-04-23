@@ -1,6 +1,7 @@
 
 # Topology optimization with ToOptix
 
+
 <p align="center">
   <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/StaticLoadCaseTwoRectangle.png" width="100%">
 </p>
@@ -21,12 +22,30 @@
 ## Installation
 - Install python 3.xx
 - Download ToOptix
-- Start "runOptimization.py"
+
+### General information
+- Start this program in a user directory so Blender should be for example on the desktop 
+- If you want to start Tooptix in "C:Programms\Blender Foundation ..." you need administrator rights (not reccomended)
+- So i would suggest you should take a copy of blender and then use it on the desktop or some other user access folder
+- (Optional) create a environment variable for Calculix (ccx)
+
+### Blender Installation
+- Check if import statement of run_optimization.py is: 
+from .TopologyOptimizer.OptimizationController import OptimizationController 
+- Copy your ToOptix Folder and paste it into ...\Blender Foundation\Blender\2.79\scripts\addons
+- Start Blender and activate the addon (type = mesh)
+
+
+
+### Python / PyCharm Installation
+- Check if import statement of run_optimization.py is: 
+from TopologyOptimizer.OptimizationController import OptimizationController 
+- Open the folder with pycharm and just start your optimization
 
 
 ## Settings
-- Change file paths in "runOptimization.py"
-- Change optimization properties "runOptimization.py"
+- Change file paths in "run_optimization.py"
+- Change optimization properties "run_optimization.py"
 - Create new cases for CalculiX "test.inp" ....
 
 ## Output
@@ -36,21 +55,22 @@ Example:
 
 ```python,example
 
-from TopologyOptimizer.OptimizationController import OptimizationController
-import os
-# Set environment variable Windows
+from run_optimization import run_optimization
+
 cpus = 4
-#Windows environment variable
-os.popen("set OMP_NUM_THREADS=" + str(cpus))
-
-#Optimization controller settings
 opti_type = "seperated"
-sol_type = ["heat", "static"]
-files = ["TwoRectanglesTherm.inp", "TwoRectanglesStruc.inp"]
-opti_controller = OptimizationController(files, sol_type, reverse=True, type=opti_type)
-
-# Start the optimization
-opti_controller.run()
+sol_type = ["static"]
+files = ["testinp\Cylinder_Mesh.inp"]
+max_iteration = 20
+vol_frac = 0.3
+penal = 3.0
+matSets = 10
+weight_factors = [3.0]
+workDir = "work"
+solverPath = "ccx"
+run_optimization(penal,  matSets, opti_type, sol_type,
+                                      weight_factors, max_iteration, vol_frac,
+                                      files, workDir, solverPath, cpus)
 
 ```
 
