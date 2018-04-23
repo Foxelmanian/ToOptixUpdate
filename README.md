@@ -36,20 +36,21 @@ from .TopologyOptimizer.OptimizationController import OptimizationController
 - Start Blender and activate the addon (type = mesh)
 
 
+<p align="center">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/Blender_UI.png" width="50%">
+</p>
+
+
+
 
 ### Python / PyCharm Installation
 - Check if import statement of run_optimization.py is: 
 from TopologyOptimizer.OptimizationController import OptimizationController 
 - Open the folder with pycharm and just start your optimization
 
-
-## Settings
 - Change file paths in "run_optimization.py"
 - Change optimization properties "run_optimization.py"
 - Create new cases for CalculiX "test.inp" ....
-
-## Output
-- STL File in a specific folder for every optimizaiton step
 
 Example:
 
@@ -73,6 +74,11 @@ run_optimization(penal,  matSets, opti_type, sol_type,
                                       files, workDir, solverPath, cpus)
 
 ```
+
+
+## Output
+- STL File in a specific folder for every optimizaiton step
+
 
 
 ## Licence
