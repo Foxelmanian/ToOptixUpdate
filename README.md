@@ -37,7 +37,7 @@ from .TopologyOptimizer.OptimizationController import OptimizationController
 
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/Blender_UI.png" width="50%">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/Blender_UI.PNG" width="50%">
 </p>
 
 
