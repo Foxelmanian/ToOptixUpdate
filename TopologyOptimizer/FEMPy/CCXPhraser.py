@@ -32,6 +32,13 @@ class CCXPhraser(object):
                 empty = False
         return empty
 
+    def __remove_empty_parts(self, list: List)-> List:
+        new_list = []
+        for element in list:
+            if element not in [" ", ",", "", "\n", "\t"]:
+                new_list.append(element)
+        return new_list
+
     def __is_line_to_ignore(self, line)->bool:
         if len(line) < 1:
             return False
@@ -70,6 +77,7 @@ class CCXPhraser(object):
         return node_dict
 
     def __get_elements(self) -> Dict[int, Element]:
+
         element_dict = {}
         read_attributes = False
         self.__file.seek(0)
@@ -83,10 +91,13 @@ class CCXPhraser(object):
             if read_attributes:
                 line_items = line[:-1].split(",")
                 try:
+
                     if self.__is_empty_list(line_items):
                         continue
+
                     # Check if a new element is in this line or adding new nodes by using the node number
                     if new_element:
+
                         elem_id = int(line_items[0])
                         node_list = []
                         for node_id in line_items[1: len(line_items)]:
@@ -95,13 +106,15 @@ class CCXPhraser(object):
                             except ValueError:
                                 continue
                             node_list.append(self.__nodes[node_id_int])
+
                         if len(node_list) == nodes_of_one_element:
                             new_element = True
                         else:
                             new_element = False
                             continue
                     if not new_element:
-                        for node_id in line_items[0: len(line_items) - 1]:
+
+                        for node_id in line_items[0: len(line_items)]:
                             node_list.append(self.__nodes[int(node_id)])
                         if len(node_list) == nodes_of_one_element:
                             new_element = True
@@ -109,6 +122,7 @@ class CCXPhraser(object):
                             new_element = False
                             continue
                     element_dict[elem_id] = Element(elem_id, node_list)
+
                 except IOError as e:
                     print("Error: at line {}".format(line))
 
@@ -118,8 +132,13 @@ class CCXPhraser(object):
                     and not "FILE" in line.upper():
                 read_attributes = True
 
+
                 if "C3D" in line:
                     node_number = line.split("C3D")[1][0:2]
+
+                    if len(node_number) > 2:
+                        node_number = node_number[0:1]
+
                     if node_number[1].isdigit():
                         nodes_of_one_element = int(node_number)
                     else:
@@ -132,6 +151,7 @@ class CCXPhraser(object):
                         nodes_of_one_element = int(node_number[0])
 
         return element_dict
+
 
     def __get_material(self) -> Material:
 
@@ -150,10 +170,14 @@ class CCXPhraser(object):
                 read_elastic = False
                 read_conductivity = False
 
+            line_items = line[:-1].split(",")
+            if self.__is_empty_list(line_items):
+                continue
+
             if read_elastic:
-                line_items = line[:-1].split(",")
                 try:
                     if len(line_items) <= 2:
+                        print(line_items)
                         material.add_elasticity(float(line_items[0]), float(line_items[1]))
                     else:
                         material.add_elasticity(float(line_items[0]), float(line_items[1]), float(line_items[2]))
@@ -161,7 +185,6 @@ class CCXPhraser(object):
                     print(e)
 
             if read_conductivity:
-                line_items = line[:-1].split(",")
                 try:
                     if len(line_items) <= 2:
                         material.add_conductivity(float(line_items[0]))

@@ -1,6 +1,6 @@
 ## BLENDER from .TopologyOptimizer.OptimizationController import OptimizationController
 ## PYCHARM from TopologyOptimizer.OptimizationController import OptimizationController
-from .TopologyOptimizer.OptimizationController import OptimizationController
+from TopologyOptimizer.OptimizationController import OptimizationController
 
 import os
 
@@ -27,9 +27,9 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
 if __name__ == "__main__":
     cpus = 4
     opti_type = "seperated"
-    sol_type = ["static"]
-    files = ["testinp\Cylinder_Mesh.inp"]
-    max_iteration = 20
+    sol_type = ["static", "static", "static", "static"]
+    files = ["FirstOrderHexaeder.inp", "FirstOrderTetraeder.inp", "SecondOrderTetraeder.inp", "SecondOrderHexaeder.inp"]
+    max_iteration = 10
     vol_frac = 0.3
     penal = 3.0
     matSets = 10

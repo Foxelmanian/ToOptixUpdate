@@ -122,26 +122,21 @@ class VIEW3D_OT_topo_opti_tools(bpy.types.Panel):
         rowsub = layout.row(align=True)
         rowsub.prop(scene.topoOpt, "work_path")
 
-        
-        
         row = layout.row()
         row.label("Optimization iteration and system controll:")
         rowsub = layout.row(align=True)
         rowsub.prop(scene.topoOpt, "n_const")
 
- 
         row = layout.row()
         row.label("Type of physic:")
         rowsub = layout.row(align=True)
         rowsub.prop(scene.topoOpt, "structural_topo")
         rowsub.prop(scene.topoOpt, "static_path")
-        rowsub.prop(scene.topoOpt, "weight_static")
+
         # heat transfer
         rowsub = layout.row(align=True)
         rowsub.prop(scene.topoOpt, "heat_trans_topo")
         rowsub.prop(scene.topoOpt, "heat_trans_path")
-        rowsub.prop(scene.topoOpt, "weight_heat_transfer")
-
 
         # Settings for material law
         row = layout.row()

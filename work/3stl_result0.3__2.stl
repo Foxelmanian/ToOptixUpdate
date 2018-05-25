@@ -1,0 +1,682 @@
+solid Exported from DMST-STL
+outer loop
+vertex -15.833333 0.0 200.0
+vertex -15.833333 5.0 200.0
+vertex -15.833333 5.0 190.0
+endloop
+outer loop
+vertex -15.833333 5.0 190.0
+vertex -15.833333 0.0 190.0
+vertex -15.833333 0.0 200.0
+endloop
+outer loop
+vertex -25.0 0.0 200.0
+vertex -25.0 0.0 190.0
+vertex -25.0 5.0 190.0
+endloop
+outer loop
+vertex -25.0 5.0 190.0
+vertex -25.0 5.0 200.0
+vertex -25.0 0.0 200.0
+endloop
+outer loop
+vertex -15.833333 0.0 200.0
+vertex -25.0 0.0 200.0
+vertex -25.0 5.0 200.0
+endloop
+outer loop
+vertex -25.0 5.0 200.0
+vertex -15.833333 5.0 200.0
+vertex -15.833333 0.0 200.0
+endloop
+outer loop
+vertex -15.833333 5.0 200.0
+vertex -25.0 5.0 200.0
+vertex -25.0 5.0 190.0
+endloop
+outer loop
+vertex -25.0 5.0 190.0
+vertex -15.833333 5.0 190.0
+vertex -15.833333 5.0 200.0
+endloop
+outer loop
+vertex -15.833333 0.0 190.0
+vertex -25.0 0.0 190.0
+vertex -25.0 0.0 200.0
+endloop
+outer loop
+vertex -25.0 0.0 200.0
+vertex -15.833333 0.0 200.0
+vertex -15.833333 0.0 190.0
+endloop
+outer loop
+vertex -15.833333 0.0 190.0
+vertex -15.833333 5.0 190.0
+vertex -15.833333 5.0 180.0
+endloop
+outer loop
+vertex -15.833333 5.0 180.0
+vertex -15.833333 0.0 180.0
+vertex -15.833333 0.0 190.0
+endloop
+outer loop
+vertex -25.0 0.0 190.0
+vertex -25.0 0.0 180.0
+vertex -25.0 5.0 180.0
+endloop
+outer loop
+vertex -25.0 5.0 180.0
+vertex -25.0 5.0 190.0
+vertex -25.0 0.0 190.0
+endloop
+outer loop
+vertex -15.833333 5.0 190.0
+vertex -25.0 5.0 190.0
+vertex -25.0 5.0 180.0
+endloop
+outer loop
+vertex -25.0 5.0 180.0
+vertex -15.833333 5.0 180.0
+vertex -15.833333 5.0 190.0
+endloop
+outer loop
+vertex -15.833333 0.0 180.0
+vertex -25.0 0.0 180.0
+vertex -25.0 0.0 190.0
+endloop
+outer loop
+vertex -25.0 0.0 190.0
+vertex -15.833333 0.0 190.0
+vertex -15.833333 0.0 180.0
+endloop
+outer loop
+vertex -15.833333 0.0 180.0
+vertex -15.833333 5.0 180.0
+vertex -15.833333 5.0 170.0
+endloop
+outer loop
+vertex -15.833333 5.0 170.0
+vertex -15.833333 0.0 170.0
+vertex -15.833333 0.0 180.0
+endloop
+outer loop
+vertex -25.0 0.0 180.0
+vertex -25.0 0.0 170.0
+vertex -25.0 5.0 170.0
+endloop
+outer loop
+vertex -25.0 5.0 170.0
+vertex -25.0 5.0 180.0
+vertex -25.0 0.0 180.0
+endloop
+outer loop
+vertex -15.833333 5.0 180.0
+vertex -25.0 5.0 180.0
+vertex -25.0 5.0 170.0
+endloop
+outer loop
+vertex -25.0 5.0 170.0
+vertex -15.833333 5.0 170.0
+vertex -15.833333 5.0 180.0
+endloop
+outer loop
+vertex -15.833333 0.0 170.0
+vertex -25.0 0.0 170.0
+vertex -25.0 0.0 180.0
+endloop
+outer loop
+vertex -25.0 0.0 180.0
+vertex -15.833333 0.0 180.0
+vertex -15.833333 0.0 170.0
+endloop
+outer loop
+vertex -15.833333 0.0 170.0
+vertex -15.833333 5.0 170.0
+vertex -15.833333 5.0 160.0
+endloop
+outer loop
+vertex -15.833333 5.0 160.0
+vertex -15.833333 0.0 160.0
+vertex -15.833333 0.0 170.0
+endloop
+outer loop
+vertex -25.0 0.0 170.0
+vertex -25.0 0.0 160.0
+vertex -25.0 5.0 160.0
+endloop
+outer loop
+vertex -25.0 5.0 160.0
+vertex -25.0 5.0 170.0
+vertex -25.0 0.0 170.0
+endloop
+outer loop
+vertex -15.833333 5.0 170.0
+vertex -25.0 5.0 170.0
+vertex -25.0 5.0 160.0
+endloop
+outer loop
+vertex -25.0 5.0 160.0
+vertex -15.833333 5.0 160.0
+vertex -15.833333 5.0 170.0
+endloop
+outer loop
+vertex -15.833333 0.0 160.0
+vertex -25.0 0.0 160.0
+vertex -25.0 0.0 170.0
+endloop
+outer loop
+vertex -25.0 0.0 170.0
+vertex -15.833333 0.0 170.0
+vertex -15.833333 0.0 160.0
+endloop
+outer loop
+vertex -15.833333 0.0 160.0
+vertex -15.833333 5.0 160.0
+vertex -15.833333 5.0 150.0
+endloop
+outer loop
+vertex -15.833333 5.0 150.0
+vertex -15.833333 0.0 150.0
+vertex -15.833333 0.0 160.0
+endloop
+outer loop
+vertex -25.0 0.0 160.0
+vertex -25.0 0.0 150.0
+vertex -25.0 5.0 150.0
+endloop
+outer loop
+vertex -25.0 5.0 150.0
+vertex -25.0 5.0 160.0
+vertex -25.0 0.0 160.0
+endloop
+outer loop
+vertex -15.833333 5.0 160.0
+vertex -25.0 5.0 160.0
+vertex -25.0 5.0 150.0
+endloop
+outer loop
+vertex -25.0 5.0 150.0
+vertex -15.833333 5.0 150.0
+vertex -15.833333 5.0 160.0
+endloop
+outer loop
+vertex -15.833333 0.0 150.0
+vertex -25.0 0.0 150.0
+vertex -25.0 0.0 160.0
+endloop
+outer loop
+vertex -25.0 0.0 160.0
+vertex -15.833333 0.0 160.0
+vertex -15.833333 0.0 150.0
+endloop
+outer loop
+vertex -15.833333 0.0 150.0
+vertex -15.833333 5.0 150.0
+vertex -15.833333 5.0 140.0
+endloop
+outer loop
+vertex -15.833333 5.0 140.0
+vertex -15.833333 0.0 140.0
+vertex -15.833333 0.0 150.0
+endloop
+outer loop
+vertex -25.0 0.0 150.0
+vertex -25.0 0.0 140.0
+vertex -25.0 5.0 140.0
+endloop
+outer loop
+vertex -25.0 5.0 140.0
+vertex -25.0 5.0 150.0
+vertex -25.0 0.0 150.0
+endloop
+outer loop
+vertex -15.833333 5.0 150.0
+vertex -25.0 5.0 150.0
+vertex -25.0 5.0 140.0
+endloop
+outer loop
+vertex -25.0 5.0 140.0
+vertex -15.833333 5.0 140.0
+vertex -15.833333 5.0 150.0
+endloop
+outer loop
+vertex -15.833333 0.0 140.0
+vertex -25.0 0.0 140.0
+vertex -25.0 0.0 150.0
+endloop
+outer loop
+vertex -25.0 0.0 150.0
+vertex -15.833333 0.0 150.0
+vertex -15.833333 0.0 140.0
+endloop
+outer loop
+vertex -15.833333 0.0 140.0
+vertex -15.833333 5.0 140.0
+vertex -15.833333 5.0 130.0
+endloop
+outer loop
+vertex -15.833333 5.0 130.0
+vertex -15.833333 0.0 130.0
+vertex -15.833333 0.0 140.0
+endloop
+outer loop
+vertex -25.0 0.0 140.0
+vertex -25.0 0.0 130.0
+vertex -25.0 5.0 130.0
+endloop
+outer loop
+vertex -25.0 5.0 130.0
+vertex -25.0 5.0 140.0
+vertex -25.0 0.0 140.0
+endloop
+outer loop
+vertex -15.833333 5.0 140.0
+vertex -25.0 5.0 140.0
+vertex -25.0 5.0 130.0
+endloop
+outer loop
+vertex -25.0 5.0 130.0
+vertex -15.833333 5.0 130.0
+vertex -15.833333 5.0 140.0
+endloop
+outer loop
+vertex -15.833333 0.0 130.0
+vertex -25.0 0.0 130.0
+vertex -25.0 0.0 140.0
+endloop
+outer loop
+vertex -25.0 0.0 140.0
+vertex -15.833333 0.0 140.0
+vertex -15.833333 0.0 130.0
+endloop
+outer loop
+vertex -15.833333 0.0 130.0
+vertex -15.833333 5.0 130.0
+vertex -15.833333 5.0 120.0
+endloop
+outer loop
+vertex -15.833333 5.0 120.0
+vertex -15.833333 0.0 120.0
+vertex -15.833333 0.0 130.0
+endloop
+outer loop
+vertex -25.0 0.0 130.0
+vertex -25.0 0.0 120.0
+vertex -25.0 5.0 120.0
+endloop
+outer loop
+vertex -25.0 5.0 120.0
+vertex -25.0 5.0 130.0
+vertex -25.0 0.0 130.0
+endloop
+outer loop
+vertex -15.833333 5.0 130.0
+vertex -25.0 5.0 130.0
+vertex -25.0 5.0 120.0
+endloop
+outer loop
+vertex -25.0 5.0 120.0
+vertex -15.833333 5.0 120.0
+vertex -15.833333 5.0 130.0
+endloop
+outer loop
+vertex -15.833333 0.0 120.0
+vertex -25.0 0.0 120.0
+vertex -25.0 0.0 130.0
+endloop
+outer loop
+vertex -25.0 0.0 130.0
+vertex -15.833333 0.0 130.0
+vertex -15.833333 0.0 120.0
+endloop
+outer loop
+vertex -15.833333 0.0 120.0
+vertex -15.833333 5.0 120.0
+vertex -15.833333 5.0 110.0
+endloop
+outer loop
+vertex -15.833333 5.0 110.0
+vertex -15.833333 0.0 110.0
+vertex -15.833333 0.0 120.0
+endloop
+outer loop
+vertex -25.0 0.0 120.0
+vertex -25.0 0.0 110.0
+vertex -25.0 5.0 110.0
+endloop
+outer loop
+vertex -25.0 5.0 110.0
+vertex -25.0 5.0 120.0
+vertex -25.0 0.0 120.0
+endloop
+outer loop
+vertex -15.833333 5.0 120.0
+vertex -25.0 5.0 120.0
+vertex -25.0 5.0 110.0
+endloop
+outer loop
+vertex -25.0 5.0 110.0
+vertex -15.833333 5.0 110.0
+vertex -15.833333 5.0 120.0
+endloop
+outer loop
+vertex -15.833333 5.0 110.0
+vertex -25.0 5.0 110.0
+vertex -25.0 0.0 110.0
+endloop
+outer loop
+vertex -25.0 0.0 110.0
+vertex -15.833333 0.0 110.0
+vertex -15.833333 5.0 110.0
+endloop
+outer loop
+vertex -15.833333 0.0 110.0
+vertex -25.0 0.0 110.0
+vertex -25.0 0.0 120.0
+endloop
+outer loop
+vertex -25.0 0.0 120.0
+vertex -15.833333 0.0 120.0
+vertex -15.833333 0.0 110.0
+endloop
+outer loop
+vertex 30.0 0.0 200.0
+vertex 30.0 5.0 200.0
+vertex 30.0 5.0 190.0
+endloop
+outer loop
+vertex 30.0 5.0 190.0
+vertex 30.0 0.0 190.0
+vertex 30.0 0.0 200.0
+endloop
+outer loop
+vertex 20.833334 0.0 200.0
+vertex 20.833334 0.0 190.0
+vertex 20.833334 5.0 190.0
+endloop
+outer loop
+vertex 20.833334 5.0 190.0
+vertex 20.833334 5.0 200.0
+vertex 20.833334 0.0 200.0
+endloop
+outer loop
+vertex 30.0 0.0 200.0
+vertex 20.833334 0.0 200.0
+vertex 20.833334 5.0 200.0
+endloop
+outer loop
+vertex 20.833334 5.0 200.0
+vertex 30.0 5.0 200.0
+vertex 30.0 0.0 200.0
+endloop
+outer loop
+vertex 30.0 5.0 200.0
+vertex 20.833334 5.0 200.0
+vertex 20.833334 5.0 190.0
+endloop
+outer loop
+vertex 20.833334 5.0 190.0
+vertex 30.0 5.0 190.0
+vertex 30.0 5.0 200.0
+endloop
+outer loop
+vertex 30.0 0.0 190.0
+vertex 20.833334 0.0 190.0
+vertex 20.833334 0.0 200.0
+endloop
+outer loop
+vertex 20.833334 0.0 200.0
+vertex 30.0 0.0 200.0
+vertex 30.0 0.0 190.0
+endloop
+outer loop
+vertex 30.0 0.0 190.0
+vertex 30.0 5.0 190.0
+vertex 30.0 5.0 180.0
+endloop
+outer loop
+vertex 30.0 5.0 180.0
+vertex 30.0 0.0 180.0
+vertex 30.0 0.0 190.0
+endloop
+outer loop
+vertex 20.833334 0.0 190.0
+vertex 20.833334 0.0 180.0
+vertex 20.833334 5.0 180.0
+endloop
+outer loop
+vertex 20.833334 5.0 180.0
+vertex 20.833334 5.0 190.0
+vertex 20.833334 0.0 190.0
+endloop
+outer loop
+vertex 30.0 5.0 190.0
+vertex 20.833334 5.0 190.0
+vertex 20.833334 5.0 180.0
+endloop
+outer loop
+vertex 20.833334 5.0 180.0
+vertex 30.0 5.0 180.0
+vertex 30.0 5.0 190.0
+endloop
+outer loop
+vertex 30.0 0.0 180.0
+vertex 20.833334 0.0 180.0
+vertex 20.833334 0.0 190.0
+endloop
+outer loop
+vertex 20.833334 0.0 190.0
+vertex 30.0 0.0 190.0
+vertex 30.0 0.0 180.0
+endloop
+outer loop
+vertex 30.0 0.0 180.0
+vertex 30.0 5.0 180.0
+vertex 30.0 5.0 170.0
+endloop
+outer loop
+vertex 30.0 5.0 170.0
+vertex 30.0 0.0 170.0
+vertex 30.0 0.0 180.0
+endloop
+outer loop
+vertex 20.833334 0.0 180.0
+vertex 20.833334 0.0 170.0
+vertex 20.833334 5.0 170.0
+endloop
+outer loop
+vertex 20.833334 5.0 170.0
+vertex 20.833334 5.0 180.0
+vertex 20.833334 0.0 180.0
+endloop
+outer loop
+vertex 30.0 5.0 180.0
+vertex 20.833334 5.0 180.0
+vertex 20.833334 5.0 170.0
+endloop
+outer loop
+vertex 20.833334 5.0 170.0
+vertex 30.0 5.0 170.0
+vertex 30.0 5.0 180.0
+endloop
+outer loop
+vertex 30.0 0.0 170.0
+vertex 20.833334 0.0 170.0
+vertex 20.833334 0.0 180.0
+endloop
+outer loop
+vertex 20.833334 0.0 180.0
+vertex 30.0 0.0 180.0
+vertex 30.0 0.0 170.0
+endloop
+outer loop
+vertex 30.0 0.0 170.0
+vertex 30.0 5.0 170.0
+vertex 30.0 5.0 160.0
+endloop
+outer loop
+vertex 30.0 5.0 160.0
+vertex 30.0 0.0 160.0
+vertex 30.0 0.0 170.0
+endloop
+outer loop
+vertex 20.833334 0.0 170.0
+vertex 20.833334 0.0 160.0
+vertex 20.833334 5.0 160.0
+endloop
+outer loop
+vertex 20.833334 5.0 160.0
+vertex 20.833334 5.0 170.0
+vertex 20.833334 0.0 170.0
+endloop
+outer loop
+vertex 30.0 5.0 170.0
+vertex 20.833334 5.0 170.0
+vertex 20.833334 5.0 160.0
+endloop
+outer loop
+vertex 20.833334 5.0 160.0
+vertex 30.0 5.0 160.0
+vertex 30.0 5.0 170.0
+endloop
+outer loop
+vertex 30.0 5.0 160.0
+vertex 20.833334 5.0 160.0
+vertex 20.833334 0.0 160.0
+endloop
+outer loop
+vertex 20.833334 0.0 160.0
+vertex 30.0 0.0 160.0
+vertex 30.0 5.0 160.0
+endloop
+outer loop
+vertex 30.0 0.0 160.0
+vertex 20.833334 0.0 160.0
+vertex 20.833334 0.0 170.0
+endloop
+outer loop
+vertex 20.833334 0.0 170.0
+vertex 30.0 0.0 170.0
+vertex 30.0 0.0 160.0
+endloop
+outer loop
+vertex 30.0 0.0 120.0
+vertex 30.0 5.0 120.0
+vertex 30.0 5.0 110.0
+endloop
+outer loop
+vertex 30.0 5.0 110.0
+vertex 30.0 0.0 110.0
+vertex 30.0 0.0 120.0
+endloop
+outer loop
+vertex 20.833334 0.0 120.0
+vertex 20.833334 0.0 110.0
+vertex 20.833334 5.0 110.0
+endloop
+outer loop
+vertex 20.833334 5.0 110.0
+vertex 20.833334 5.0 120.0
+vertex 20.833334 0.0 120.0
+endloop
+outer loop
+vertex 30.0 0.0 120.0
+vertex 20.833334 0.0 120.0
+vertex 20.833334 5.0 120.0
+endloop
+outer loop
+vertex 20.833334 5.0 120.0
+vertex 30.0 5.0 120.0
+vertex 30.0 0.0 120.0
+endloop
+outer loop
+vertex 30.0 5.0 120.0
+vertex 20.833334 5.0 120.0
+vertex 20.833334 5.0 110.0
+endloop
+outer loop
+vertex 20.833334 5.0 110.0
+vertex 30.0 5.0 110.0
+vertex 30.0 5.0 120.0
+endloop
+outer loop
+vertex 30.0 5.0 110.0
+vertex 20.833334 5.0 110.0
+vertex 20.833334 0.0 110.0
+endloop
+outer loop
+vertex 20.833334 0.0 110.0
+vertex 30.0 0.0 110.0
+vertex 30.0 5.0 110.0
+endloop
+outer loop
+vertex 30.0 0.0 110.0
+vertex 20.833334 0.0 110.0
+vertex 20.833334 0.0 120.0
+endloop
+outer loop
+vertex 20.833334 0.0 120.0
+vertex 30.0 0.0 120.0
+vertex 30.0 0.0 110.0
+endloop
+outer loop
+vertex 30.0 0.0 10.0
+vertex 30.0 5.0 10.0
+vertex 30.0 5.0 0.0
+endloop
+outer loop
+vertex 30.0 5.0 0.0
+vertex 30.0 0.0 0.0
+vertex 30.0 0.0 10.0
+endloop
+outer loop
+vertex 20.833334 0.0 10.0
+vertex 20.833334 0.0 0.0
+vertex 20.833334 5.0 0.0
+endloop
+outer loop
+vertex 20.833334 5.0 0.0
+vertex 20.833334 5.0 10.0
+vertex 20.833334 0.0 10.0
+endloop
+outer loop
+vertex 30.0 0.0 10.0
+vertex 20.833334 0.0 10.0
+vertex 20.833334 5.0 10.0
+endloop
+outer loop
+vertex 20.833334 5.0 10.0
+vertex 30.0 5.0 10.0
+vertex 30.0 0.0 10.0
+endloop
+outer loop
+vertex 30.0 5.0 10.0
+vertex 20.833334 5.0 10.0
+vertex 20.833334 5.0 0.0
+endloop
+outer loop
+vertex 20.833334 5.0 0.0
+vertex 30.0 5.0 0.0
+vertex 30.0 5.0 10.0
+endloop
+outer loop
+vertex 30.0 5.0 0.0
+vertex 20.833334 5.0 0.0
+vertex 20.833334 0.0 0.0
+endloop
+outer loop
+vertex 20.833334 0.0 0.0
+vertex 30.0 0.0 0.0
+vertex 30.0 5.0 0.0
+endloop
+outer loop
+vertex 30.0 0.0 0.0
+vertex 20.833334 0.0 0.0
+vertex 20.833334 0.0 10.0
+endloop
+outer loop
+vertex 20.833334 0.0 10.0
+vertex 30.0 0.0 10.0
+vertex 30.0 0.0 0.0
+endloop
+endsolid

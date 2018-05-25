@@ -1,0 +1,102 @@
+solid Exported from DMST-STL
+outer loop
+vertex -11.25 0.0 200.0
+vertex -11.25 5.0 200.0
+vertex -11.25 5.0 184.615387
+endloop
+outer loop
+vertex -11.25 5.0 184.615387
+vertex -11.25 0.0 184.615387
+vertex -11.25 0.0 200.0
+endloop
+outer loop
+vertex -25.0 0.0 200.0
+vertex -25.0 0.0 184.615387
+vertex -25.0 5.0 184.615387
+endloop
+outer loop
+vertex -25.0 5.0 184.615387
+vertex -25.0 5.0 200.0
+vertex -25.0 0.0 200.0
+endloop
+outer loop
+vertex -11.25 0.0 200.0
+vertex -25.0 0.0 200.0
+vertex -25.0 5.0 200.0
+endloop
+outer loop
+vertex -25.0 5.0 200.0
+vertex -11.25 5.0 200.0
+vertex -11.25 0.0 200.0
+endloop
+outer loop
+vertex -11.25 5.0 200.0
+vertex -25.0 5.0 200.0
+vertex -25.0 5.0 184.615387
+endloop
+outer loop
+vertex -25.0 5.0 184.615387
+vertex -11.25 5.0 184.615387
+vertex -11.25 5.0 200.0
+endloop
+outer loop
+vertex -11.25 0.0 184.615387
+vertex -25.0 0.0 184.615387
+vertex -25.0 0.0 200.0
+endloop
+outer loop
+vertex -25.0 0.0 200.0
+vertex -11.25 0.0 200.0
+vertex -11.25 0.0 184.615387
+endloop
+outer loop
+vertex -11.25 0.0 184.615387
+vertex -11.25 5.0 184.615387
+vertex -11.25 5.0 169.230774
+endloop
+outer loop
+vertex -11.25 5.0 169.230774
+vertex -11.25 0.0 169.230774
+vertex -11.25 0.0 184.615387
+endloop
+outer loop
+vertex -25.0 0.0 184.615387
+vertex -25.0 0.0 169.230774
+vertex -25.0 5.0 169.230774
+endloop
+outer loop
+vertex -25.0 5.0 169.230774
+vertex -25.0 5.0 184.615387
+vertex -25.0 0.0 184.615387
+endloop
+outer loop
+vertex -11.25 5.0 184.615387
+vertex -25.0 5.0 184.615387
+vertex -25.0 5.0 169.230774
+endloop
+outer loop
+vertex -25.0 5.0 169.230774
+vertex -11.25 5.0 169.230774
+vertex -11.25 5.0 184.615387
+endloop
+outer loop
+vertex -11.25 5.0 169.230774
+vertex -25.0 5.0 169.230774
+vertex -25.0 0.0 169.230774
+endloop
+outer loop
+vertex -25.0 0.0 169.230774
+vertex -11.25 0.0 169.230774
+vertex -11.25 5.0 169.230774
+endloop
+outer loop
+vertex -11.25 0.0 169.230774
+vertex -25.0 0.0 169.230774
+vertex -25.0 0.0 184.615387
+endloop
+outer loop
+vertex -25.0 0.0 184.615387
+vertex -11.25 0.0 184.615387
+vertex -11.25 0.0 169.230774
+endloop
+endsolid
