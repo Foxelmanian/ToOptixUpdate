@@ -4,13 +4,14 @@ from TopologyOptimizer.OptimizationController import OptimizationController
 
 import os
 
+
+
 def run_optimization(penal,  matSets, opti_type, sol_type,
                     weight_factors, max_iteration, vol_frac,
                     files, workDir, solverPath, cpus):
     print('Start topology otpimization')
-    # Set environment variable Windows
-    #Windows environment variable
-    os.popen("set OMP_NUM_THREADS=" + str(cpus))
+
+    os.environ['OMP_NUM_THREADS'] = str(cpus)
     opti_controller = OptimizationController(files, sol_type, reverse=False, type=opti_type)
     opti_controller.set_maximum_iterations(max_iteration)
     opti_controller.set_penalty_exponent(penal)
