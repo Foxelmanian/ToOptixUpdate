@@ -16,6 +16,7 @@ class CCXPhraser(object):
 
         # Initialize a FEMBody
         try:
+            self.__file_name = file_name
             self.__file = open(file_name, "r")
             self.__nodes = self.__get_nodes()
             self.__elements = self.__get_elements()
@@ -50,6 +51,35 @@ class CCXPhraser(object):
     def get_fem_body(self) -> FEMBody:
         return self.__fem_body
 
+    def get_elements_by_set_name(self, name=None):
+        self.__file = open(self.__file_name, "r")
+        elements = []
+        self.__file.seek(0)  # Start at first line
+        read_attributes = False
+        for line in self.__file:
+            if self.__is_line_to_ignore(line):
+                continue
+            if "*" in line[0]:
+                read_attributes = False
+            if read_attributes:
+                line_items = line[:-1].split(",")
+                if self.__is_empty_list(line_items):
+                    continue
+                line_items = self.__remove_empty_parts(line_items)
+                for element_id in line_items:
+                    try:
+                        elements.append(int(element_id))
+                    except IOError as e:
+                        print(e)
+            if "*ELSET" in line.upper():
+                if name != None:
+                    if name in line.upper():
+                        read_attributes = True
+                else:
+                    read_attributes = True
+        self.__file.close()
+        return elements
+
     def __get_nodes(self) -> Dict[int, Node]:
         node_dict = {}
         read_attributes = False
@@ -62,6 +92,8 @@ class CCXPhraser(object):
             if read_attributes:
                 line_items = line[:-1].split(",")
                 try:
+                    if self.__is_empty_list(line_items):
+                        continue
                     node_id = int(line_items[0])
                     x = float(line_items[1])
                     y = float(line_items[2])

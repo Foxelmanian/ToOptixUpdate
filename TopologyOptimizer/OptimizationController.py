@@ -20,7 +20,6 @@ class OptimizationController(object):
 
         self.__result_file_name = "stl_result"
 
-
         self.__volumina_ratio = 0.5
         if self.__reverse:
             self.__volumina_ratio = 1.0 - self.__volumina_ratio
@@ -35,6 +34,8 @@ class OptimizationController(object):
         self.__change = 0.2
         self.__use_filter = True
         self.__only_last_result = False
+        self.__no_design_space = []
+
 
     def set_penalty_exponent(self, penalty):
         self.__penalty_exponent = penalty
@@ -72,6 +73,11 @@ class OptimizationController(object):
 
         if self.__type == "seperated":
             for file, solution_type in zip(self.__files, self.__solution_types):
+
+                if solution_type == "no_design_space":
+                    fem_builder = CCXPhraser(file)
+                    self.__no_design_space = fem_builder.get_elements_by_set_name(None)
+
                 if solution_type == "static":
                     # Create each time a new fem body for each type
                     fem_builder = CCXPhraser(file)
@@ -91,6 +97,8 @@ class OptimizationController(object):
 
                     self.__optimization(file, fem_body, ele_filter, solution_type)
                     self.__run_counter += 1
+        else:
+            print("No other mode is implemented: {}".format(self.__type))
 
     def __optimization(self, input_file_path, fem_body, ele_filter, solution_type):
 
@@ -106,6 +114,7 @@ class OptimizationController(object):
 
         sys_file_name = os.path.join(self.__result_path, system_request + "_system_optimization")
         sens_file_name = os.path.join(self.__result_path, sensitivity_request + "_sensitivity_optimization")
+
         # Create a material according to the density rule (currently only 1 material is possible no multi material changing)
         topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], self.__material_sets, self.__penalty_exponent)
         current_density = len(fem_body.get_elements()) * [self.__volumina_ratio]
@@ -117,13 +126,15 @@ class OptimizationController(object):
 
         # Build up Optimizater
         optimizer = TopologyOptimizer(current_density, topology_optimization_material)
+        optimizer.set_no_design_space(fem_body.get_elements(), self.__no_design_space)
         optimizer.set_maximum_density_change(self.__change)
         sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
         optimizer.set_compaction_ratio(self.__volumina_ratio)
 
         # Start optimization
         for iteration in range(self.__maximum_iterations):
-            #optimizer.set_compaction_ratio(max(self.__volumina_ratio, 1.0 - 0.05 * iteration))
+            ####optimizer.set_compaction_ratio(max(self.__volumina_ratio, 1.0 - 0.05 * iteration))
+            # System calculation
             ccx_topo_static.run_topo_sys(topology_optimization_material.get_density_materials(), sorted_density_element_sets, sys_file_name, system_request)
             if solution_type == "heat":
                 frd_reader.get_temperature(fem_body.get_nodes())
@@ -131,10 +142,12 @@ class OptimizationController(object):
                 frd_reader.get_displacement(fem_body.get_nodes())
             ccx_topo_static.run_topo_sens(fem_body.get_nodes(), sens_file_name,fem_body.get_elements(),  sensitivity_request)
 
+            #Sensitivity calculation
             if solution_type == "heat":
                 sensitivity_vector = dat_reader.get_heat_flux(fem_body.get_elements())
             elif solution_type == "static":
                 sensitivity_vector = dat_reader.get_energy_density(fem_body.get_elements())
+
 
             # Change densitys
             optimizer.change_density(sensitivity_vector)
@@ -142,6 +155,8 @@ class OptimizationController(object):
                 print("########## FILTER IS USED")
                 optimizer.filter_density(ele_filter)
             sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+
+
 
             # Select results which density is higher than a specific value
             res_elem = []

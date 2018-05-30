@@ -19,11 +19,18 @@ class TopologyOptimizer(object):
         self.__convergence_max = 0.01
         self.__max_change = 0.1
         self.__compaction_ratio = compaction_ratio
+        self.__no_design_space = []
+
+    def set_no_design_space(self, elements: Dict[int, Element], no_design_space_elements):
+        print("No design space is active with {} elements".format(len(no_design_space_elements)))
+        counter = -1
+        for element_key in elements:
+            counter += 1
+            if element_key in no_design_space_elements:
+                self.__no_design_space.append(counter)
 
     def set_maximum_density_change(self, max_change):
         self.__max_change = max_change
-
-
 
     def get_current_density(self):
         return self.__current_density
@@ -53,20 +60,14 @@ class TopologyOptimizer(object):
         self.__current_density = element_filter.filter_element_properties(self.__current_density)
 
     def change_density(self, sensitivity):
-
-
         sensitivity = np.array(self.__current_density)**(self.__density_material.get_penalty_exponent() - 1) * np.array(sensitivity)
-
         if min(sensitivity) <= 0:
             sensitivity += abs(np.min(sensitivity))+ 0.1
-
-
         self.__sensitivity_sets.append(sensitivity)
         self.__density_sets.append(self.__current_density)
         if len(self.__sensitivity_sets) > self.__memory_size:
             self.__sensitivity_sets.pop(0)
             self.__density_sets.pop(0)
-
         weight = 0
         for sensitivity_in_memory in self.__sensitivity_sets:
             if weight == 0:
@@ -100,12 +101,16 @@ class TopologyOptimizer(object):
                                                                    self.__current_density * (sensitivity / l_mid) ** 0.5))))
             # BESO-Method
             #new_design_variable = np.maximum(0.00001, np.sign(sensitivity - l_mid))
+
+
+            for id in self.__no_design_space:
+                self.__next_density[id] = 1.0
+
             if np.mean(self.__next_density) - self.__compaction_ratio > 0.0:
                 l_lower = l_mid
             else:
                 l_upper = l_mid
         print("##---- MEAN DENSTIY: " + str(np.mean(self.__next_density)))
-
         self.__current_density = self.__next_density
 
 

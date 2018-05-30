@@ -1,10 +1,7 @@
 ## BLENDER from .TopologyOptimizer.OptimizationController import OptimizationController
 ## PYCHARM from TopologyOptimizer.OptimizationController import OptimizationController
 from TopologyOptimizer.OptimizationController import OptimizationController
-
 import os
-
-
 
 def run_optimization(penal,  matSets, opti_type, sol_type,
                     weight_factors, max_iteration, vol_frac,
@@ -17,7 +14,6 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
     opti_controller.set_penalty_exponent(penal)
     opti_controller.set_number_of_material_sets(matSets)
     opti_controller.set_solver_path(solverPath)
-    #opti_controller.get_only_last_result()
 
     # Start the optimization
     opti_controller.set_result_file_name('stl_result' + str(vol_frac) + "__")
@@ -28,8 +24,10 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
 if __name__ == "__main__":
     cpus = 4
     opti_type = "seperated"
-    sol_type = ["static", "static", "static", "static"]
-    files = ["FirstOrderHexaeder.inp", "FirstOrderTetraeder.inp", "SecondOrderTetraeder.inp", "SecondOrderHexaeder.inp"]
+
+    # No design space stays until the next definition
+    sol_type = ["no_design_space", "static", "no_design_space", "heat"]
+    files = ["no_design_space.inp", "TwoRectanglesStruc.inp", "reset_no_design_space.inp", "TwoRectanglesTherm.inp"]
     max_iteration = 10
     vol_frac = 0.3
     penal = 3.0
