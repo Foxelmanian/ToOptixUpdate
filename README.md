@@ -60,8 +60,9 @@ from run_optimization import run_optimization
 
 cpus = 4
 opti_type = "seperated"
-sol_type = ["static"]
-files = ["testinp\Cylinder_Mesh.inp"]
+# no design space is used until redefinition
+sol_type = ["no_design_space", "static"]
+files = ["no_design_space.inp", "testinp\Cylinder_Mesh.inp"]
 max_iteration = 20
 vol_frac = 0.3
 penal = 3.0
