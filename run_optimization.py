@@ -27,7 +27,8 @@ if __name__ == "__main__":
 
     # No design space stays until the next definition
     sol_type = ["no_design_space", "static", "no_design_space", "heat"]
-    files = ["no_design_space.inp", "TwoRectanglesStruc.inp", "reset_no_design_space.inp", "TwoRectanglesTherm.inp"]
+    # Use a file with all elements in "no Design space": no_design_space.inp
+    files = ["reset_no_design_space.inp", "TwoRectanglesStruc.inp", "reset_no_design_space.inp", "TwoRectanglesTherm.inp"]
     max_iteration = 10
     vol_frac = 0.3
     penal = 3.0

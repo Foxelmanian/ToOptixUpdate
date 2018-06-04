@@ -79,12 +79,12 @@ class STL(File):
             solid = part
             o_file.write("solid Exported from DMST-STL\n")
             for triangle in solid.triangles:
-                #o_file.write("facet " + str(triangle.normal[0]) + " " + str(triangle.normal[1]) + " " + str(triangle.normal[2]) + "\n")
+                o_file.write("facet " + str(triangle.normal[0]) + " " + str(triangle.normal[1]) + " " + str(triangle.normal[2]) + "\n")
                 o_file.write("outer loop\n")
                 for point in triangle.points:
                     o_file.write("vertex " + str(point.x) + " " + str(point.y) + " " + str(point.z) + "\n")
                 o_file.write("endloop\n")
-                #o_file.write("endfacet\n")
+                o_file.write("endfacet\n")
             o_file.write("endsolid\n")
 
     def read(self):
