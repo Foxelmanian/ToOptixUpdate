@@ -22,6 +22,8 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
     opti_controller.run()
 
 if __name__ == "__main__":
+
+    # Optimization type --> seperated (combined is not implemented )
     cpus = 4
     opti_type = "seperated"
 

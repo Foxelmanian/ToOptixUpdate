@@ -34,7 +34,11 @@ class Triangle(object):
         # Defining two vectors and using cross product for normal vector
         p1_p2 = [p2.x - p1.x, p2.y - p1.y, p2.z - p1.z]
         p1_p3 = [p3.x - p1.x, p3.y - p1.y, p3.z - p1.z]
+
         norm_vec = np.cross(p1_p2, p1_p3)
+
+        norm_vec = 1.0 / np.linalg.norm(norm_vec) * norm_vec
+
         return norm_vec
 
     @property

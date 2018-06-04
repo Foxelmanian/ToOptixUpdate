@@ -69,6 +69,7 @@ class ElementFilter():
             for node in element.get_nodes():
                 element_in_region = element_in_region | self.__element_on_node[node.id]
 
+            # Inverse distance
             inverse_distance_to_neighbour_elements = []
             neighbour_elements = []
             for neighbour_element in element_in_region:
