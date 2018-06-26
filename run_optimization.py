@@ -2,6 +2,7 @@
 ## PYCHARM from TopologyOptimizer.OptimizationController import OptimizationController
 from TopologyOptimizer.OptimizationController import OptimizationController
 import os
+from enum import Enum
 
 def run_optimization(penal,  matSets, opti_type, sol_type,
                     weight_factors, max_iteration, vol_frac,
@@ -14,6 +15,8 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
     opti_controller.set_penalty_exponent(penal)
     opti_controller.set_number_of_material_sets(matSets)
     opti_controller.set_solver_path(solverPath)
+    opti_controller.set_weight_factors(weight_factors)
+    opti_controller.plot_only_last_result(False)
 
     # Start the optimization
     opti_controller.set_result_file_name('stl_result' + str(vol_frac) + "__")
@@ -24,18 +27,18 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
 if __name__ == "__main__":
 
     # Optimization type --> seperated (combined is not implemented )
-    cpus = 4
+    cpus = 6
     opti_type = "seperated"
 
-    # No design space stays until the next definition
-    sol_type = ["no_design_space", "static", "no_design_space", "heat"]
-    # Use a file with all elements in "no Design space": no_design_space.inp
-    files = ["reset_no_design_space.inp", "TwoRectanglesStruc.inp", "reset_no_design_space.inp", "TwoRectanglesTherm.inp"]
-    max_iteration = 10
-    vol_frac = 0.3
-    penal = 3.0
+
+    sol_type = ["heat", "static"]
+    files = ["TwoRectanglesTherm.inp","TwoRectanglesStruc.inp"]
+
+    max_iteration = 30
+    vol_frac = 0.3 # 0.15, 0.3,  0.45
+    penal = 3.0 # 1.5 , 2.0 , 3.0
     matSets = 10
-    weight_factors = [3.0]
+    weight_factors = [2.0, 1.0]
     workDir = "work"
     solverPath = "ccx"
     run_optimization(penal,  matSets, opti_type, sol_type,

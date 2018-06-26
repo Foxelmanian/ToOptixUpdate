@@ -10,6 +10,9 @@ import os
 import numpy as np
 
 
+
+
+
 class OptimizationController(object):
 
     def __init__(self, files, solution_types, reverse=False, type="seperated"):
@@ -17,6 +20,9 @@ class OptimizationController(object):
         self.__type = type
         self.__files = files
         self.__solution_types = solution_types
+        self.__solution_type_toOptix = {'heat': [], 'static':[]}
+
+
 
         self.__result_file_name = "stl_result"
 
@@ -33,8 +39,12 @@ class OptimizationController(object):
         self.__run_counter = 0
         self.__change = 0.2
         self.__use_filter = True
-        self.__only_last_result = False
+        self.__plot_only_last_result = False
         self.__no_design_space = []
+        self.__weight_factors = []
+
+    def set_weight_factors(self, weight_factors):
+        self.__weight_factors = weight_factors
 
 
     def set_penalty_exponent(self, penalty):
@@ -46,8 +56,8 @@ class OptimizationController(object):
     def set_solver_path(self, path):
         self.__solver_path = path
 
-    def get_only_last_result(self):
-        self.__only_last_result = True
+    def plot_only_last_result(self, activate=False):
+        self.__plot_only_last_result = activate
 
     def set_result_file_name(self, file_name: str):
         self.__result_file_name = file_name
@@ -73,32 +83,150 @@ class OptimizationController(object):
 
         if self.__type == "seperated":
             for file, solution_type in zip(self.__files, self.__solution_types):
+                self.__result_file_name = file[0:-4]
 
                 if solution_type == "no_design_space":
                     fem_builder = CCXPhraser(file)
                     self.__no_design_space = fem_builder.get_elements_by_set_name(None)
 
-                if solution_type == "static":
+                if solution_type == "static" or solution_type == "heat":
                     # Create each time a new fem body for each type
                     fem_builder = CCXPhraser(file)
                     fem_body = fem_builder.get_fem_body()
                     ele_filter = ElementFilter(fem_body.get_elements())
                     ele_filter.create_filter_structure()
-
                     self.__optimization(file, fem_body, ele_filter, solution_type)
                     self.__run_counter += 1
 
-                if solution_type == "heat":
-                    # Create each time a new fem body for each type
+        elif self.__type == "pareto":
+            print("Pareto optimization started --> Only possible for equal meshes")
+            for file, solution_type in zip(self.__files, self.__solution_types):
+                if solution_type == "no_design_space":
                     fem_builder = CCXPhraser(file)
-                    fem_body = fem_builder.get_fem_body()
-                    ele_filter = ElementFilter(fem_body.get_elements())
-                    ele_filter.create_filter_structure()
+                    self.__no_design_space = fem_builder.get_elements_by_set_name(None)
 
-                    self.__optimization(file, fem_body, ele_filter, solution_type)
-                    self.__run_counter += 1
+            self.__pareto_optimization(self.__files, self.__solution_types, self.__weight_factors)
+            self.__run_counter += 1
+
+
+
         else:
             print("No other mode is implemented: {}".format(self.__type))
+
+    def __pareto_optimization(self, files, solution_types, weight_factors):
+
+        # build up fem body with the first file
+        file = files[0]
+        fem_builder = CCXPhraser(file)
+        fem_body = fem_builder.get_fem_body()
+        ele_filter = ElementFilter(fem_body.get_elements())
+        ele_filter.create_filter_structure()
+        # Create a material according to the density rule (currently only 1 material is possible no multi material changing)
+        topology_optimization_material = DensityMaterial(fem_body.get_materials()[0], self.__material_sets,
+                                                         self.__penalty_exponent)
+        current_density = len(fem_body.get_elements()) * [self.__volumina_ratio]
+
+        for iteration in range(self.__maximum_iterations):
+            print("[i] Iteration: {}".format(iteration))
+            sensitivity_vectors = []
+            for input_file_path, solution_type in zip(files, solution_types):
+                print("[i] Pareto current type: {}  current file: {}".format(solution_type, input_file_path))
+                if solution_type == "heat":
+                    system_request = "NT"
+                    sensitivity_request = "HFL"
+                elif solution_type == "static":
+                    system_request = "U"
+                    sensitivity_request = "ENER"
+                elif solution_type == "no_design_space":
+                    continue
+                else:
+                    raise ValueError("Solution type not supported")
+                sys_file_name = os.path.join(self.__result_path, system_request + "_system_optimization")
+                sens_file_name = os.path.join(self.__result_path, sensitivity_request + "_sensitivity_optimization")
+                ccx_topo_static = CCXSolver(self.__solver_path, input_file_path)
+
+                # Calculix Result reader for FRD and DAT
+                frd_reader = FRDReader(sys_file_name)
+                dat_reader = DATReader(sens_file_name)
+
+                # Build up Optimizater
+                optimizer = TopologyOptimizer(current_density, topology_optimization_material)
+                optimizer.set_no_design_space(fem_body.get_elements(), self.__no_design_space)
+                optimizer.set_maximum_density_change(self.__change)
+                sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+                optimizer.set_compaction_ratio(self.__volumina_ratio)
+
+
+                ############### start optimization
+
+                ####optimizer.set_compaction_ratio(max(self.__volumina_ratio, 1.0 - 0.05 * iteration))
+                # System calculation
+                ccx_topo_static.run_topo_sys(topology_optimization_material.get_density_materials(),
+                                             sorted_density_element_sets, sys_file_name, system_request)
+                if solution_type == "heat":
+                    frd_reader.get_temperature(fem_body.get_nodes())
+                elif solution_type == "static":
+                    frd_reader.get_displacement(fem_body.get_nodes())
+                ccx_topo_static.run_topo_sens(fem_body.get_nodes(), sens_file_name, fem_body.get_elements(),
+                                              sensitivity_request)
+
+                # Sensitivity calculation
+                if solution_type == "heat":
+                    sensitivity_vector = dat_reader.get_heat_flux(fem_body.get_elements())
+                elif solution_type == "static":
+                    sensitivity_vector = dat_reader.get_energy_density(fem_body.get_elements())
+
+                sensitivity_vectors.append(sensitivity_vector)
+
+            # Perform pareto optimization
+            #normalize by using median
+            print("[i] number of different sensitivity vectors: {} normalized by median with weights {}".format(len(sensitivity_vectors), weight_factors))
+
+            pareto_sensitivity_vector = np.zeros(len(sensitivity_vectors[0]))
+            for sensitivity_vector, weight_factor in zip(sensitivity_vectors, weight_factors):
+                sensitivity_vector = weight_factor * 1.0 /  np.median(sensitivity_vector) * np.array(sensitivity_vector)
+                pareto_sensitivity_vector += sensitivity_vector
+
+
+            # Change densitys
+            print(pareto_sensitivity_vector)
+            optimizer.change_density(pareto_sensitivity_vector)
+            if self.__use_filter:
+                print("########## FILTER IS USED")
+                optimizer.filter_density(ele_filter)
+            sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
+
+            # Select results which density is higher than a specific value
+            res_elem = []
+            for element_key in fem_body.get_elements():
+                print(fem_body.get_elements()[element_key].get_density())
+                if self.__reverse:
+                    if fem_body.get_elements()[element_key].get_density() < self.__density_output:
+                        res_elem.append(fem_body.get_elements()[element_key])
+                else:
+                    if fem_body.get_elements()[element_key].get_density() > self.__density_output:
+                        res_elem.append(fem_body.get_elements()[element_key])
+
+            if self.__plot_only_last_result:
+                if iteration == self.__maximum_iterations - 1:
+
+                    result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
+                                       + self.__result_file_name + "pareto" + str(iteration) + "_p_" +
+                                       str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) +  '.stl')
+
+
+                    self.__plot_result(iteration, res_elem, result_path)
+            else:
+
+                result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
+                                           + self.__result_file_name + "pareto" + str(iteration) + "_p_" +
+                                           str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) + '.stl')
+                self.__plot_result(iteration, res_elem, result_path)
+
+
+
+
+
 
     def __optimization(self, input_file_path, fem_body, ele_filter, solution_type):
 
@@ -168,14 +296,20 @@ class OptimizationController(object):
                     if fem_body.get_elements()[element_key].get_density() > self.__density_output:
                         res_elem.append(fem_body.get_elements()[element_key])
 
-            if self.__only_last_result:
+            if self.__plot_only_last_result:
                 if iteration == self.__maximum_iterations -1:
-                    self.__plot_result(iteration, res_elem)
+                    result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
+                                       + self.__result_file_name + str(iteration) + "_p_" +
+                                       str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) +  '.stl')
+                    self.__plot_result(iteration, res_elem, result_path)
             else:
-                self.__plot_result(iteration, res_elem)
+                result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
+                                           + self.__result_file_name + str(iteration) + "_p_" +
+                                           str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) + '.stl')
+                self.__plot_result(iteration, res_elem, result_path)
 
 
-    def __plot_result(self, iteration, res_elem):
+    def __plot_result(self, iteration, res_elem, result_path):
 
         # Create the Surface for an stl output
         topo_surf = Surface()
@@ -185,8 +319,7 @@ class OptimizationController(object):
         topo_part = Solid(1, topo_surf.triangles)
         stl_file.add_solid(topo_part)
         print("Exporting result elements: {}".format(len(res_elem)))
-        stl_result_path = os.path.join(self.__result_path, str(self.__run_counter)
-                                       + self.__result_file_name + str(iteration) + '.stl')
+        stl_result_path = result_path
         print("Exporting stl result: {}".format(stl_result_path))
         if os.path.isfile(stl_result_path):
             os.remove(stl_result_path)
