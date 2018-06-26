@@ -2,10 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ToOptix04_06_2018_1.zip" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Result.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/QuadraticPlateLoadCase.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_no_symmetrie.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_symmetrie.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_symmetry_reduced.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements_load_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements_load_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements_load_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements_storm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_130000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_130000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_5000_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_5000_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_500_elements.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_500_elements_heat_transfer.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Rectangle_heat.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Rectangle_static.inp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_optimization.py" afterPath="$PROJECT_DIR$/run_optimization.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -182,6 +210,16 @@
             <path>
               <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
               <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
+              <item name="Images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
+              <item name="TopologyOptimizer" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -609,7 +647,21 @@
       <option name="project" value="LOCAL" />
       <updated>1528100677578</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="No design space is added">
+      <created>1530007339068</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1530007339068</updated>
+    </task>
+    <task id="LOCAL-00042" summary="No design space is added">
+      <created>1530007436398</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1530007436398</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="ToolWindowManager">
