@@ -12,6 +12,11 @@
 </p>
 
 
+<p align="center">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/QuadraticPlateLoadCase.png" width="100%">
+</p>
+
+
 ## Current version
 - Only 3D-FEM support
 - Heat Transfer
