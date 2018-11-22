@@ -70,6 +70,9 @@ Example no design space with file:
 from run_optimization import run_optimization
 
 cpus = 4
+
+# Optimization type --> seperated (combined is only in beta )
+
 opti_type = "seperated"
 # no design space is used until redefinition
 sol_type = ["no_design_space", "static"]
@@ -84,35 +87,30 @@ solverPath = "ccx"
 run_optimization(penal,  matSets, opti_type, sol_type,
                                       weight_factors, max_iteration, vol_frac,
                                       files, workDir, solverPath, cpus)
-                                      
-                                      
-                                      
-                                      
-                                  
-                                      
-                                      
-                                      
-
 ```
 Example no design space with element set and several iterations:
-```python,example
-# Optimization type --> seperated (combined is not implemented )
-    cpus = 6
-    opti_type = "seperated"
-    sol_type = ["static"]
-    files = ["PlateWithNoDesignSpaceFine.inp"]
 
-    for vol_frac in [0.4, 0.6]:
-        for penal in [3.0]:
-            max_iteration = 100
-            matSets = 20
-            weight_factors = [1.0]
-            workDir = "work"
-            solverPath = "ccx"
-            no_design_set = 'SolidMaterial001Solid'
-            run_optimization(penal,  matSets, opti_type, sol_type,
-                                                  weight_factors, max_iteration, vol_frac,
-                                                  files, workDir, solverPath, cpus, no_design_set)
+```python,example
+
+from run_optimization import run_optimization
+
+# Optimization type --> seperated (combined is only in beta )
+cpus = 6
+opti_type = "seperated"
+sol_type = ["static"]
+files = ["PlateWithNoDesignSpaceFine.inp"]
+
+for vol_frac in [0.4, 0.6]:
+    for penal in [3.0]:
+        max_iteration = 100
+        matSets = 20
+        weight_factors = [1.0]
+        workDir = "work"
+        solverPath = "ccx"
+        no_design_set = 'SolidMaterial001Solid'
+        run_optimization(penal,  matSets, opti_type, sol_type,
+                                              weight_factors, max_iteration, vol_frac,
+                                              files, workDir, solverPath, cpus, no_design_set)
 ```
 ## Output
 - STL File in a specific folder for every optimizaiton step
