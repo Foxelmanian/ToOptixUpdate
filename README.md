@@ -16,6 +16,12 @@
   <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/QuadraticPlateLoadCase.png" width="100%">
 </p>
 
+<p align="center">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/NoDesignSpace.png" width="100%">
+</p>
+
+
+
 
 ## Current version
 - Only 3D-FEM support
@@ -57,7 +63,7 @@ from TopologyOptimizer.OptimizationController import OptimizationController
 - Change optimization properties "run_optimization.py"
 - Create new cases for CalculiX "test.inp" ....
 
-Example:
+Example no design space with file:
 
 ```python,example
 
@@ -78,10 +84,36 @@ solverPath = "ccx"
 run_optimization(penal,  matSets, opti_type, sol_type,
                                       weight_factors, max_iteration, vol_frac,
                                       files, workDir, solverPath, cpus)
+                                      
+                                      
+                                      
+                                      
+                                  
+                                      
+                                      
+                                      
 
 ```
+Example no design space with element set and several iterations:
+```python,example
+# Optimization type --> seperated (combined is not implemented )
+    cpus = 6
+    opti_type = "seperated"
+    sol_type = ["static"]
+    files = ["PlateWithNoDesignSpaceFine.inp"]
 
-
+    for vol_frac in [0.4, 0.6]:
+        for penal in [3.0]:
+            max_iteration = 100
+            matSets = 20
+            weight_factors = [1.0]
+            workDir = "work"
+            solverPath = "ccx"
+            no_design_set = 'SolidMaterial001Solid'
+            run_optimization(penal,  matSets, opti_type, sol_type,
+                                                  weight_factors, max_iteration, vol_frac,
+                                                  files, workDir, solverPath, cpus, no_design_set)
+```
 ## Output
 - STL File in a specific folder for every optimizaiton step
 

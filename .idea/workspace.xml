@@ -2,41 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/FixedPlate.FCStd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/FixedPlate.FCStd1" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/PlateWithNoDesignSpaceCoarse.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_Example.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_Plate.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_PlatteTestExample.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/HouseThinnWall.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/InletOutletHeat.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleBlockPressureLoadCoarse.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleBlockThinPressure.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_fine.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_rough.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_test2.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_roguh.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_very_rough.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_very_very_rough.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectanglePressureLoad.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectengularMesh40x10_Therm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/TwoRectanglesStruc.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/TwoRectanglesTherm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/no_design_space.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/reset_no_design_space.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PlateWithNoDesignSpaceFine.inp" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoRectanglesStruc.inp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoRectanglesTherm.inp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/no_design_space.inp" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/reset_no_design_space.inp" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/NoDesignSpace.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/Filter.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/Filter.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_optimization.py" afterPath="$PROJECT_DIR$/run_optimization.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -50,8 +18,8 @@
       <file leaf-file-name="run_optimization.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_optimization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+            <state relative-caret-position="441">
+              <caret line="45" column="98" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="45" selection-end-column="98" />
               <folding>
                 <element signature="e#175#250#0" expanded="true" />
               </folding>
@@ -79,14 +47,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+            <state relative-caret-position="275">
+              <caret line="298" column="0" lean-forward="true" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="260">
+                <caret line="105" column="27" lean-forward="true" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -130,8 +111,8 @@
       <find>get_elements_by_set_name</find>
       <find>set_</find>
       <find>set_no_design</find>
-      <find>filter</find>
       <find>use_filter</find>
+      <find>filter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -180,7 +161,6 @@
         <option value="$PROJECT_DIR$/no_design_space.inp" />
         <option value="$PROJECT_DIR$/create_no_design_space_file.py" />
         <option value="$PROJECT_DIR$/Scripts/create_no_design_space_file.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
@@ -190,6 +170,7 @@
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
         <option value="$PROJECT_DIR$/run_optimization.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -669,7 +650,14 @@
       <option name="project" value="LOCAL" />
       <updated>1530007490097</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="No design space is added">
+      <created>1542887741371</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1542887741372</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -796,16 +784,6 @@
     <entry file="file://$PROJECT_DIR$/test_writer.py" />
     <entry file="file://$PROJECT_DIR$/create_no_design_space_file.py" />
     <entry file="file://$PROJECT_DIR$/reset_no_design_space.inp" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="280">
-            <caret line="68" column="12" lean-forward="true" selection-start-line="68" selection-start-column="12" selection-end-line="68" selection-end-column="12" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Scripts/create_no_design_space_file.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="154">
@@ -900,18 +878,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
-          <folding />
+        <state relative-caret-position="275">
+          <caret line="298" column="0" lean-forward="true" selection-start-line="298" selection-start-column="0" selection-end-line="298" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_optimization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
+        <state relative-caret-position="441">
+          <caret line="45" column="98" lean-forward="true" selection-start-line="29" selection-start-column="4" selection-end-line="45" selection-end-column="98" />
           <folding>
             <element signature="e#175#250#0" expanded="true" />
           </folding>
@@ -926,13 +906,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="288">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="260">
+            <caret line="105" column="27" lean-forward="true" selection-start-line="105" selection-start-column="27" selection-end-line="105" selection-end-column="27" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
