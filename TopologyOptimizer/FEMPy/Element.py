@@ -27,6 +27,7 @@ class Element(object):
 
         self.__calculate_element_center()
 
+
     def set_heat_flux_xyz(self, flx_x, flx_y, flx_z):
         self.__hflux_x = flx_x
         self.__hflux_y = flx_y
@@ -64,6 +65,7 @@ class Element(object):
         x_center = 0.0
         y_center = 0.0
         z_center = 0.0
+
         for node in self.__nodes:
             count += 1
             x_center += node.x

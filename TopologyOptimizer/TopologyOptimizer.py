@@ -56,6 +56,9 @@ class TopologyOptimizer(object):
             counter += 1
         return element_sets_ob
 
+    def filter_sensitivity(self, element_filter, sensitivity):
+        return element_filter.filter_element_properties(sensitivity * self.__current_density)
+
     def filter_density(self, element_filter: ElementFilter):
         self.__current_density = element_filter.filter_element_properties(self.__current_density)
 

@@ -6,6 +6,7 @@ class CCXSolver(object):
     def __init__(self, solver_path: str, input_deck_path: str):
         self.__solver_path = solver_path
         self.__input_path = input_deck_path
+        self.__2D_case = False
 
     def run_topo_sys(self, topo_materials, topo_element_sets, run_path, output):
         self.__run_topo_system(topo_materials, topo_element_sets, run_path, output)
@@ -28,6 +29,7 @@ class CCXSolver(object):
                         run_file.write("\n")
                         counter_tab = 0
                     run_file.write(str(elements[element_id].get_id()) + ",")
+
                 run_file.write("\n")
                 run_file.write("*BOUNDARY\n")
                 for node_id in boundary_nodes:
@@ -92,6 +94,9 @@ class CCXSolver(object):
                         run_file.write('{}, {}, {} \n'.format(elasticity.get_young_module(),
                                                               elasticity.get_contraction(),
                                                               elasticity.get_temperature()))
+
+                    run_file.write("*DENSITY \n 7.900e-09 \n")
+
                     run_file.write("*CONDUCTIVITY  \n")
                     for conductivity in material.get_conductivity():
                         run_file.write('{},{}  \n'.format(conductivity.get_conductivity(),
@@ -115,9 +120,17 @@ class CCXSolver(object):
                         continue
                     set_name = topo_element_sets[ii].get_name()
                     mat_name = topo_materials[ii].get_name()
-                    run_file.write("*SOLID SECTION,ELSET=" + str(set_name) + ",material=" + str(mat_name) + "\n")
+                    if self.__2D_case:
+                        run_file.write("*SHELL SECTION,ELSET=" + str(set_name) + ",material=" + str(mat_name) + "\n")
+                        run_file.write("1 \n")
+                    else:
+                        run_file.write("*SOLID SECTION,ELSET=" + str(set_name) + ",material=" + str(mat_name) + "\n")
             if "*SOLID SECTION" in line.upper():
                 continue
+
+            if "SHELL SECTION" in line.upper():
+                continue
+
             if ignore_node_output:
                 if len(line) >= 2:
                     if line[0] == "*" and line[0:2] != "**":

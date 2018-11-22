@@ -11,8 +11,6 @@ import numpy as np
 
 
 
-
-
 class OptimizationController(object):
 
     def __init__(self, files, solution_types, reverse=False, type="seperated"):
@@ -39,13 +37,16 @@ class OptimizationController(object):
         self.__run_counter = 0
         self.__change = 0.2
         self.__use_filter = True
-        self.__plot_only_last_result = False
+        self.__plot_only_last_result = True
         self.__no_design_space = []
         self.__weight_factors = []
+        self.__set_name = None
 
     def set_weight_factors(self, weight_factors):
         self.__weight_factors = weight_factors
 
+    def set_no_design_element_set(self, set_name):
+        self.__set_name = set_name
 
     def set_penalty_exponent(self, penalty):
         self.__penalty_exponent = penalty
@@ -87,11 +88,15 @@ class OptimizationController(object):
 
                 if solution_type == "no_design_space":
                     fem_builder = CCXPhraser(file)
-                    self.__no_design_space = fem_builder.get_elements_by_set_name(None)
+                    self.__no_design_space.extend(fem_builder.get_elements_by_set_name(None))
 
                 if solution_type == "static" or solution_type == "heat":
                     # Create each time a new fem body for each type
                     fem_builder = CCXPhraser(file)
+                    if self.__set_name != None:
+                        print(f'No Design element set: {self.__set_name}')
+                        self.__no_design_space.extend(fem_builder.get_elements_by_set_name(self.__set_name))
+
                     fem_body = fem_builder.get_fem_body()
                     ele_filter = ElementFilter(fem_body.get_elements())
                     ele_filter.create_filter_structure()
@@ -251,6 +256,7 @@ class OptimizationController(object):
         # Calculix Result reader for FRD and DAT
         frd_reader = FRDReader(sys_file_name)
         dat_reader = DATReader(sens_file_name)
+        dat_reader_2 = DATReader(sys_file_name)
 
         # Build up Optimizater
         optimizer = TopologyOptimizer(current_density, topology_optimization_material)
@@ -267,8 +273,11 @@ class OptimizationController(object):
             if solution_type == "heat":
                 frd_reader.get_temperature(fem_body.get_nodes())
             elif solution_type == "static":
+
+                #dat_reader_2.get_displacement(fem_body.get_nodes())
                 frd_reader.get_displacement(fem_body.get_nodes())
-            ccx_topo_static.run_topo_sens(fem_body.get_nodes(), sens_file_name,fem_body.get_elements(),  sensitivity_request)
+
+            ccx_topo_static.run_topo_sens(fem_body.get_nodes(), sens_file_name, fem_body.get_elements(),  sensitivity_request)
 
             #Sensitivity calculation
             if solution_type == "heat":
@@ -276,12 +285,14 @@ class OptimizationController(object):
             elif solution_type == "static":
                 sensitivity_vector = dat_reader.get_energy_density(fem_body.get_elements())
 
+            if self.__use_filter:
+                sensitivity_vector = optimizer.filter_sensitivity(ele_filter, sensitivity_vector)
 
             # Change densitys
             optimizer.change_density(sensitivity_vector)
             if self.__use_filter:
-                print("########## FILTER IS USED")
                 optimizer.filter_density(ele_filter)
+
             sorted_density_element_sets = optimizer.get_element_sets_by_density(fem_body.get_elements())
 
 

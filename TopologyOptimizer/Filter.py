@@ -79,6 +79,7 @@ class ElementFilter():
                 xc1 = neighbour_element.get_x_center()
                 yc1 = neighbour_element.get_y_center()
                 zc1 = neighbour_element.get_z_center()
+
                 inverse_distance_to_neighbour_elements.append(1 / ((xc1 - xc) ** 2 + (yc1 - yc) ** 2 + (zc1 - zc) ** 2) ** 0.5)
                 neighbour_elements.append(neighbour_element)
 

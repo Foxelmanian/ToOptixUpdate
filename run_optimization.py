@@ -6,7 +6,7 @@ from enum import Enum
 
 def run_optimization(penal,  matSets, opti_type, sol_type,
                     weight_factors, max_iteration, vol_frac,
-                    files, workDir, solverPath, cpus):
+                    files, workDir, solverPath, cpus, no_design_set):
     print('Start topology otpimization')
 
     os.environ['OMP_NUM_THREADS'] = str(cpus)
@@ -22,6 +22,7 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
     opti_controller.set_result_file_name('stl_result' + str(vol_frac) + "__")
     opti_controller.set_result_path(workDir)
     opti_controller.set_volumina_ratio(vol_frac)
+    opti_controller.set_no_design_element_set(no_design_set)
     opti_controller.run()
 
 if __name__ == "__main__":
@@ -29,18 +30,17 @@ if __name__ == "__main__":
     # Optimization type --> seperated (combined is not implemented )
     cpus = 6
     opti_type = "seperated"
+    sol_type = ["static"]
+    files = ["PlateWithNoDesignSpaceFine.inp"]
 
-
-    sol_type = ["heat", "static"]
-    files = ["TwoRectanglesTherm.inp","TwoRectanglesStruc.inp"]
-
-    max_iteration = 30
-    vol_frac = 0.3 # 0.15, 0.3,  0.45
-    penal = 3.0 # 1.5 , 2.0 , 3.0
-    matSets = 10
-    weight_factors = [2.0, 1.0]
-    workDir = "work"
-    solverPath = "ccx"
-    run_optimization(penal,  matSets, opti_type, sol_type,
-                                          weight_factors, max_iteration, vol_frac,
-                                          files, workDir, solverPath, cpus)
+    for vol_frac in [0.4]:
+        for penal in [3.0]:
+            max_iteration = 100
+            matSets = 20
+            weight_factors = [1.0]
+            workDir = "work"
+            solverPath = "ccx"
+            no_design_set = 'SolidMaterial001Solid'
+            run_optimization(penal,  matSets, opti_type, sol_type,
+                                                  weight_factors, max_iteration, vol_frac,
+                                                  files, workDir, solverPath, cpus, no_design_set)

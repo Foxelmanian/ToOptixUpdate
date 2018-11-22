@@ -52,6 +52,7 @@ class CCXPhraser(object):
         return self.__fem_body
 
     def get_elements_by_set_name(self, name=None):
+
         self.__file = open(self.__file_name, "r")
         elements = []
         self.__file.seek(0)  # Start at first line
@@ -59,10 +60,12 @@ class CCXPhraser(object):
         for line in self.__file:
             if self.__is_line_to_ignore(line):
                 continue
+
             if "*" in line[0]:
                 read_attributes = False
             if read_attributes:
                 line_items = line[:-1].split(",")
+
                 if self.__is_empty_list(line_items):
                     continue
                 line_items = self.__remove_empty_parts(line_items)
@@ -73,7 +76,7 @@ class CCXPhraser(object):
                         print(e)
             if "*ELSET" in line.upper():
                 if name != None:
-                    if name in line.upper():
+                    if name.upper() in line.upper():
                         read_attributes = True
                 else:
                     read_attributes = True
@@ -182,6 +185,13 @@ class CCXPhraser(object):
                     else:
                         nodes_of_one_element = int(node_number[0])
 
+                if "TYPE=S" in line.upper():
+                    node_number = line.split('=S')[1][0:2]
+                    if node_number.isdigit():
+                        nodes_of_one_element = int(node_number)
+                    else:
+                        nodes_of_one_element = int(node_number[0])
+
         return element_dict
 
 
@@ -285,6 +295,41 @@ class DATReader(object):
 
     def __init__(self, file_name: str):
         self.__file_name = file_name + ".dat"
+
+    def get_displacement(self, node_dictonary: Dict[int, Node]):
+
+
+        frd_file = open(self.__file_name, "r")
+        displacement_section = False
+        node_counter = 0
+
+        for line in frd_file:
+
+            if len(line) < 2:
+                continue
+
+
+
+            if "DISPLACEMENTS (VX,VY,VZ)" in line.upper():
+                displacement_section = True
+                continue
+
+            if node_counter == len(node_dictonary):
+                displacement_section = False
+
+            if displacement_section:
+                node_counter += 1
+                print(line[0:10])
+                print(line[10:25])
+                print(line[25:39])
+                print(line[39:53])
+                node_id = int(line[0:10])
+                disp_x = float(line[10:25])
+                disp_y = float(line[25:39])
+                disp_z = float(line[39:53])
+                node_dictonary[node_id].set_displacement(disp_x, disp_y, disp_z)
+
+
 
     def get_energy_density(self, element_dictonary: Dict[int, Element]):
 

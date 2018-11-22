@@ -2,38 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Result.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/QuadraticPlateLoadCase.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_no_symmetrie.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_symmetrie.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_0_25_symmetry_reduced.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_220000_elements_load_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_2200_elements_load_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_65000_elements_load_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_170000_elements_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_2200_elements_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/06_House_use_case/House_10x10x10_mod_23000_elements_storm.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_130000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_130000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_5000_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_5000_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_500_elements.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/07_Roof/Roof_500_elements_heat_transfer.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Rectangle_heat.inp" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/08_QuadraticPlate_heat_static/Rectangle_static.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/FixedPlate.FCStd" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/FixedPlate.FCStd1" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/09_FreeCAD_No_Design_Space/PlateWithNoDesignSpaceCoarse.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_Example.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_Plate.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/2D_PlatteTestExample.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/HouseThinnWall.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/InletOutletHeat.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleBlockPressureLoadCoarse.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleBlockThinPressure.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_fine.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_rough.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_test2.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_roguh.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_very_rough.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectangleExtruded_very_very_very_rough.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectanglePressureLoad.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/RectengularMesh40x10_Therm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/TwoRectanglesStruc.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/TwoRectanglesTherm.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/no_design_space.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Examples/reset_no_design_space.inp" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/PlateWithNoDesignSpaceFine.inp" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoRectanglesStruc.inp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/TwoRectanglesTherm.inp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/no_design_space.inp" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/reset_no_design_space.inp" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/Filter.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/Filter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_optimization.py" afterPath="$PROJECT_DIR$/run_optimization.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -44,11 +47,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run_optimization.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="run_optimization.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_optimization.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+            <state relative-caret-position="465">
+              <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
               <folding>
                 <element signature="e#175#250#0" expanded="true" />
               </folding>
@@ -56,25 +59,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
+      <file leaf-file-name="Filter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3388">
-              <caret line="163" column="26" lean-forward="false" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-                <marker date="1530006600520" expanded="true" signature="10745:14531" ph="..." />
-              </folding>
+            <state relative-caret-position="288">
+              <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CCXSolver.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py">
+      <file leaf-file-name="TopologyOptimizer.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2046">
-              <caret line="94" column="55" lean-forward="false" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+            <state relative-caret-position="288">
+              <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="251">
+              <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#62#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,20 +102,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NODES OF ONE</find>
-      <find>volumina_ratio</find>
-      <find>FRD</find>
-      <find>dat</find>
-      <find>0.75</find>
-      <find>frdReader</find>
-      <find>datR</find>
-      <find>element_dic</find>
-      <find>output_density</find>
-      <find>ele_filter</find>
-      <find>work_path</find>
-      <find>*material</find>
-      <find>*boundary</find>
-      <find>filter_</find>
       <find>*element</find>
       <find>it</find>
       <find>self.__plot</find>
@@ -120,6 +118,20 @@
       <find>change_density</find>
       <find>plot_result</find>
       <find>self.__result_file_name</find>
+      <find>*ELEMENT</find>
+      <find>input</find>
+      <find>TOPO_ALL_ELEMENTS_DMST</find>
+      <find>*SOLID</find>
+      <find>*material</find>
+      <find>filter_density</find>
+      <find>filter_</find>
+      <find>self.__no_design_space</find>
+      <find>__no_design_space</find>
+      <find>get_elements_by_set_name</find>
+      <find>set_</find>
+      <find>set_no_design</find>
+      <find>filter</find>
+      <find>use_filter</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -156,8 +168,6 @@
         <option value="$PROJECT_DIR$/FEMPy/Node.py" />
         <option value="$PROJECT_DIR$/FEMPy/Geometrie/Solid.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Surface.py" />
         <option value="$PROJECT_DIR$/U_system_optimization.frd" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/__init__.py" />
@@ -166,8 +176,6 @@
         <option value="$PROJECT_DIR$/ui_topo.py" />
         <option value="$PROJECT_DIR$/SecondOrderHexaeder.inp" />
         <option value="$PROJECT_DIR$/SecondOrderTetraeder.inp" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
         <option value="$PROJECT_DIR$/test_writer.py" />
         <option value="$PROJECT_DIR$/no_design_space.inp" />
         <option value="$PROJECT_DIR$/create_no_design_space_file.py" />
@@ -175,17 +183,20 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/Filter.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
         <option value="$PROJECT_DIR$/run_optimization.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="974" />
-    <option name="height" value="1047" />
+    <option name="x" value="512" />
+    <option name="width" value="1415" />
+    <option name="height" value="1044" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -202,7 +213,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -211,20 +221,11 @@
               <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
               <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
-              <item name="Images" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
-              <item name="TopologyOptimizer" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -661,21 +662,28 @@
       <option name="project" value="LOCAL" />
       <updated>1530007436398</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="No design space is added">
+      <created>1530007490097</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1530007490097</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1173" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19083156" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23134328" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.34215686" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3567889" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3990196" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39841428" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -762,20 +770,6 @@
     <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Solid.py" />
     <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Point.py" />
     <entry file="file://$PROJECT_DIR$/FEMPy/CCXSolver.py" />
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="44">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="55" column="30" lean-forward="false" selection-start-line="55" selection-start-column="30" selection-end-line="55" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/ENER_sensitivity_optimization.inp" />
     <entry file="file://$PROJECT_DIR$/U_system_optimization.frd" />
     <entry file="file://$PROJECT_DIR$/U_system_optimization.inp" />
@@ -796,66 +790,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TwoRectanglesStruc.inp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="24962" column="27" lean-forward="true" selection-start-line="24962" selection-start-column="27" selection-end-line="24962" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Material.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="51" column="81" lean-forward="true" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/TwoRectanglesStruc.inp" />
     <entry file="file://$PROJECT_DIR$/SecondOrderHexaeder.inp" />
     <entry file="file://$PROJECT_DIR$/SecondOrderTetraeder.inp" />
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Node.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/FEMBody.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/ElementSet.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="346">
-          <caret line="69" column="24" lean-forward="false" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/test_writer.py" />
     <entry file="file://$PROJECT_DIR$/create_no_design_space_file.py" />
-    <entry file="file://$PROJECT_DIR$/no_design_space.inp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="19" column="26" lean-forward="false" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/reset_no_design_space.inp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/reset_no_design_space.inp" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -902,45 +842,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Material.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="805">
-          <caret line="71" column="30" lean-forward="false" selection-start-line="71" selection-start-column="30" selection-end-line="71" selection-end-column="30" />
+        <state relative-caret-position="566">
+          <caret line="51" column="81" lean-forward="false" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py">
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/FEMBody.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="72" column="20" lean-forward="false" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
+        <state relative-caret-position="240">
+          <caret line="13" column="21" lean-forward="false" selection-start-line="13" selection-start-column="21" selection-end-line="13" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/ElementSet.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3388">
-          <caret line="163" column="26" lean-forward="false" selection-start-line="163" selection-start-column="26" selection-end-line="163" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-            <marker date="1530006600520" expanded="true" signature="10745:14531" ph="..." />
-          </folding>
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/no_design_space.inp" />
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Node.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2046">
-          <caret line="94" column="55" lean-forward="false" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+        <state relative-caret-position="179">
+          <caret line="97" column="20" lean-forward="false" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="14" column="34" lean-forward="false" selection-start-line="14" selection-start-column="34" selection-end-line="14" selection-end-column="34" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/run_optimization.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="20" column="28" lean-forward="false" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+        <state relative-caret-position="465">
+          <caret line="25" column="25" lean-forward="false" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
           <folding>
             <element signature="e#175#250#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="17" column="32" lean-forward="false" selection-start-line="17" selection-start-column="32" selection-end-line="17" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="251">
+          <caret line="294" column="0" lean-forward="false" selection-start-line="294" selection-start-column="0" selection-end-line="294" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#62#0" expanded="true" />
           </folding>
         </state>
       </provider>
