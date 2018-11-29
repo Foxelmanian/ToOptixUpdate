@@ -90,6 +90,11 @@ run_optimization(penal,  matSets, opti_type, sol_type,
 ```
 Example no design space with element set and several iterations:
 
+- The element set created by FreeCAD will be named as follow
+'SolidMaterialSolid'  'SolidMaterial001Solid'  'SolidMaterial002Solid'  
+You can specify the non design space by another material definition. So that SolidMaterialSolid is free and SolidMaterial001Solid is a non design space.
+- You can specify your own non design space by creating a element set in '.inp' file and use the name of the element set as the non design space definition
+
 ```python,example
 
 from run_optimization import run_optimization
@@ -111,7 +116,59 @@ for vol_frac in [0.4, 0.6]:
         run_optimization(penal,  matSets, opti_type, sol_type,
                                               weight_factors, max_iteration, vol_frac,
                                               files, workDir, solverPath, cpus, no_design_set)
+
+
+``` 
+
+##For using the python FreeCAD Macro 
+
+- You need to define a python3 path 'python3_path' in the file 'FreeCADMacro.py' because FreeCAD uses python2 as default
+- You need to define a install path 'installation_path' in the file 'FreeCADMacro.py' that FreeCAD knows where ToOptix is located.
+- During the macro FreeCAD changes the directory to the ToOptix folder and creates a 'config.json' file with the 'model.inp' path and the 'ccx.exe' path . 
+- Create a FEM Model (which should work) for a static load case. Then run the Macro 'FreeCADMacro.py' in FreeCAD
+- FreeCAD Macro, you can specifiy a non design material as well, just like before.
+- Modification should be done in 'run_optimization_freeCAD.py'. This will be changed in the next version.
+
+<p align="center">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/InstructionFreeCADMacro.png" width="100%">
+</p>
+
+
+
+
+```python, 
+
+from run_optimization import run_optimization
+import json
+import os
+
+
+json_path = 'config.json'
+if __name__ == "__main__":
+    # Optimization type --> seperated (combined is not implemented )
+    cpus = 6
+    opti_type = "seperated"
+    sol_type = ["static"]
+    with open(json_path, 'r') as file:
+        data = json.load(file)
+    files = [data['inp_path']]
+    workDir = 'work'
+    solverPath =  "\"" + str(data['ccx_path']) +  "\""
+    inp_path = data['inp_path']
+    files = [inp_path]
+    for vol_frac in [0.4]:
+        for penal in [3.0]:
+            max_iteration = 100
+            matSets = 20
+            weight_factors = [1.0]
+            no_design_set = 'SolidMaterial001Solid'
+            no_design_set = None
+            run_optimization(penal,  matSets, opti_type, sol_type,
+                                                  weight_factors, max_iteration, vol_frac,
+                                                  files, workDir, solverPath, cpus, no_design_set)
 ```
+
+
 ## Output
 - STL File in a specific folder for every optimizaiton step
 

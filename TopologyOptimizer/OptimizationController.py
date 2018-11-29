@@ -79,6 +79,7 @@ class OptimizationController(object):
         self.__material_sets = number_of_sets
 
     def run(self):
+
         if not os.path.exists(self.__result_path):
             os.mkdir(self.__result_path)
 
@@ -315,13 +316,12 @@ class OptimizationController(object):
                     self.__plot_result(iteration, res_elem, result_path)
             else:
                 result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
-                                           + self.__result_file_name + str(iteration) + "_p_" +
+                                           + self.__result_file_name.split("\\")[-1] + str(iteration) + "_p_" +
                                            str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) + '.stl')
                 self.__plot_result(iteration, res_elem, result_path)
 
 
     def __plot_result(self, iteration, res_elem, result_path):
-
         # Create the Surface for an stl output
         topo_surf = Surface()
         topo_surf.create_surface_on_elements(res_elem)

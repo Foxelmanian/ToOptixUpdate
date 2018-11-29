@@ -25,21 +25,24 @@ def run_optimization(penal,  matSets, opti_type, sol_type,
     opti_controller.set_no_design_element_set(no_design_set)
     opti_controller.run()
 
+
+
 if __name__ == "__main__":
 
     # Optimization type --> seperated (combined is not implemented )
     cpus = 6
     opti_type = "seperated"
     sol_type = ["static"]
-    files = ["PlateWithNoDesignSpaceFine.inp"]
+    files = ['PlateWithNoDesignSpaceFine.inp']
+    workDir = 'work'
+    solverPath = 'ccx'
 
     for vol_frac in [0.4]:
         for penal in [3.0]:
             max_iteration = 100
             matSets = 20
             weight_factors = [1.0]
-            workDir = "work"
-            solverPath = "ccx"
+
             no_design_set = 'SolidMaterial001Solid'
             run_optimization(penal,  matSets, opti_type, sol_type,
                                                   weight_factors, max_iteration, vol_frac,
