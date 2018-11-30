@@ -177,16 +177,15 @@ if __name__ == "__main__":
 
 - goto the file 'TopologyOptimizer\OptimizationController.py'
 - At the beginning of the file set the variable 'use_trimesh_may_avi=True'
-- At the beginning you set 'use_interactive': After each step the calculation will be stoped and you can look at the result.
-
+- You can specify a 'interactive_visualization_after_iteration'. After these iteration interval a scene will be poped up and rendered.
 
 ```python, 
 
 use_trimesh_may_avi = True
-use_interactive = False
 if use_trimesh_may_avi:
     from mayavi import mlab
     import trimesh
+    interactive_visualization_after_iteration = 10
 ```
 
 ## Output

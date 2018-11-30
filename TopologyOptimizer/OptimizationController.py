@@ -10,10 +10,13 @@ import os
 import numpy as np
 
 use_trimesh_may_avi = True
-use_interactive = False
+
 if use_trimesh_may_avi:
     from mayavi import mlab
     import trimesh
+    visualization_after_iteration = 5
+
+    engine = mlab.get_engine()
 
 
 
@@ -348,21 +351,28 @@ class OptimizationController(object):
         stl_file.write(stl_result_path)
 
         if use_trimesh_may_avi:
-            self.__plot_mayavi_function(stl_result_path)
+            if iteration % visualization_after_iteration == visualization_after_iteration - 1:
+                self.__plot_mayavi_function(stl_result_path)
 
 
     def __plot_mayavi_function(self, stl_result_path):
-
+        try:
+            s = engine._get_current_scene()
+            mlab.close(s)
+        except:
+            pass
         triangle_mesh = trimesh.load(stl_result_path)
         mesh = {'x': triangle_mesh.vertices[:, 0].tolist(),
                      'y': triangle_mesh.vertices[:, 1].tolist(),
                      'z': triangle_mesh.vertices[:, 2].tolist(),
                      'faces': triangle_mesh.faces.tolist()}
-        engine = mlab.get_engine()
-        fig = mlab.figure(size=(600, 600), bgcolor=(1, 1, 1), fgcolor=(0.5, 0.5, 0.5))
-        s = engine._get_current_scene()
-        mlab.triangular_mesh(mesh['x'], mesh['y'], mesh['z'], mesh['faces'], colormap="bone", opacity=0.1)
 
+        fig = mlab.figure(size=(600, 600), bgcolor=(1, 1, 1), fgcolor=(0.5, 0.5, 0.5))
+        mlab.triangular_mesh(mesh['x'], mesh['y'], mesh['z'], mesh['faces'], colormap="bone", opacity=0.1)
+        s = engine._get_current_scene()
         s.scene.save(stl_result_path[0:-3] + 'jpg')
-        if use_interactive:
-            mlab.show()
+
+
+        #if use_interactive:
+        #    if iteration % interactive_visualization_after_iteration == 1:
+        #        mlab.show()
