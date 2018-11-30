@@ -180,7 +180,7 @@ if __name__ == "__main__":
 - You can specify a 'interactive_visualization_after_iteration'. After these iteration interval a scene will be poped up and rendered.
 
 <p align="center">
-  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/RenderedMAYAVI.png" width="50%">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/RenderedMAYAVI.jpg" width="50%">
 </p>
 
 
