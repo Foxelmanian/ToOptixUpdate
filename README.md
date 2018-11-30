@@ -179,6 +179,13 @@ if __name__ == "__main__":
 - At the beginning of the file set the variable 'use_trimesh_may_avi=True'
 - You can specify a 'interactive_visualization_after_iteration'. After these iteration interval a scene will be poped up and rendered.
 
+<p align="center">
+  <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/RenderedMAYAVI.png" width="50%">
+</p>
+
+
+
+
 ```python, 
 
 use_trimesh_may_avi = True
@@ -190,6 +197,8 @@ if use_trimesh_may_avi:
 
 ## Output
 - STL File in a specific folder for every optimizaiton step
+- Rendered Pictures of the result
+
 
 
 

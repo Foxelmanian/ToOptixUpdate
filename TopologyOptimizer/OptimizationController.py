@@ -368,7 +368,7 @@ class OptimizationController(object):
                      'faces': triangle_mesh.faces.tolist()}
 
         fig = mlab.figure(size=(600, 600), bgcolor=(1, 1, 1), fgcolor=(0.5, 0.5, 0.5))
-        mlab.triangular_mesh(mesh['x'], mesh['y'], mesh['z'], mesh['faces'], colormap="bone", opacity=0.1)
+        mlab.triangular_mesh(mesh['x'], mesh['y'], mesh['z'], mesh['faces'], colormap="bone", opacity=1.0)
         s = engine._get_current_scene()
         s.scene.save(stl_result_path[0:-3] + 'jpg')
 

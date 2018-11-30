@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="Adding Mayavi and trimesh combination rendering module.">
+    <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Images/RenderedMAYAVI.jpg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
@@ -18,7 +19,7 @@
       <file leaf-file-name="FreeCADMacro.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="24">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#132#142#0" expanded="true" />
@@ -42,8 +43,8 @@
       <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8568">
-              <caret line="357" column="54" lean-forward="false" selection-start-line="357" selection-start-column="54" selection-end-line="357" selection-end-column="54" />
+            <state relative-caret-position="455">
+              <caret line="371" column="25" lean-forward="false" selection-start-line="371" selection-start-column="25" selection-end-line="371" selection-end-column="25" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
               </folding>
@@ -55,8 +56,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="313">
-                <caret line="179" column="101" lean-forward="false" selection-start-line="179" selection-start-column="101" selection-end-line="179" selection-end-column="101" />
+              <first_editor relative-caret-position="503">
+                <caret line="199" column="33" lean-forward="false" selection-start-line="199" selection-start-column="33" selection-end-line="199" selection-end-column="33" />
                 <folding />
               </first_editor>
               <second_editor />
@@ -404,13 +405,6 @@
       <option name="presentableId" value="Default" />
       <updated>1517910707004</updated>
     </task>
-    <task id="LOCAL-00004" summary="Adding calculating displacements">
-      <created>1517932076629</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1517932076629</updated>
-    </task>
     <task id="LOCAL-00005" summary="Adding calculating displacements">
       <created>1517932400133</created>
       <option name="number" value="00005" />
@@ -747,7 +741,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543570816706</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Improved vizualization">
+      <created>1543571958330</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1543571958331</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -818,7 +819,8 @@
     <MESSAGE value="New Design case added" />
     <MESSAGE value="MayAVI_Added" />
     <MESSAGE value="Adding Mayavi and trimesh combination rendering module." />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Mayavi and trimesh combination rendering module." />
+    <MESSAGE value="Improved vizualization" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved vizualization" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -997,26 +999,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#132#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
-          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-          <folding>
-            <element signature="e#2#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/run_optimization.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="984">
@@ -1033,10 +1015,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding>
+            <element signature="e#2#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#132#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="8568">
-          <caret line="357" column="54" lean-forward="false" selection-start-line="357" selection-start-column="54" selection-end-line="357" selection-end-column="54" />
+        <state relative-caret-position="455">
+          <caret line="371" column="25" lean-forward="false" selection-start-line="371" selection-start-column="25" selection-end-line="371" selection-end-column="25" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
           </folding>
@@ -1046,8 +1048,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="313">
-            <caret line="179" column="101" lean-forward="false" selection-start-line="179" selection-start-column="101" selection-end-line="179" selection-end-column="101" />
+          <first_editor relative-caret-position="503">
+            <caret line="199" column="33" lean-forward="false" selection-start-line="199" selection-start-column="33" selection-end-line="199" selection-end-column="33" />
             <folding />
           </first_editor>
           <second_editor />
