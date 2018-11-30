@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Point.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Point.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Surface.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Surface.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -21,7 +17,7 @@
       <file leaf-file-name="FreeCADMacro.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
+            <state relative-caret-position="24">
               <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding>
                 <element signature="e#132#142#0" expanded="true" />
@@ -33,7 +29,7 @@
       <file leaf-file-name="run_optimization_freeCAD.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="648">
+            <state relative-caret-position="696">
               <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
               <folding>
                 <element signature="e#2#47#0" expanded="true" />
@@ -42,14 +38,27 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="356">
-              <caret line="349" column="31" lean-forward="false" selection-start-line="349" selection-start-column="31" selection-end-line="349" selection-end-column="31" />
+            <state relative-caret-position="288">
+              <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="15" />
               <folding>
                 <element signature="e#0#62#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="726">
+                <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -209,13 +218,13 @@
         <option value="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
         <option value="$PROJECT_DIR$/run_optimization.py" />
         <option value="$PROJECT_DIR$/run_optimization_freeCAD.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Point.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Surface.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" />
         <option value="$PROJECT_DIR$/FreeCADMacro.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -730,7 +739,14 @@
       <option name="project" value="LOCAL" />
       <updated>1543484758805</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="MayAVI_Added">
+      <created>1543570559321</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1543570559321</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -799,7 +815,8 @@
     <MESSAGE value="Multithreading on linux and windows fixed" />
     <MESSAGE value="No design space is added" />
     <MESSAGE value="New Design case added" />
-    <option name="LAST_COMMIT_MESSAGE" value="New Design case added" />
+    <MESSAGE value="MayAVI_Added" />
+    <option name="LAST_COMMIT_MESSAGE" value="MayAVI_Added" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -951,16 +968,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="219">
-            <caret line="123" column="0" lean-forward="false" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
@@ -993,26 +1000,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#132#142#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="648">
-          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
-          <folding>
-            <element signature="e#2#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="864">
@@ -1023,13 +1010,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="e#132#142#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="349" column="31" lean-forward="false" selection-start-line="349" selection-start-column="31" selection-end-line="349" selection-end-column="31" />
+        <state relative-caret-position="288">
+          <caret line="12" column="15" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="15" />
           <folding>
             <element signature="e#0#62#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="696">
+          <caret line="29" column="69" lean-forward="false" selection-start-line="29" selection-start-column="69" selection-end-line="29" selection-end-column="69" />
+          <folding>
+            <element signature="e#2#47#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="726">
+            <caret line="180" column="0" lean-forward="true" selection-start-line="180" selection-start-column="0" selection-end-line="180" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

@@ -169,6 +169,21 @@ if __name__ == "__main__":
 ```
 
 
+## Using rendering module mayavi
+
+- This module creates rendered pictures of the result into the working folder.
+- Install mayavi package (with vtk ...)
+- Install trimesh package (for converting the stl file)
+
+- goto the file 'TopologyOptimizer\OptimizationController.py'
+- At the beginning of the file set the variable 'use_trimesh_may_avi=True'
+- At the beginning you set 'use_interactive': After each step the calculation will be stoped and you can look at the result.
+
+
+```python, 
+
+```
+
 ## Output
 - STL File in a specific folder for every optimizaiton step
 
