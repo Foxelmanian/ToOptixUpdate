@@ -182,6 +182,11 @@ if __name__ == "__main__":
 
 ```python, 
 
+use_trimesh_may_avi = True
+use_interactive = False
+if use_trimesh_may_avi:
+    from mayavi import mlab
+    import trimesh
 ```
 
 ## Output
