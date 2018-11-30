@@ -9,6 +9,13 @@ from .FEMPy.Geometry.Surface import Surface
 import os
 import numpy as np
 
+use_trimesh_may_avi = True
+use_interactive = False
+if use_trimesh_may_avi:
+    from mayavi import mlab
+    import trimesh
+
+
 
 
 class OptimizationController(object):
@@ -97,7 +104,6 @@ class OptimizationController(object):
                     if self.__set_name != None:
                         print(f'No Design element set: {self.__set_name}')
                         self.__no_design_space.extend(fem_builder.get_elements_by_set_name(self.__set_name))
-
                     fem_body = fem_builder.get_fem_body()
                     ele_filter = ElementFilter(fem_body.get_elements())
                     ele_filter.create_filter_structure()
@@ -322,16 +328,41 @@ class OptimizationController(object):
 
 
     def __plot_result(self, iteration, res_elem, result_path):
-        # Create the Surface for an stl output
+        # Create the Surface for an stl output##
+
+
+
         topo_surf = Surface()
         topo_surf.create_surface_on_elements(res_elem)
         print("Number of result elements", len(res_elem))
         stl_file = STL(1)
         topo_part = Solid(1, topo_surf.triangles)
         stl_file.add_solid(topo_part)
+
+
         print("Exporting result elements: {}".format(len(res_elem)))
         stl_result_path = result_path
         print("Exporting stl result: {}".format(stl_result_path))
         if os.path.isfile(stl_result_path):
             os.remove(stl_result_path)
         stl_file.write(stl_result_path)
+
+        if use_trimesh_may_avi:
+            self.__plot_mayavi_function(stl_result_path)
+
+
+    def __plot_mayavi_function(self, stl_result_path):
+
+        triangle_mesh = trimesh.load(stl_result_path)
+        mesh = {'x': triangle_mesh.vertices[:, 0].tolist(),
+                     'y': triangle_mesh.vertices[:, 1].tolist(),
+                     'z': triangle_mesh.vertices[:, 2].tolist(),
+                     'faces': triangle_mesh.faces.tolist()}
+        engine = mlab.get_engine()
+        fig = mlab.figure(size=(600, 600), bgcolor=(1, 1, 1), fgcolor=(0.5, 0.5, 0.5))
+        s = engine._get_current_scene()
+        mlab.triangular_mesh(mesh['x'], mesh['y'], mesh['z'], mesh['faces'], colormap="bone", opacity=0.1)
+
+        s.scene.save(stl_result_path[0:-3] + 'jpg')
+        if use_interactive:
+            mlab.show()

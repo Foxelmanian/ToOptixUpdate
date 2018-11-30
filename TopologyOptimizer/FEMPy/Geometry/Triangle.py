@@ -18,8 +18,9 @@ class Triangle(object):
     >>> t1 = Triangle(1, [p1, p2, p3])
     """
 
-    def __init__(self,ID=None, Points=[]):
+    def __init__(self,ID=None, Points=[], Face_ids=[]):
         self.__points = Points
+        self.__face_ids = Face_ids
         if len(Points) == 3:
             self.__normal = self.normal_vec(Points)
         else:
@@ -40,6 +41,10 @@ class Triangle(object):
         norm_vec = 1.0 / np.linalg.norm(norm_vec) * norm_vec
 
         return norm_vec
+
+    @property
+    def face_ids(self):
+        return self.__face_ids
 
     @property
     def id(self):

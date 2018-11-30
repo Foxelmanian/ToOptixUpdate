@@ -17,6 +17,8 @@ class Point(object):
         self.__y = y
         self.__z = z
 
+
+
     @property
     def x(self):
         return self.__x

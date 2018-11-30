@@ -150,59 +150,60 @@ class Surface():
                 # Face1
                 f = sorted([n1, n2, n3, n4])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n22, n33])
+                    tmp_tri = Triangle(tn, [n11, n22, n33], [n1, n2, n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
-                    tmp_tri = Triangle(tn, [n33, n44, n11])
+                    tmp_tri = Triangle(tn, [n33, n44, n11], [n3, n4, n1])
                     self.triangles.append(tmp_tri)
                     tn += 1
                 # Face2
                 f = sorted([n5, n8, n7, n6])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n55, n88, n77])
+
+                    tmp_tri = Triangle(tn, [n55, n88, n77], [n5, n8, n7])
                     self.triangles.append(tmp_tri)
                     tn += 1
-                    tmp_tri = Triangle(tn, [n77, n66, n55])
+                    tmp_tri = Triangle(tn, [n77, n66, n55], [n7, n6, n5])
                     self.triangles.append(tmp_tri)
                     tn += 1
                 # Face3
                 f = sorted([n1, n5, n6, n2])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n55, n66])
+                    tmp_tri = Triangle(tn, [n11, n55, n66], [n1, n5, n6])
 
                     self.triangles.append(tmp_tri)
                     tn += 1
-                    tmp_tri = Triangle(tn, [n66, n22, n11])
+                    tmp_tri = Triangle(tn, [n66, n22, n11], [n6, n2, n1])
                     self.triangles.append(tmp_tri)
                     tn += 1
                 # Face4
                 f = sorted([n2, n6, n7, n3])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n22, n66, n77])
+                    tmp_tri = Triangle(tn, [n22, n66, n77], [n2, n6, n7])
                     self.triangles.append(tmp_tri)
                     tn += 1
-                    tmp_tri = Triangle(tn, [n77, n33, n22])
+                    tmp_tri = Triangle(tn, [n77, n33, n22], [n7, n3, n2])
                     self.triangles.append(tmp_tri)
                     tn += 1
                 # Face5
                 f = sorted([n3, n7, n8, n4])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n33, n77, n88])
+                    tmp_tri = Triangle(tn, [n33, n77, n88], [n3,n7,n8])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
-                    tmp_tri = Triangle(tn, [n88, n44, n33])
+                    tmp_tri = Triangle(tn, [n88, n44, n33], [n8,n4,n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face6
                 f = sorted([n4, n8, n5, n1])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n44, n88, n55])
+                    tmp_tri = Triangle(tn, [n44, n88, n55], [n4,n8,n5])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
-                    tmp_tri = Triangle(tn, [n55, n11, n44])
+                    tmp_tri = Triangle(tn, [n55, n11, n44], [n5,n1,n4])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
@@ -222,47 +223,47 @@ class Surface():
                 # Face1
                 f = sorted([n1, n2, n3])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n22, n33])
+                    tmp_tri = Triangle(tn, [n11, n22, n33], [n1, n2, n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face2
                 f = sorted([n4, n6, n5])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n44, n66, n55])
+                    tmp_tri = Triangle(tn, [n44, n66, n55], [n4,n6,n5])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face3
                 f = sorted([n1, n4, n5, n2])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n44, n55])
+                    tmp_tri = Triangle(tn, [n11, n44, n55], [n1,n4,n5])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
-                    tmp_tri = Triangle(tn, [n55, n22, n11])
+                    tmp_tri = Triangle(tn, [n55, n22, n11], [n5,n2,n1])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face4
                 f = sorted([n2, n5, n6, n3])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n22, n55, n66])
+                    tmp_tri = Triangle(tn, [n22, n55, n66], [n2,n5,n6])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
-                    tmp_tri = Triangle(tn, [n66, n33, n22])
+                    tmp_tri = Triangle(tn, [n66, n33, n22], [n6,n3,n2])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face5
                 f = sorted([n3, n6, n4, n1])
                 if eFace[f[0], f[1], f[2], f[3]] == 1:
-                    tmp_tri = Triangle(tn, [n33, n66, n44])
+                    tmp_tri = Triangle(tn, [n33, n66, n44], [n3,n6,n4])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
-                    tmp_tri = Triangle(tn, [n44, n11, n33])
+                    tmp_tri = Triangle(tn, [n44, n11, n33], [n4,n1,n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
@@ -278,27 +279,27 @@ class Surface():
                 # Face1
                 f = sorted([n1, n2, n3])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n22, n33])
+                    tmp_tri = Triangle(tn, [n11, n22, n33], [n1,n2,n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face2
                 f = sorted([n1, n4, n2])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n11, n44, n22])
+                    tmp_tri = Triangle(tn, [n11, n44, n22],[n1,n4,n2])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face3
                 f = sorted([n2, n4, n3])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n22, n44, n33])
+                    tmp_tri = Triangle(tn, [n22, n44, n33], [n2,n4,n3])
                     self.triangles.append(tmp_tri)
                     tn += 1
 
                 # Face4
                 f = sorted([n3, n4, n1])
                 if eFace[f[0], f[1], f[2]] == 1:
-                    tmp_tri = Triangle(tn, [n33, n44, n11])
+                    tmp_tri = Triangle(tn, [n33, n44, n11], [n3,n4,n1])
                     self.triangles.append(tmp_tri)
                     tn += 1
