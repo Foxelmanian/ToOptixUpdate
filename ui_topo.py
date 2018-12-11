@@ -89,6 +89,7 @@ class OBJECT_OT_start_topo_optimization(bpy.types.Operator):
         else:
             print("Select a solution type")
 
+
         run_optimization.run_optimization(penal,  matSets, opti_type, sol_type,
                                           weight_factors, max_iteration, vol_frac,
                                           files, workDir, solverPath,cpus)

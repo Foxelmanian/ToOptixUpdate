@@ -6,7 +6,7 @@ from enum import Enum
 
 def run_optimization(penal,  matSets, opti_type, sol_type,
                     weight_factors, max_iteration, vol_frac,
-                    files, workDir, solverPath, cpus, no_design_set):
+                    files, workDir, solverPath, cpus, no_design_set=None):
     print('Start topology otpimization')
 
     os.environ['OMP_NUM_THREADS'] = str(cpus)
@@ -32,8 +32,8 @@ if __name__ == "__main__":
     # Optimization type --> seperated (combined is not implemented )
     cpus = 6
     opti_type = "seperated"
-    sol_type = ["static"]
-    files = ['PlateWithNoDesignSpaceFine.inp']
+    sol_type = ["static", "static"]
+    files = ['ab2.inp', 'ab2.inp']
     workDir = 'work'
     solverPath = 'ccx'
 
