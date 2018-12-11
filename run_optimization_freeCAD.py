@@ -24,7 +24,6 @@ if __name__ == "__main__":
             matSets = 20
             weight_factors = [1.0]
             no_design_set = 'SolidMaterial001Solid'
-            no_design_set = None
             run_optimization(penal,  matSets, opti_type, sol_type,
                                                   weight_factors, max_iteration, vol_frac,
                                                   files, workDir, solverPath, cpus, no_design_set)

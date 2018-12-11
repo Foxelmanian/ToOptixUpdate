@@ -9,7 +9,7 @@ from .FEMPy.Geometry.Surface import Surface
 import os
 import numpy as np
 
-use_trimesh_may_avi = True
+use_trimesh_may_avi = False
 
 if use_trimesh_may_avi:
     from mayavi import mlab
