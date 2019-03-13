@@ -39,32 +39,23 @@
 - If you want to start Tooptix in "C:Programms\Blender Foundation ..." you need administrator rights (not reccomended)
 - So i would suggest you should take a copy of blender and then use it on the desktop or some other user access folder
 - (Optional) create a environment variable for Calculix (ccx)
+- Test at first the two example files TwoRectanglesStruc.inp and TwoRectanglesTherm.inp
+
 
 ### Blender Installation
-- Check if import statement of run_optimization.py is: 
-from .TopologyOptimizer.OptimizationController import OptimizationController 
-- Copy your ToOptix Folder and paste it into ...\Blender Foundation\Blender\2.79\scripts\addons
+- Only supported for Blender 2.80
+- Copy the folder ToOptix_BlenderAddon
+- Copy your ToOptix Folder and paste it into ...\Blender Foundation\Blender\2.80\scripts\addons
 - Start Blender and activate the addon (type = mesh)
-- Blender has no mayavi or trimesh so goto the file 'TopologyOptimizer\OptimizationController.py'
-- At the beginning of the file set the variable 'use_trimesh_may_avi=False'
-- If you add these python modules to the blender python.exe you can use these one
-
-
 <p align="center">
   <img src="https://github.com/DMST1990/ToOptixUpdate/blob/master/Images/Blender_UI.PNG" width="50%">
 </p>
-
-
-
 
 ### Python / PyCharm Installation
 - Check if import statement of run_optimization.py is: 
 from TopologyOptimizer.OptimizationController import OptimizationController 
 - Open the folder with pycharm and just start your optimization
-
-- Change file paths in "run_optimization.py"
-- Change optimization properties "run_optimization.py"
-- Create new cases for CalculiX "test.inp" ....
+- Use the Folder ToOptix_Python
 
 Example no design space with file:
 
@@ -173,7 +164,7 @@ if __name__ == "__main__":
 
 
 ## Using rendering module mayavi
-
+- Only supported if mayavi and trimesh is insatlled
 - This module creates rendered pictures of the result into the working folder.
 - Install mayavi package (with vtk ...)
 - Install trimesh package (for converting the stl file)
@@ -187,8 +178,6 @@ if __name__ == "__main__":
 </p>
 
 
-
-
 ```python, 
 
 use_trimesh_may_avi = True
@@ -197,12 +186,9 @@ if use_trimesh_may_avi:
     import trimesh
     interactive_visualization_after_iteration = 10
 ```
-
 ## Output
 - STL File in a specific folder for every optimizaiton step
 - Rendered Pictures of the result
-
-
 
 
 ## Licence
