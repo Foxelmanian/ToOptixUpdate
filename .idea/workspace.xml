@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" afterPath="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/run_optimization_freeCAD.py" afterPath="$PROJECT_DIR$/run_optimization_freeCAD.py" />
-    </list>
+    <list default="true" id="7983666f-3ec9-419c-8aa7-a1352816bfad" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,119 +10,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="FreeCADMacro.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-              <folding>
-                <element signature="e#132#142#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_optimization_freeCAD.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-              <folding>
-                <element signature="e#2#47#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OptimizationController.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="264">
-              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-              <folding>
-                <element signature="e#0#62#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TopologyOptimizer.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="23" column="83" lean-forward="false" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="4680">
-                <caret line="195" column="3" lean-forward="false" selection-start-line="195" selection-start-column="3" selection-end-line="195" selection-end-column="3" />
-                <folding />
-              </first_editor>
-              <second_editor />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run_optimization.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/run_optimization.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ui_topo.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ui_topo.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1656">
-              <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Surface.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Surface.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7248">
-              <caret line="303" column="50" lean-forward="false" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="STLPhraser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1848">
-              <caret line="83" column="45" lean-forward="false" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CCXPhraser.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="864">
-              <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding>
-                <element signature="e#0#28#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -137,11 +21,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>self.__plot</find>
-      <find>get_id</find>
-      <find>reverse</find>
-      <find>*solid</find>
-      <find>weight</find>
       <find>penalty_ex</find>
       <find>set_p</find>
       <find>is_empty_list</find>
@@ -153,7 +32,6 @@
       <find>input</find>
       <find>TOPO_ALL_ELEMENTS_DMST</find>
       <find>*SOLID</find>
-      <find>*material</find>
       <find>filter_density</find>
       <find>filter_</find>
       <find>self.__no_design_space</find>
@@ -167,6 +45,12 @@
       <find>plot_result</find>
       <find>set_no_design_</find>
       <find>set_no_design_space</find>
+      <find>run_topo_sys</find>
+      <find>mean</find>
+      <find>density</find>
+      <find>material</find>
+      <find>*material</find>
+      <find>design</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -175,7 +59,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/FEMPy/Material.py" />
         <option value="$PROJECT_DIR$/topo_displacement.dat" />
         <option value="$PROJECT_DIR$/PolygonMesh/Geometry.py" />
         <option value="$PROJECT_DIR$/PolygonMesh/Voxelizer.py" />
@@ -200,7 +83,6 @@
         <option value="$PROJECT_DIR$/FEMPy/Geometrie/Point.py" />
         <option value="$PROJECT_DIR$/FEMPy/Node.py" />
         <option value="$PROJECT_DIR$/FEMPy/Geometrie/Solid.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py" />
         <option value="$PROJECT_DIR$/U_system_optimization.frd" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/__init__.py" />
         <option value="$PROJECT_DIR$/test.py" />
@@ -213,7 +95,6 @@
         <option value="$PROJECT_DIR$/Scripts/create_no_design_space_file.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Element.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/Filter.py" />
-        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Point.py" />
@@ -222,17 +103,20 @@
         <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/STLPhraser.py" />
         <option value="$PROJECT_DIR$/FreeCADMacro.py" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/run_optimization_freeCAD.py" />
+        <option value="$PROJECT_DIR$/loggedResults/print_results.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py" />
+        <option value="$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py" />
         <option value="$PROJECT_DIR$/ui_topo.py" />
         <option value="$PROJECT_DIR$/run_optimization.py" />
         <option value="$PROJECT_DIR$/TopologyOptimizer/OptimizationController.py" />
-        <option value="$PROJECT_DIR$/run_optimization_freeCAD.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1172" />
-    <option name="height" value="1044" />
+    <option name="x" value="953" />
+    <option name="width" value="974" />
+    <option name="height" value="1164" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -249,7 +133,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -257,20 +140,16 @@
               <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
               <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="ToOptixUpdate" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ToOptixUpdate" type="462c0819:PsiDirectoryNode" />
-              <item name="TopologyOptimizer" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/DataCreatorMachineLearning" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="two.files.diff.last.used.folder" value="$PROJECT_DIR$" />
   </component>
@@ -330,19 +209,19 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
     </configuration>
-    <configuration name="create_no_design_space_file" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="print_results" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/loggedResults" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="ToOptixUpdate" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/create_no_design_space_file.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/loggedResults/print_results.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -383,18 +262,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Python.run_optimization" />
-      <item index="1" class="java.lang.String" itemvalue="Python.create_no_design_space_file" />
-      <item index="2" class="java.lang.String" itemvalue="Python.create_no_design_space_file (1)" />
-      <item index="3" class="java.lang.String" itemvalue="Python.FreeCADMacro" />
-      <item index="4" class="java.lang.String" itemvalue="Python.run_optimization_freeCAD" />
+      <item index="1" class="java.lang.String" itemvalue="Python.create_no_design_space_file (1)" />
+      <item index="2" class="java.lang.String" itemvalue="Python.FreeCADMacro" />
+      <item index="3" class="java.lang.String" itemvalue="Python.run_optimization_freeCAD" />
+      <item index="4" class="java.lang.String" itemvalue="Python.print_results" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Python.run_optimization" />
-        <item index="1" class="java.lang.String" itemvalue="Python.FreeCADMacro" />
-        <item index="2" class="java.lang.String" itemvalue="Python.run_optimization_freeCAD" />
-        <item index="3" class="java.lang.String" itemvalue="Python.create_no_design_space_file (1)" />
-        <item index="4" class="java.lang.String" itemvalue="Python.create_no_design_space_file" />
+        <item index="1" class="java.lang.String" itemvalue="Python.print_results" />
+        <item index="2" class="java.lang.String" itemvalue="Python.FreeCADMacro" />
+        <item index="3" class="java.lang.String" itemvalue="Python.run_optimization_freeCAD" />
+        <item index="4" class="java.lang.String" itemvalue="Python.create_no_design_space_file (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -408,13 +287,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1517910707004</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Clean up Code">
-      <created>1518184998049</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1518184998049</updated>
     </task>
     <task id="LOCAL-00009" summary="STL Output is missing.&#10;TopologyOptimization without filtering is working.">
       <created>1518535613003</created>
@@ -752,20 +624,27 @@
       <option name="project" value="LOCAL" />
       <updated>1544533190998</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="FreeCAD Macro extended">
+      <created>1544533981852</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1544533981853</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1173" extended-state="6" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23880596" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38379532" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3633296" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31119922" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32941177" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32507434" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32903865" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Data View" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -825,7 +704,8 @@
     <MESSAGE value="Adding Mayavi and trimesh combination rendering module." />
     <MESSAGE value="Improved vizualization" />
     <MESSAGE value="Blender UI extended" />
-    <option name="LAST_COMMIT_MESSAGE" value="Blender UI extended" />
+    <MESSAGE value="FreeCAD Macro extended" />
+    <option name="LAST_COMMIT_MESSAGE" value="FreeCAD Macro extended" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -841,11 +721,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/FEMPy/Element.py" />
-    <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Triangle.py" />
-    <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Surface.py" />
-    <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Geometry.py" />
-    <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/STLPhraser.py" />
     <entry file="file://$PROJECT_DIR$/FEMPy/CCXPhraser.py" />
     <entry file="file://$PROJECT_DIR$/FEMPy/Node.py" />
     <entry file="file://$PROJECT_DIR$/FEMPy/Geometrie/Solid.py" />
@@ -885,13 +760,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test" />
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Material.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="566">
-          <caret line="51" column="81" lean-forward="false" selection-start-line="51" selection-start-column="81" selection-end-line="51" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/FEMBody.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -921,13 +789,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
-          <caret line="33" column="21" lean-forward="false" selection-start-line="33" selection-start-column="21" selection-end-line="33" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/Filter.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -935,22 +796,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="153" column="33" lean-forward="false" selection-start-line="153" selection-start-column="33" selection-end-line="153" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config.ini" />
     <entry file="file://$PROJECT_DIR$/call_me.py" />
-    <entry file="file://$PROJECT_DIR$/config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="67" lean-forward="false" selection-start-line="0" selection-start-column="59" selection-end-line="0" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Geometry/Triangle.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1032">
@@ -969,17 +816,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="7248">
           <caret line="303" column="50" lean-forward="false" selection-start-line="303" selection-start-column="50" selection-end-line="303" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="864">
-          <caret line="41" column="0" lean-forward="false" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#28#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -987,18 +823,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1848">
           <caret line="83" column="45" lean-forward="false" selection-start-line="83" selection-start-column="45" selection-end-line="83" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="4680">
-            <caret line="195" column="3" lean-forward="false" selection-start-line="195" selection-start-column="3" selection-end-line="195" selection-end-column="3" />
-            <folding />
-          </first_editor>
-          <second_editor />
         </state>
       </provider>
     </entry>
@@ -1009,36 +833,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding>
-            <element signature="e#132#142#0" expanded="true" />
-          </folding>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4680">
+            <caret line="195" column="3" lean-forward="false" selection-start-line="195" selection-start-column="3" selection-end-line="195" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/run_optimization.py">
+    <entry file="file://$PROJECT_DIR$/loggedResults/print_results.py" />
+    <entry file="file://$PROJECT_DIR$/work/ENER_sensitivity_optimization.inp" />
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/Material.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
+        <state relative-caret-position="168">
+          <caret line="7" column="36" lean-forward="false" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/work/U_system_optimization.inp" />
+    <entry file="file://$USER_HOME$/PycharmProjects/DataCreatorMachineLearning/FreeCADFeatureGenerator.py" />
+    <entry file="file://$PROJECT_DIR$/GridStructure.inp" />
+    <entry file="file://$PROJECT_DIR$/ui_topo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2160">
+          <caret line="97" column="0" lean-forward="false" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/FreeCADMacro.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="840">
+          <caret line="38" column="2" lean-forward="false" selection-start-line="38" selection-start-column="2" selection-end-line="38" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/TopologyOptimizer/TopologyOptimizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="23" column="83" lean-forward="false" selection-start-line="23" selection-start-column="83" selection-end-line="23" selection-end-column="83" />
+        <state relative-caret-position="2760">
+          <caret line="115" column="67" lean-forward="false" selection-start-line="115" selection-start-column="67" selection-end-line="115" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ui_topo.py">
+    <entry file="file://$PROJECT_DIR$/config.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1656">
-          <caret line="76" column="16" lean-forward="false" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="16" />
+        <state relative-caret-position="0">
+          <caret line="0" column="68" lean-forward="false" selection-start-line="0" selection-start-column="68" selection-end-line="0" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXPhraser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="906">
+          <caret line="210" column="17" lean-forward="false" selection-start-line="210" selection-start-column="16" selection-end-line="210" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/run_optimization.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="2" column="6" lean-forward="false" selection-start-line="2" selection-start-column="6" selection-end-line="2" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/DensityMaterial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="672">
+          <caret line="29" column="17" lean-forward="false" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TopologyOptimizer/FEMPy/CCXSolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="101" column="39" lean-forward="false" selection-start-line="101" selection-start-column="39" selection-end-line="101" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1047,19 +929,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
           <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#62#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/run_optimization_freeCAD.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="25" column="51" lean-forward="false" selection-start-line="25" selection-start-column="51" selection-end-line="25" selection-end-column="51" />
-          <folding>
-            <element signature="e#2#47#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>

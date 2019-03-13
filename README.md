@@ -45,6 +45,9 @@
 from .TopologyOptimizer.OptimizationController import OptimizationController 
 - Copy your ToOptix Folder and paste it into ...\Blender Foundation\Blender\2.79\scripts\addons
 - Start Blender and activate the addon (type = mesh)
+- Blender has no mayavi or trimesh so goto the file 'TopologyOptimizer\OptimizationController.py'
+- At the beginning of the file set the variable 'use_trimesh_may_avi=False'
+- If you add these python modules to the blender python.exe you can use these one
 
 
 <p align="center">
