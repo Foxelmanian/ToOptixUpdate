@@ -7,7 +7,7 @@ import subprocess
 import json
 
 python3_path = os.path.join("C:\\", "Users", "Denk", 'AppData','Local', 'Programs','Python', 'Python36','python.exe')
-installation_path = os.path.join("C:\\", "Users", "Denk", 'Documents', 'GitHub', 'ToOptixUpdate', 'ToOptix_FreeCADAddon')
+installation_path = os.path.join("C:\\", "Users", "Denk", 'Downloads', 'ToOptixUpdate-master', 'ToOptixUpdate-master', 'ToOptix_FreeCADAddon')
 
 import FreeCAD
 import Part

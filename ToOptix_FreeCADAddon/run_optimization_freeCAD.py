@@ -13,6 +13,9 @@ if __name__ == "__main__":
     sol_type = ["static"]
     with open(json_path, 'r') as file:
         data = json.load(file)
+    if os.path.exists(json_path):
+        os.remove(json_path)
+
     files = [data['inp_path']]
     workDir = 'work'
     solverPath =  "\"" + str(data['ccx_path']) +  "\""
