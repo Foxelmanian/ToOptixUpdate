@@ -1,0 +1,441 @@
+edge meshing
+nvertices = 8
+nedges = 12
+different vertices = 8
+faces = 6
+edge nr 1
+add meshpoint (0, 1, 10)
+add meshpoint (0, 2, 10)
+add meshpoint (0, 3, 10)
+add meshpoint (0, 4, 10)
+add meshpoint (0, 5, 10)
+add meshpoint (0, 6, 10)
+add meshpoint (0, 7, 10)
+add meshpoint (0, 8, 10)
+add meshpoint (0, 9, 10)
+NP = 17
+edge nr 2
+add meshpoint (1, 10, 10)
+add meshpoint (2, 10, 10)
+add meshpoint (3, 10, 10)
+add meshpoint (4, 10, 10)
+add meshpoint (5, 10, 10)
+add meshpoint (6, 10, 10)
+add meshpoint (7, 10, 10)
+add meshpoint (8, 10, 10)
+add meshpoint (9, 10, 10)
+NP = 26
+edge nr 3
+add meshpoint (10, 1, 10)
+add meshpoint (10, 2, 10)
+add meshpoint (10, 3, 10)
+add meshpoint (10, 4, 10)
+add meshpoint (10, 5, 10)
+add meshpoint (10, 6, 10)
+add meshpoint (10, 7, 10)
+add meshpoint (10, 8, 10)
+add meshpoint (10, 9, 10)
+NP = 35
+edge nr 4
+add meshpoint (1, 0, 10)
+add meshpoint (2, 0, 10)
+add meshpoint (3, 0, 10)
+add meshpoint (4, 0, 10)
+add meshpoint (5, 0, 10)
+add meshpoint (6, 0, 10)
+add meshpoint (7, 0, 10)
+add meshpoint (8, 0, 10)
+add meshpoint (9, 0, 10)
+NP = 44
+edge nr 5
+add meshpoint (0, 1, 0)
+add meshpoint (0, 2, 0)
+add meshpoint (0, 3, 0)
+add meshpoint (0, 4, 0)
+add meshpoint (0, 5, 0)
+add meshpoint (0, 6, 0)
+add meshpoint (0, 7, 0)
+add meshpoint (0, 8, 0)
+add meshpoint (0, 9, 0)
+NP = 53
+edge nr 6
+add meshpoint (1, 10, 0)
+add meshpoint (2, 10, 0)
+add meshpoint (3, 10, 0)
+add meshpoint (4, 10, 0)
+add meshpoint (5, 10, 0)
+add meshpoint (6, 10, 0)
+add meshpoint (7, 10, 0)
+add meshpoint (8, 10, 0)
+add meshpoint (9, 10, 0)
+NP = 62
+edge nr 7
+add meshpoint (10, 1, 0)
+add meshpoint (10, 2, 0)
+add meshpoint (10, 3, 0)
+add meshpoint (10, 4, 0)
+add meshpoint (10, 5, 0)
+add meshpoint (10, 6, 0)
+add meshpoint (10, 7, 0)
+add meshpoint (10, 8, 0)
+add meshpoint (10, 9, 0)
+NP = 71
+edge nr 8
+add meshpoint (1, 0, 0)
+add meshpoint (2, 0, 0)
+add meshpoint (3, 0, 0)
+add meshpoint (4, 0, 0)
+add meshpoint (5, 0, 0)
+add meshpoint (6, 0, 0)
+add meshpoint (7, 0, 0)
+add meshpoint (8, 0, 0)
+add meshpoint (9, 0, 0)
+NP = 80
+edge nr 9
+NP = 80
+edge nr 10
+add meshpoint (10, 10, 1)
+add meshpoint (10, 10, 2)
+add meshpoint (10, 10, 3)
+add meshpoint (10, 10, 4)
+add meshpoint (10, 10, 5)
+add meshpoint (10, 10, 6)
+add meshpoint (10, 10, 7)
+add meshpoint (10, 10, 8)
+add meshpoint (10, 10, 9)
+NP = 89
+edge nr 11
+NP = 89
+edge nr 12
+add meshpoint (0, 10, 1)
+add meshpoint (0, 10, 2)
+add meshpoint (0, 10, 3)
+add meshpoint (0, 10, 4)
+add meshpoint (0, 10, 5)
+add meshpoint (0, 10, 6)
+add meshpoint (0, 10, 7)
+add meshpoint (0, 10, 8)
+add meshpoint (0, 10, 9)
+NP = 98
+edge nr 13
+NP = 98
+edge nr 14
+add meshpoint (10, 0, 1)
+add meshpoint (10, 0, 2)
+add meshpoint (10, 0, 3)
+add meshpoint (10, 0, 4)
+add meshpoint (10, 0, 5)
+add meshpoint (10, 0, 6)
+add meshpoint (10, 0, 7)
+add meshpoint (10, 0, 8)
+add meshpoint (10, 0, 9)
+NP = 107
+edge nr 15
+NP = 107
+edge nr 16
+add meshpoint (0, 0, 1)
+add meshpoint (0, 0, 2)
+add meshpoint (0, 0, 3)
+add meshpoint (0, 0, 4)
+add meshpoint (0, 0, 5)
+add meshpoint (0, 0, 6)
+add meshpoint (0, 0, 7)
+add meshpoint (0, 0, 8)
+add meshpoint (0, 0, 9)
+NP = 116
+edge nr 17
+NP = 116
+edge nr 18
+NP = 116
+edge nr 19
+NP = 116
+edge nr 20
+NP = 116
+edge nr 21
+NP = 116
+edge nr 22
+NP = 116
+edge nr 23
+NP = 116
+edge nr 24
+NP = 116
+mesh face 1
+  17 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  14 times used rule Left 60 (1)
+  44 times used rule Right 120 (1)
+  24 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+mesh face 2
+  18 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  15 times used rule Left 60 (1)
+  37 times used rule Right 120 (1)
+  25 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+mesh face 3
+  17 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  14 times used rule Left 60 (1)
+  44 times used rule Right 120 (1)
+  24 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+mesh face 4
+  18 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  15 times used rule Left 60 (1)
+  37 times used rule Right 120 (1)
+  25 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+mesh face 5
+  17 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  14 times used rule Left 60 (1)
+  44 times used rule Right 120 (1)
+  24 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+mesh face 6
+  18 times used rule Free Triangle (1)
+   0 times used rule Free Triangle (5)
+   0 times used rule Free Triangle (10)
+   0 times used rule Free Triangle (20)
+  21 times used rule Right 60 (1)
+  15 times used rule Left 60 (1)
+  37 times used rule Right 120 (1)
+  25 times used rule Left 120 (1)
+  17 times used rule Left Right 120 (1)
+   2 times used rule Fill Triangle
+   1 times used rule Vis A Vis (1)
+   0 times used rule 2 h Vis A Vis (1)
+Meshing subdomain 1
+blockfill local h
+rel filldist = 0.1
+
+
+Points:           1835
+Volume Elements:  10854
+
+Volume elements in qualityclasses:
+   0 - 0.05: 1533
+0.05 -  0.1: 7
+ 0.1 - 0.15: 71
+0.15 -  0.2: 38
+ 0.2 - 0.25: 223
+0.25 -  0.3: 277
+ 0.3 - 0.35: 305
+0.35 -  0.4: 354
+ 0.4 - 0.45: 191
+0.45 -  0.5: 323
+ 0.5 - 0.55: 569
+0.55 -  0.6: 759
+ 0.6 - 0.65: 491
+0.65 -  0.7: 730
+ 0.7 - 0.75: 1198
+0.75 -  0.8: 1058
+ 0.8 - 0.85: 941
+0.85 -  0.9: 893
+ 0.9 - 0.95: 734
+0.95 -    1: 159
+total error: 1.7e+07
+free: 900, fixed: 9954
+
+Start SwapImprove
+free: 119, fixed: 10690
+
+Start SwapImprove
+
+
+Points:           1835
+Volume Elements:  10809
+
+Volume elements in qualityclasses:
+   0 - 0.05: 1528
+0.05 -  0.1: 5
+ 0.1 - 0.15: 68
+0.15 -  0.2: 35
+ 0.2 - 0.25: 215
+0.25 -  0.3: 272
+ 0.3 - 0.35: 292
+0.35 -  0.4: 346
+ 0.4 - 0.45: 186
+0.45 -  0.5: 317
+ 0.5 - 0.55: 563
+0.55 -  0.6: 759
+ 0.6 - 0.65: 493
+0.65 -  0.7: 744
+ 0.7 - 0.75: 1196
+0.75 -  0.8: 1052
+ 0.8 - 0.85: 950
+0.85 -  0.9: 902
+ 0.9 - 0.95: 726
+0.95 -    1: 160
+total error: 1.7e+07
+
+99/0/0 map/can/use rule Free Tetrahedron
+61/25/23 map/can/use rule Tetrahedron 60
+25/25/24 map/can/use rule Tetrahedron 60 with edge(1)
+0/0/0 map/can/use rule Tetrahedron Vis a Vis Point (1)
+170/4/4 map/can/use rule Tetrahedron Vis a Vis Point with edge(1)
+81/40/14 map/can/use rule Tetrahedron Vis a Vis Point with 2 edges (1)
+39/39/3 map/can/use rule Tetrahedron Vis a Vis Point with 3 edges (1)
+0/0/0 map/can/use rule Tetrahedron Vis a Vis Triangle (1)
+0/0/0 map/can/use rule Octaeder 1
+0/0/0 map/can/use rule Octaeder 2
+0/0/0 map/can/use rule Octaeder 2a
+0/0/0 map/can/use rule Pyramid 1
+16/16/2 map/can/use rule Tetrahedron 2 times 60
+3/3/0 map/can/use rule Fill Tetrahedron (1)
+40/6/4 map/can/use rule Tetrahedron 120 (1)
+0/0/0 map/can/use rule Tetrahedron 2 times 120 (1)
+0/0/0 map/can/use rule four Tetrahedron non convex (4)
+0/0/0 map/can/use rule five Tetrahedron non convex (4)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule three Tetrahedron non convex (4)
+0/0/0 map/can/use rule three Tetrahedron non convex (6)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule Tetrahedron 2 in 60 (12)
+0/0/0 map/can/use rule Tetrahedron 120: but more than 180 (13)
+0/0/0 map/can/use rule Free Tetrahedron (14)
+0/0/0 map/can/use rule Free Tetrahedron (15)
+
+
+199/0/0 map/can/use rule Free Tetrahedron
+138/48/43 map/can/use rule Tetrahedron 60
+59/57/51 map/can/use rule Tetrahedron 60 with edge(1)
+0/0/0 map/can/use rule Tetrahedron Vis a Vis Point (1)
+366/13/7 map/can/use rule Tetrahedron Vis a Vis Point with edge(1)
+181/76/27 map/can/use rule Tetrahedron Vis a Vis Point with 2 edges (1)
+96/92/12 map/can/use rule Tetrahedron Vis a Vis Point with 3 edges (1)
+0/0/0 map/can/use rule Tetrahedron Vis a Vis Triangle (1)
+0/0/0 map/can/use rule Octaeder 1
+0/0/0 map/can/use rule Octaeder 2
+0/0/0 map/can/use rule Octaeder 2a
+0/0/0 map/can/use rule Pyramid 1
+42/41/3 map/can/use rule Tetrahedron 2 times 60
+15/15/0 map/can/use rule Fill Tetrahedron (1)
+70/10/8 map/can/use rule Tetrahedron 120 (1)
+0/0/0 map/can/use rule Tetrahedron 2 times 120 (1)
+0/0/0 map/can/use rule four Tetrahedron non convex (4)
+0/0/0 map/can/use rule five Tetrahedron non convex (4)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule three Tetrahedron non convex (4)
+0/0/0 map/can/use rule three Tetrahedron non convex (6)
+0/0/0 map/can/use rule four Tetrahedron non convex (6)
+0/0/0 map/can/use rule Tetrahedron 2 in 60 (12)
+0/0/0 map/can/use rule Tetrahedron 120: but more than 180 (13)
+0/0/0 map/can/use rule Free Tetrahedron (14)
+0/0/0 map/can/use rule Free Tetrahedron (15)
+
+   0 times used rule Free Tetrahedron
+  58 times used rule Tetrahedron 60
+  58 times used rule Tetrahedron 60 with edge(1)
+   0 times used rule Tetrahedron Vis a Vis Point (1)
+   7 times used rule Tetrahedron Vis a Vis Point with edge(1)
+  30 times used rule Tetrahedron Vis a Vis Point with 2 edges (1)
+  22 times used rule Tetrahedron Vis a Vis Point with 3 edges (1)
+   0 times used rule Tetrahedron Vis a Vis Triangle (1)
+   0 times used rule Octaeder 1
+   0 times used rule Octaeder 2
+   0 times used rule Octaeder 2a
+   0 times used rule Pyramid 1
+   3 times used rule Tetrahedron 2 times 60
+   0 times used rule Fill Tetrahedron (1)
+   8 times used rule Tetrahedron 120 (1)
+   0 times used rule Tetrahedron 2 times 120 (1)
+   0 times used rule four Tetrahedron non convex (4)
+   0 times used rule five Tetrahedron non convex (4)
+   0 times used rule four Tetrahedron non convex (6)
+   0 times used rule four Tetrahedron non convex (6)
+   0 times used rule three Tetrahedron non convex (4)
+   0 times used rule three Tetrahedron non convex (6)
+   0 times used rule four Tetrahedron non convex (6)
+   0 times used rule Tetrahedron 2 in 60 (12)
+   0 times used rule Tetrahedron 120: but more than 180 (13)
+   0 times used rule Free Tetrahedron (14)
+   0 times used rule Free Tetrahedron (15)
+
+
+Points:           1836
+Volume Elements:  9304
+
+Volume elements in qualityclasses:
+   0 - 0.05: 1
+0.05 -  0.1: 7
+ 0.1 - 0.15: 69
+0.15 -  0.2: 38
+ 0.2 - 0.25: 219
+0.25 -  0.3: 273
+ 0.3 - 0.35: 297
+0.35 -  0.4: 346
+ 0.4 - 0.45: 187
+0.45 -  0.5: 322
+ 0.5 - 0.55: 570
+0.55 -  0.6: 761
+ 0.6 - 0.65: 494
+0.65 -  0.7: 741
+ 0.7 - 0.75: 1196
+0.75 -  0.8: 1050
+ 0.8 - 0.85: 948
+0.85 -  0.9: 900
+ 0.9 - 0.95: 725
+0.95 -    1: 160
+total error: 1.6e+04
+
+
+Points:           1836
+Volume Elements:  9304
+
+Volume elements in qualityclasses:
+   0 - 0.05: 1
+0.05 -  0.1: 7
+ 0.1 - 0.15: 69
+0.15 -  0.2: 38
+ 0.2 - 0.25: 219
+0.25 -  0.3: 273
+ 0.3 - 0.35: 297
+0.35 -  0.4: 346
+ 0.4 - 0.45: 187
+0.45 -  0.5: 322
+ 0.5 - 0.55: 570
+0.55 -  0.6: 761
+ 0.6 - 0.65: 494
+0.65 -  0.7: 741
+ 0.7 - 0.75: 1196
+0.75 -  0.8: 1050
+ 0.8 - 0.85: 948
+0.85 -  0.9: 900
+ 0.9 - 0.95: 725
+0.95 -    1: 160
+total error: 1.6e+04
