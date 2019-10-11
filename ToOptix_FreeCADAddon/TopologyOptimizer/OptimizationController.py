@@ -249,7 +249,7 @@ class OptimizationController(object):
             raise ValueError("Solution type not supported")
 
         result_path_obj = os.path.join(str(self.__result_path), str(self.__run_counter)
-                                   + self.__result_file_name.split("\\")[-1] + "_p_" +
+                                   + os.path.split(self.__result_file_name)[-1] + "_p_" +
                                    str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) + '.txt')
 
         if os.path.isfile(result_path_obj):
@@ -336,7 +336,7 @@ class OptimizationController(object):
                     self.__plot_result(iteration, res_elem, result_path)
             else:
                 result_path = os.path.join(str(self.__result_path), str(self.__run_counter)
-                                           + self.__result_file_name.split("\\")[-1] + str(iteration) + "_p_" +
+                                           + os.path.split(self.__result_file_name)[-1] + str(iteration) + "_p_" +
                                            str(self.__penalty_exponent) + "_v_" + str(self.__volumina_ratio) + '.stl')
                 self.__plot_result(iteration, res_elem, result_path)
         obj_file.close()
